@@ -20,17 +20,6 @@ Try changing it so that the test fails.</description>
     </item>
     
     <item>
-      <title>hello world</title>
-      <link>https://cairo-by-example.com/examples/hello-world/</link>
-      <pubDate>Sat, 10 Jun 2023 16:52:31 -0600</pubDate>
-      
-      <guid>https://cairo-by-example.com/examples/hello-world/</guid>
-      <description>the use keyword imports a dependency into scope
-use debug::PrintTrait; fn main() { &amp;#34;Hello, world!&amp;#34;.print(); } now, run the tests with cairo-run hello_world.cairo
-[DEBUG]	Hello, world! (raw: 0x48656c6c6f2c20776f726c6421 Run completed successfully, returning [] </description>
-    </item>
-    
-    <item>
       <title>variables</title>
       <link>https://cairo-by-example.com/examples/variables/</link>
       <pubDate>Sat, 10 Jun 2023 16:52:31 -0600</pubDate>
@@ -39,6 +28,17 @@ use debug::PrintTrait; fn main() { &amp;#34;Hello, world!&amp;#34;.print(); } no
       <description>To store data in variables with the let keyword but you will not be able to change the value of said variables.
 if you need to change that data, it must be a mutable variable with let mut
 fn main() { let immutable_var: felt252 = 17; // immutable_var = 38; &amp;lt;-- fails to compile // but this is legal: let mut mutable_var: felt252 = immutable_var; mutable_var = 38; assert(mutable_var != immutable_var, &amp;#39;mutable equals immutable&amp;#39;); } #[test] fn test_main() { main(); } </description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>https://cairo-by-example.com/examples/hello-world/</link>
+      <pubDate>Sat, 10 Jun 2023 16:52:30 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/hello-world/</guid>
+      <description>the use keyword imports a dependency into scope
+use debug::PrintTrait; fn main() { &amp;#34;Hello, world!&amp;#34;.print(); } now, run the tests with cairo-run hello_world.cairo
+[DEBUG]	Hello, world! (raw: 0x48656c6c6f2c20776f726c6421 Run completed successfully, returning [] </description>
     </item>
     
   </channel>

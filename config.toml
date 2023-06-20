@@ -1,0 +1,4 @@
+baseURL = 'https://cairo-by-example.com/'
+languageCode = 'en-us'
+title = 'cairo by example'
+publishDir = 'docs'

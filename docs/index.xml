@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cairo by example</title>
+    <link>https://cairo-by-example.com/</link>
+    <description>Recent content on cairo by example</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Jun 2023 16:52:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>assert</title>
+      <link>https://cairo-by-example.com/examples/assert/</link>
+      <pubDate>Sat, 10 Jun 2023 16:52:31 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/assert/</guid>
+      <description>To make sure our tests work, we use assert.
+fn main(x: felt252, y: felt252) { assert(x != y, &amp;#39;error, x is equal to y&amp;#39;); } #[test] fn test_main() { main(1,2); } The first argument of assert is the condition we want to check, and the second is a message we will see on the console if the condition is false.
+Run cairo-test file_name
+Try changing it so that the test fails.</description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>https://cairo-by-example.com/examples/hello-world/</link>
+      <pubDate>Sat, 10 Jun 2023 16:52:31 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/hello-world/</guid>
+      <description>the use keyword imports a dependency into scope
+use debug::PrintTrait; fn main() { &amp;#34;Hello, world!&amp;#34;.print(); } now, run the tests with cairo-run hello_world.cairo
+[DEBUG]	Hello, world! (raw: 0x48656c6c6f2c20776f726c6421 Run completed successfully, returning [] </description>
+    </item>
+    
+    <item>
+      <title>variables</title>
+      <link>https://cairo-by-example.com/examples/variables/</link>
+      <pubDate>Sat, 10 Jun 2023 16:52:31 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/variables/</guid>
+      <description>To store data in variables with the let keyword but you will not be able to change the value of said variables.
+if you need to change that data, it must be a mutable variable with let mut
+fn main() { let immutable_var: felt252 = 17; // immutable_var = 38; &amp;lt;-- fails to compile // but this is legal: let mut mutable_var: felt252 = immutable_var; mutable_var = 38; assert(mutable_var != immutable_var, &amp;#39;mutable equals immutable&amp;#39;); } #[test] fn test_main() { main(); } </description>
+    </item>
+    
+  </channel>
+</rss>

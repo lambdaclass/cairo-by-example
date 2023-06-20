@@ -1,0 +1,17 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://www.cairo-lang.com/wp-content/uploads/2020/12/cropped-favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="/css/fifty-eight-bytes-of.css">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@__________sam__" />
+  <meta name="twitter:creator" content="@__________sam__" />
+  <meta name="twitter:image" content="/img/card.png" />
+  <meta property="og:title" content="an introduction to cairo" />
+  <meta property="og:description" content="with simplified examples" />
+  <meta property="og:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  {{ $title := print .Site.Title " | " .Title }}
+  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  <title>{{ $title }}</title>
+</head>

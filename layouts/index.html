@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div id="content">
+
+  <pre>
+curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
+  </pre>
+
+  <h4>an introduction to <a href="https://cairo-lang.com/">Cairo</a>, with simple examples</h4>
+  <div class="resource-list">
+    <ul>
+      {{ $examples := (where .Site.RegularPages.ByDate "Type" "examples")}}
+      {{ range $examples }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+</div>
+{{ end }}

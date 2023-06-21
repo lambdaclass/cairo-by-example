@@ -14,6 +14,7 @@ use zeroable::IsZeroResult;
 use zeroable::NonZeroIntoImpl;
 
 fn main() -> felt252 {
+    // NonZeroIntoImpl converts a NonZero<T> into its inner value.
     NonZeroIntoImpl::into(felt_to_nonzero(1234))
 }
 

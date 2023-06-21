@@ -5,9 +5,8 @@ draft: false
 ---
 
 All Cairo code has to abide by two _ownership_ rules:
-- each value in Cairo has one and only one owner at a time,
-- when the owner goes out of scope, the value will be _dropped_
-
+    - each value in Cairo has one and only one owner at a time,
+    - when the owner goes out of scope, the value will be _dropped_
 
 ```rust {.codebox}
 use array::ArrayTrait;

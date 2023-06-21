@@ -12,9 +12,9 @@ class CairoLang < Formula
     # Check for manually installed rust
     $method = "manual" if (exists("/Users/$USER/.cargo/bin/rustc"))
     # Check for brewed rust
-    $method = "brew" if exists("/opt/homebrew/bin/rustc")
+    $method = "brew" if exists("rustc")
 
-    print("Installation method is: " + $method.upcase + "\n")
+    print("Detected Rust installation method: " + $method.upcase + "\n")
 
     if $method == "manual"
       current_user=ENV["USER"]

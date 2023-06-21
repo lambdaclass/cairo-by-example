@@ -9,7 +9,6 @@ Cairo uses recursion as the principal method of iteration.
 Here is how we can calculate the factorial using this method.
 
 ```rust {.codebox}
-// The IsZeroResult<T> enum allows us to obtain a NonZero<T> via matching.
 
 fn main() -> felt252 {
     factorial(9);

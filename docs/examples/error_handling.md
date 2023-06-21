@@ -1,3 +1,9 @@
+---
+title: "error_handling"
+date: 2023-06-21T16:52:30-06:00
+draft: false
+---
+
 # Unrecoverable errors
 
 ## Panic

@@ -1,9 +1,9 @@
 class CairoLang < Formula
   desc "Cairo language installation"
   homepage "https://cairo-by-example.com/"
-  url "https://github.com/starkware-libs/cairo/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "e13ff5a2375e3520f4f1f5fa7d251f362ea42c428490ef15137460bdac637bb4"
-  version "v1.1.0"
+  url "https://github.com/starkware-libs/cairo/archive/refs/tags/v2.0.0-rc4.tar.gz"
+  sha256 "e3dd3ce3f9ab5b69c44d01b13777d92516dcd830efb6a3d2cd46915d4f03e8a9"
+  version "v2.0.0-rc4"
   license "MIT"
 
   def install

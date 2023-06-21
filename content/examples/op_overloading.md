@@ -27,4 +27,5 @@ fn main() {
     assert(v + w == Vector2 { x: 1, y: 1 }, 'Should be equal.')
 }
 ```
+
 A full list of overloadable operators and their respective traits can be found in [Appendix B of the Cairo Book](https://cairo-book.github.io/appendix-02-operators-and-symbols.html)

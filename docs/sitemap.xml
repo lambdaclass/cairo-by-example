@@ -17,6 +17,9 @@
     <loc>https://cairo-by-example.com/examples/testing/</loc>
     <lastmod>2023-06-21T11:22:00-03:00</lastmod>
   </url><url>
+    <loc>https://cairo-by-example.com/examples/snapshots/</loc>
+    <lastmod>2023-06-21T11:05:00-03:00</lastmod>
+  </url><url>
     <loc>https://cairo-by-example.com/examples/zeroable/</loc>
     <lastmod>2023-06-21T14:00:01+00:00</lastmod>
   </url><url>
@@ -24,6 +27,9 @@
     <lastmod>2023-06-21T13:28:01+00:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/op_overloading/</loc>
+    <lastmod>2023-06-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/strings/</loc>
     <lastmod>2023-06-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/assert/</loc>

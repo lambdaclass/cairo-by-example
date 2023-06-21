@@ -44,6 +44,17 @@ For example:
     </item>
     
     <item>
+      <title>snapshots</title>
+      <link>https://cairo-by-example.com/examples/snapshots/</link>
+      <pubDate>Wed, 21 Jun 2023 11:05:00 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/snapshots/</guid>
+      <description>Snapshots provide read-only instances of an object without taking ownership when passed to a function. Every type T has a snapshot version @T, which is always droppable and duplicatable.
+To create a snapshot of a value x of type T, simply use @x.
+use array::Array; use array::ArrayTrait; use option::OptionTrait; use box::BoxTrait; // Receives an array snapshot fn sum_starting_two(data: @Array&amp;lt;u32&amp;gt;) -&amp;gt; u32 { //data.append(5_u32); &amp;lt;- This will fail, asi data is read-only let first = *data.</description>
+    </item>
+    
+    <item>
       <title>zeroable</title>
       <link>https://cairo-by-example.com/examples/zeroable/</link>
       <pubDate>Wed, 21 Jun 2023 14:00:01 +0000</pubDate>
@@ -74,6 +85,17 @@ use option::Option; use option::OptionTrait; // Define an enum enum MyEnum { A: 
       <description>Operator overloading is possible in Cairo through the use of particular traits, like Add, Sub, Mul, Div and many others.
 For example, for overloading the addition (+) operator of a Vector2 type:
 struct Vector2 { x: f32, y: f32, } impl Vector2Add of Add&amp;lt;Vector2&amp;gt; { fn add(lhs: Vector2, rhs: Vector2) -&amp;gt; Vector2 { Vector2 { x: lhs.x + rhs.x, y: lhs.y + rhs.y } } } fn main() { let v = Vector2 { x: 1, y: 0 }; let w = Vector2 { x: 0, y: 1 }; assert(v + w == Vector2 { x: 1, y: 1 }, &amp;#39;Should be equal.</description>
+    </item>
+    
+    <item>
+      <title>strings</title>
+      <link>https://cairo-by-example.com/examples/strings/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/strings/</guid>
+      <description>In Cairo a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.
+Examples of strings:
+use debug::PrintTrait; fn main() { let x = &amp;#39;Cairo is awesome&amp;#39;; x.print(); let c = &amp;#39;A&amp;#39;; c.print(); } Run cairo-run file_name</description>
     </item>
     
     <item>

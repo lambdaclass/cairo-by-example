@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://cairo-by-example.com/img/card.png?4444" />
   
   
-  <title>cairo by example | assert</title>
+  <title>cairo by example | strings</title>
 </head>
 <body><div class="header">
     <h1>
@@ -25,19 +25,17 @@
         </a>
     </h1>
 </div><div id="content">
-<h3>assert</h3>
-<p>To make sure our tests work, we use assert.</p>
-<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>(x: <span style="color:#a6e22e">felt252</span>, y: <span style="color:#a6e22e">felt252</span>) {
-</span></span><span style="display:flex;"><span>    assert(x <span style="color:#f92672">!=</span> y, <span style="color:#a6e22e">&#39;error</span>, x is equal to y<span style="color:#a6e22e">&#39;</span>);
+<h3>strings</h3>
+<p>In Cairo a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.</p>
+<p>Examples of strings:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> debug::PrintTrait;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#a6e22e">&#39;Cairo</span> is awesome<span style="color:#a6e22e">&#39;</span>;
+</span></span><span style="display:flex;"><span>    x.print();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span>    c.print();
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#[test]</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_main</span>() {
-</span></span><span style="display:flex;"><span>    main(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The first argument of assert is the condition we want to check, and the second is a message we will see on the console if the condition is false.</p>
-<p>Run <code>cairo-test file_name</code></p>
-<p>Try changing it so that the test fails.</p>
+</span></span></code></pre></div><p>Run <code>cairo-run file_name</code></p>
 
 
 <br>
@@ -55,8 +53,8 @@
 </details>
 <br>
 <div style="display: flex; justify-content: space-between;">
-    <a href="https://cairo-by-example.com/examples/variables/">prev (variables)</a>
-    <a href="https://cairo-by-example.com/examples/strings/">next (strings)</a>
+    <a href="https://cairo-by-example.com/examples/assert/">prev (assert)</a>
+    <a href="https://cairo-by-example.com/examples/op_overloading/">next (operator overloading)</a>
 </div>
 
 

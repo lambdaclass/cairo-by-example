@@ -83,11 +83,12 @@
 
 html {
   font-family: sans-serif;
-  font-size: 1.5em;
+  font-size: 1.4rem;
   line-height: 1.75;
+  line-height: 1.5;
   margin: auto;
   max-width: 70ch;
-  padding: 3em 1em;
+  padding: 2em 1em;
 }
 
 img {
@@ -111,8 +112,32 @@ ol {
   margin-bottom: 2em;
 }
 
-/* few more from me */
-.codebox {
+/* CSS Simple Pre Code */
+pre {
+  background-color: #222;
+  color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   overflow-x: auto;
-  background-color: #272822;
+  padding: .8rem 0;
+  white-space:normal;
+  font-size: .8rem;
 }
+
+code{
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+
+.header h1{
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+}
+
+#content h4{
+  margin-top: 1.5rem;
+  line-height: 1.4;
+}
+
+.github-fork-ribbon:before { background-color: #fe4a3c; }

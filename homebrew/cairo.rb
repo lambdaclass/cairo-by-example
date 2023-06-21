@@ -26,7 +26,15 @@ class Cairo < Formula
     print(`rustup override set stable`)
     print(`rustup update`)
     print(`cargo build --all --release --manifest-path ./Cargo.toml`)
+    bin.install "./target/release/cairo-compile"
+    bin.install "./target/release/cairo-format"
+    bin.install "./target/release/cairo-language-server"
     bin.install "./target/release/cairo-run"
+    bin.install "./target/release/cairo-test"
+    bin.install "./target/release/cairo-run"
+    bin.install "./target/release/sierra-compile"
+    bin.install "./target/release/starknet-compile"
+    bin.install "./target/release/starknet-sierra-compile"
 
   end
 

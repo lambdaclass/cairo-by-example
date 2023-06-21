@@ -6,7 +6,52 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Jun 2023 16:52:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 11:22:00 -0300</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing</title>
+      <link>https://cairo-by-example.com/examples/testing/</link>
+      <pubDate>Wed, 21 Jun 2023 11:22:00 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/testing/</guid>
+      <description>Tests are functions that verify that code is working as expected. These functions have to be annotated with #[test]
+Any code that panics will cause a test to fail. As a programmer you usually want to write a test by setting up an initial state, performing some computation, and asserting the result is as you expected.
+For example:
+#[test] fn test_passes() { let result = 2 + 2; assert(result == 4, &amp;#39;result is not 4&amp;#39;); } You can also annotate tests that are supposed to fail with #[should_panic]:</description>
+    </item>
+    
+    <item>
+      <title>zeroable</title>
+      <link>https://cairo-by-example.com/examples/zeroable/</link>
+      <pubDate>Wed, 21 Jun 2023 14:00:01 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/zeroable/</guid>
+      <description>The Cairo std library has some utilities for handling non zero values.
+Here is how to get a NonZero&amp;lt;T&amp;gt; out of a felt252.
+// The IsZeroResult&amp;lt;T&amp;gt; enum allows us to obtain a NonZero&amp;lt;T&amp;gt; via matching. use zeroable::IsZeroResult; use zeroable::NonZeroIntoImpl; fn main() -&amp;gt; felt252 { // NonZeroIntoImpl converts a NonZero&amp;lt;T&amp;gt; into its inner value. NonZeroIntoImpl::into(felt_to_nonzero(1234)) } fn felt_to_nonzero(value: felt252) -&amp;gt; NonZero&amp;lt;felt252&amp;gt; { // felt252_is_zero is a builtin method for felt252. match felt252_is_zero(value) { IsZeroResult::Zero(()) =&amp;gt; panic(ArrayTrait::new()), IsZeroResult::NonZero(x) =&amp;gt; x, } } </description>
+    </item>
+    
+    <item>
+      <title>enums</title>
+      <link>https://cairo-by-example.com/examples/enums/</link>
+      <pubDate>Wed, 21 Jun 2023 13:28:01 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/enums/</guid>
+      <description>An enum in Cairo works like a tagged union, variants can hold values inside, which you can access via pattern matching.
+You can work with enums like this:
+use option::Option; use option::OptionTrait; // Define an enum enum MyEnum { A: u8, B: u16, C: u32, D: u64 } // Construct and return an enum variant. fn my_enum_a() -&amp;gt; MyEnum { MyEnum::A(4_u8) } // Match the enum, the order must match the enum definition.</description>
+    </item>
+    
+    <item>
+      <title>operator overloading</title>
+      <link>https://cairo-by-example.com/examples/op_overloading/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/op_overloading/</guid>
+      <description>Operator overloading is possible in Cairo through the use of particular traits, like Add, Sub, Mul, Div and many others.
+For example, for overloading the addition (+) operator of a Vector2 type:
+struct Vector2 { x: f32, y: f32, } impl Vector2Add of Add&amp;lt;Vector2&amp;gt; { fn add(lhs: Vector2, rhs: Vector2) -&amp;gt; Vector2 { Vector2 { x: lhs.x + rhs.x, y: lhs.y + rhs.y } } } fn main() { let v = Vector2 { x: 1, y: 0 }; let w = Vector2 { x: 0, y: 1 }; assert(v + w == Vector2 { x: 1, y: 1 }, &amp;#39;Should be equal.</description>
+    </item>
+    
     <item>
       <title>assert</title>
       <link>https://cairo-by-example.com/examples/assert/</link>

@@ -8,7 +8,7 @@ An enum in Cairo works like a tagged union, variants can hold values inside, whi
 
 You can work with enums like this:
 
-```cairo
+```rust {.codebox}
 use option::Option;
 use option::OptionTrait;
 

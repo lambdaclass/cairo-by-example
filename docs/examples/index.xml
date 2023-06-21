@@ -6,7 +6,31 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jun 2023 11:22:00 -0300</lastBuildDate><atom:link href="https://cairo-by-example.com/examples/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 10:46:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/examples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>comments</title>
+      <link>https://cairo-by-example.com/examples/comments/</link>
+      <pubDate>Wed, 21 Jun 2023 10:46:31 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/comments/</guid>
+      <description>In Cairo programs, any text after a pair of forward slashes (//) and until the end of the line will be ignored by the compiler.
+You can use this to leave explanatory comments in your code.
+fn main() -&amp;gt; felt252 { // start of the function 1 + 4 // return the sum of 1 and 4 } </description>
+    </item>
+    
+    <item>
+      <title>structs</title>
+      <link>https://cairo-by-example.com/examples/structs/</link>
+      <pubDate>Wed, 21 Jun 2023 10:29:31 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/structs/</guid>
+      <description>A struct is a collection of named fields. It is one of the ways to define custom user types.
+The fields of a struct, called members, can be of any defined type.
+For example:
+struct Employee { age: u8, id: u32, role: String, } Struct members can be user-defined types:
+struct Company { employees: Vec&amp;lt;Employee&amp;gt;, number_of_buildings: u32 } </description>
+    </item>
+    
     <item>
       <title>testing</title>
       <link>https://cairo-by-example.com/examples/testing/</link>

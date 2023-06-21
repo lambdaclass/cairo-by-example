@@ -24,8 +24,8 @@ You can also annotate tests that are supposed to fail with `#[should_panic]`:
 #[test]
 #[should_panic]
 fn test_should_fail() {
-    let a:u8 = 255;
-    let b:u8 = a + 1; // panics due to overflow
+    let a: u8 = 255;
+    let b: u8 = a + 1; // panics due to overflow
 }
 ```
 

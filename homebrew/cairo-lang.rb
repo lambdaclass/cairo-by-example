@@ -4,7 +4,7 @@ class CairoLang < Formula
   url "https://github.com/starkware-libs/cairo/archive/refs/tags/v2.0.0-rc4.tar.gz"
   sha256 "e3dd3ce3f9ab5b69c44d01b13777d92516dcd830efb6a3d2cd46915d4f03e8a9"
   version "v2.0.0-rc4"
-  license "MIT"
+  license "Apache-2.0"
 
   def install
     # Check for manually installed rust
@@ -15,7 +15,7 @@ class CairoLang < Formula
     print("Detected Rust installation method: " + method.upcase + "\n")
 
     if method == "manual"
-      current_user=ENV["USER"]
+      current_user = ENV["USER"]
       ENV.prepend_path "PATH", "/Users/#{current_user}/.cargo/bin/"
     end
 

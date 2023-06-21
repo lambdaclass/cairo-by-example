@@ -1,4 +1,4 @@
-class Cairo < Formula
+class CairoLang < Formula
   desc "Cairo language installation"
   homepage "https://cairo-by-example.com/"
   url "https://github.com/starkware-libs/cairo/archive/refs/tags/v1.1.0.tar.gz"
@@ -31,7 +31,6 @@ class Cairo < Formula
     bin.install "./target/release/cairo-language-server"
     bin.install "./target/release/cairo-run"
     bin.install "./target/release/cairo-test"
-    bin.install "./target/release/cairo-run"
     bin.install "./target/release/sierra-compile"
     bin.install "./target/release/starknet-compile"
     bin.install "./target/release/starknet-sierra-compile"

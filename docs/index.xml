@@ -6,7 +6,28 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jun 2023 10:46:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 15:02:30 -0300</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>functions</title>
+      <link>https://cairo-by-example.com/examples/functions/</link>
+      <pubDate>Wed, 21 Jun 2023 15:02:30 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/functions/</guid>
+      <description>A function is a unit of code that performs some logic. It is defined using the fn keyword.
+Examples of functions are:
+// This functions doesn&amp;#39;t return anything. fn main() { let x = 3; } // This function returns an u32. fn inc(x: u32) -&amp;gt; u32 { x + 1 } The Cairo convention is to name functions using the &amp;lsquo;snake_case&amp;rsquo; form. In the example above, the function name is inc_n.</description>
+    </item>
+    
+    <item>
+      <title>ownership</title>
+      <link>https://cairo-by-example.com/examples/ownership/</link>
+      <pubDate>Wed, 21 Jun 2023 14:08:27 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/ownership/</guid>
+      <description>All Cairo code has to abide by two ownership rules: - each value in Cairo has one and only one owner at a time, - when the owner goes out of scope, the value will be dropped
+use array::ArrayTrait; fn foo(arr: Array&amp;lt;u128&amp;gt;) { // foo takes ownership of the array. // when this function returns, arr is dropped. } fn main() { // as the creator of arr, the main function owns the array let arr = ArrayTrait::&amp;lt;u128&amp;gt;::new(); foo(arr); // moves ownership of the array to function call // foo(arr); &amp;lt;- fails to compile, as main doesn&amp;#39;t own the array anymore } </description>
+    </item>
+    
     <item>
       <title>comments</title>
       <link>https://cairo-by-example.com/examples/comments/</link>

@@ -26,4 +26,3 @@ struct Company {
     number_of_buildings: u32
 }
 ```
-

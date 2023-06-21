@@ -1,6 +1,6 @@
 ---
 title: "functions"
-date: 2023-06-21T16:52:30-06:00
+date: 2023-06-21T15:02:30-03:00
 draft: false
 ---
 

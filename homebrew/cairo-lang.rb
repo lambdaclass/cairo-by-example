@@ -7,22 +7,20 @@ class CairoLang < Formula
   license "MIT"
 
   def install
-    $method = ""
+    method = ""
 
     # Check for manually installed rust
-    $method = "manual" if (exists("/Users/$USER/.cargo/bin/rustc"))
+    method = "manual" if (exists("/Users/$USER/.cargo/bin/rustc"))
     # Check for brewed rust
-    $method = "brew" if exists("rustc")
+    method = "brew" if exists("rustc")
 
-    print("Detected Rust installation method: " + $method.upcase + "\n")
+    print("Detected Rust installation method: " + method.upcase + "\n")
 
-    if $method == "manual"
+    if method == "manual"
       current_user=ENV["USER"]
       ENV.prepend_path "PATH", "/Users/#{current_user}/.cargo/bin/"
     end
 
-    print(`echo $PATH`)
-    print(`which rustc`)
     print(`rustup override set stable`)
     print(`rustup update`)
     print(`cargo build --all --release --manifest-path ./Cargo.toml`)

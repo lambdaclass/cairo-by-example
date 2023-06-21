@@ -32,7 +32,7 @@ fn test_should_fail() {
 To run any test, you can use the `cairo-test` command. 
 
 ```
-➜  $ cairo-test .
+$ cairo-test .
 running 2 tests
 test test_crate::test_passes ... ok
 test test_crate::test_should_fail ... ok

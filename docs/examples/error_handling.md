@@ -33,7 +33,7 @@ Both of these examples will result in the output:
 Run panicked with [7 (''), ].
 ```
 
-A third way to cause panics is to use the `panic_with` macro. This macro can be used on functions that return either Option or Result. It takes an error code and a function name, and will create a wrapper for the original function given the function name that will panic with the given error code if the original function were to return `Option::None` or `Result::Err`
+A third way to cause panics is to use the `panic_with` macro. This macro can be used on functions that return either `Option` or `Result`. It takes an error code and a function name, and will create a wrapper for the original function given the function name that will panic with the given error code if the original function were to return `Option::None` or `Result::Err`
 
 ```
 use option::OptionTrait;

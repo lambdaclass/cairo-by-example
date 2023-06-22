@@ -1,6 +1,6 @@
 ---
 title: "integers"
-date: 2023-06-22T11:45:31-07:00
+date: 2023-06-22T11:45:31-03:00
 draft: false
 ---
 
@@ -15,7 +15,7 @@ fn main() {
     let a: u8 = 0xff;
     let b: u16 = 0xffff;
     let c: u32 = 0xffffffff;
-    let c: usize = 0xffffffff; // usize is the same size as u32
+    let c: usize = 0xffffffff; // same size as u32
     let d: u64 = 0xffffffffffffffff;
     let e: u128 = 0xffffffffffffffffffffffffffffffff;
     let f: u256 = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
@@ -32,7 +32,7 @@ fn main() {
 }
 ```
 
-This program results in a compile error:
+This program results in a compilation error:
 
 ```console
 error: Trait has no implementation in context: core::traits::Neg::<core::integer::u32>

@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cairo-by-example.com/</loc>
-    <lastmod>2023-06-22T01:01:25+00:00</lastmod>
+    <lastmod>2023-06-22T11:45:31-03:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/</loc>
-    <lastmod>2023-06-22T01:01:25+00:00</lastmod>
+    <lastmod>2023-06-22T11:45:31-03:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/integers/</loc>
+    <lastmod>2023-06-22T11:45:31-03:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/generics/</loc>
     <lastmod>2023-06-22T01:01:25+00:00</lastmod>

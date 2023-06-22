@@ -6,7 +6,18 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jun 2023 01:01:25 +0000</lastBuildDate><atom:link href="https://cairo-by-example.com/examples/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2023 11:45:31 -0300</lastBuildDate><atom:link href="https://cairo-by-example.com/examples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>integers</title>
+      <link>https://cairo-by-example.com/examples/integers/</link>
+      <pubDate>Thu, 22 Jun 2023 11:45:31 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/integers/</guid>
+      <description>Even though the felt252 type is fundamental for the Cairo language, it is highly recommended to use integer types where possible. integer types come with extra protection against potential vulnerabilities in the code, such as overflow checks. Each type is suffixed with the number of bits occupied by the fixed number representation.
+Here&amp;rsquo;s an example program that declares a variable of each available type, with each type&amp;rsquo;s maximum value:
+fn main() { let a: u8 = 0xff; let b: u16 = 0xffff; let c: u32 = 0xffffffff; let c: usize = 0xffffffff; // usize is the same size as u32 let d: u64 = 0xffffffffffffffff; let e: u128 = 0xffffffffffffffffffffffffffffffff; let f: u256 = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff; } Note that all of these are unsigned, same as felt252.</description>
+    </item>
+    
     <item>
       <title>generics</title>
       <link>https://cairo-by-example.com/examples/generics/</link>
@@ -36,7 +47,7 @@ use debug::PrintTrait; fn main() { let is_awesome = true; if is_awesome { &amp;#
       
       <guid>https://cairo-by-example.com/examples/felt252/</guid>
       <description>The basic data type in Cairo is felt252, which stands for field element. These are integers in the range 0 &amp;lt;= x &amp;lt; P, where P is a large prime number, currently equatl to P = 2^{251} + 17 * 2^{192}+1. Field elements have the property of turning around when their value falls outside the specified range.
-use debug::PrintTrait; fn main() { let x: felt252 = 2; let y: felt252 = 5; (x+y).</description>
+use debug::PrintTrait; fn main() { let x: felt252 = 2; let y: felt252 = 5; (x + y).</description>
     </item>
     
     <item>
@@ -200,8 +211,8 @@ fn main() { let immutable_var: felt252 = 17; // immutable_var = 38; &amp;lt;-- f
       
       <guid>https://cairo-by-example.com/examples/hello-world/</guid>
       <description>the use keyword imports a dependency into scope
-use debug::PrintTrait; fn main() { &amp;#34;Hello, world!&amp;#34;.print(); } now, run the tests with cairo-run hello_world.cairo
-[DEBUG]	Hello, world! (raw: 0x48656c6c6f2c20776f726c6421 Run completed successfully, returning [] </description>
+use debug::PrintTrait; fn main() { &amp;#39;Hello, world!&amp;#39;.print(); } now, run the tests with cairo-run hello_world.cairo
+[DEBUG] Hello, world! (raw: 5735816763073854953388147237921) Run completed successfully, returning [] </description>
     </item>
     
   </channel>

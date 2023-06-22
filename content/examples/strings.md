@@ -17,4 +17,4 @@ fn main() {
 }
 ```
 
-Run ```cairo-run file_name``` to test this example
+To run this example, first copy the code in a new file and then run ```cairo-run file_name``` in your terminal.

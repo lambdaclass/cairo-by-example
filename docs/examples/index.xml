@@ -178,7 +178,7 @@ struct Vector2 { x: f32, y: f32, } impl Vector2Add of Add&amp;lt;Vector2&amp;gt;
       <guid>https://cairo-by-example.com/examples/strings/</guid>
       <description>In Cairo, a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.
 Examples of strings:
-use debug::PrintTrait; fn main() { let x = &amp;#39;Cairo is awesome&amp;#39;; x.print(); let c = &amp;#39;A&amp;#39;; c.print(); } Run cairo-run file_name to test this example</description>
+use debug::PrintTrait; fn main() { let x = &amp;#39;Cairo is awesome&amp;#39;; x.print(); let c = &amp;#39;A&amp;#39;; c.print(); } To run this example, first copy the code in a new file and then run cairo-run file_name in your terminal.</description>
     </item>
     
     <item>

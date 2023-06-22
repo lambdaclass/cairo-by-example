@@ -33,6 +33,26 @@ Both of these examples will result in the output:
 Run panicked with [7 (''), ].
 ```
 
+A third way to cause panics is to use the `panic_with` macro. This macro can be used on functions that return either Option or Result. It takes an error code and a function name, and will create a wrapper for the original function given the function name that will panic with the given error code if the original function were to return `Option::None` or `Result::Err`
+
+```
+use option::OptionTrait;
+
+#[panic_with('Zero Division Error', div)]
+fn safe_div(a: u16, b: u16) -> Option<u16> {
+    if b == 0 {
+        Option::None(())
+    } else {
+        Option::Some(a/b)
+    }
+}
+
+fn main() {
+    safe_div(1, 0); // this returns None
+    div(1, 0); // this panics with 'Zero Division Error'
+}
+```
+
 ## Assert
 
 The assert function can be used to check that a boolean expression holds true during runtime, and panic if holds false. The assert function takes a boolean expression and a short string (the size of a felt) as error code.

@@ -6,7 +6,19 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jun 2023 16:52:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2023 01:01:25 +0000</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>generics</title>
+      <link>https://cairo-by-example.com/examples/generics/</link>
+      <pubDate>Thu, 22 Jun 2023 01:01:25 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/generics/</guid>
+      <description>Generic types allow us to create definitions that may be used with different data types.
+In Cairo, you can use generics when defining functions, structs, enums, traits, implementations, and methods.
+Example of a generic function:
+// We can use this function to compare any integer (e.g. u8, u32, u256) fn largest&amp;lt;T&amp;gt;(t1: T, t2: T) -&amp;gt; T { if t1 &amp;gt; t2 { t1 } else { t2 } } If you tried to run the previous function, you might had a compiler error saying Trait has no implementation in context .</description>
+    </item>
+    
     <item>
       <title>if expression</title>
       <link>https://cairo-by-example.com/examples/if/</link>
@@ -80,6 +92,16 @@ The fields of a struct, called members, can be of any defined type.
 For example:
 struct Employee { age: u8, id: u32, role: String, } Struct members can be user-defined types:
 struct Company { employees: Vec&amp;lt;Employee&amp;gt;, number_of_buildings: u32 } </description>
+    </item>
+    
+    <item>
+      <title>pattern_matching</title>
+      <link>https://cairo-by-example.com/examples/pattern_matching/</link>
+      <pubDate>Wed, 21 Jun 2023 14:41:01 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/pattern_matching/</guid>
+      <description>Besides enums, Cairo supports more general use of pattern matching. You can match on enums but also structs. Currently you can use pattern matching on structs only to destructure the fields in a let statement:
+struct MyStruct { a: u16, b: u16, } fn destructure_my_struct(s: MyStruct, t: MyStruct, u: MyStruct) -&amp;gt; u16 { // We can ignore a single field by using `_` or `_name` let MyStruct{a: a, b: _b} = u; let MyStruct{a: b, b: _} = s; // Or just ignore everything we didn&amp;#39;t name by using `.</description>
     </item>
     
     <item>

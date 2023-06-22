@@ -1,5 +1,11 @@
-# loop
+---
+title: "loop"
+date: 2023-06-21
+draft: false
+---
 
+The `loop` keyword tells Cairo to execute a block of code over and over again forever (until it runs out of gas) or until you explicitly tell it to stop. 
+This is the only kind of loop for now.
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -7,22 +13,26 @@ use debug::PrintTrait;
 fn main() -> u128 {
     let mut i: u128 = 0;
     loop {
-
-        if i > 10 {
+        if i > 9 { // Break condition
             break ();
         }
-        'hello'.print();
+        // Repeating code
+        'hello'.print(); 
         i = i + 1;
     };
-
     i
 }
 
 #[test]
-#[available_gas(200000)]
+// In order to prevent infinite iteration, we have to explicitly declare the 'available_gas' value
+// (The program wont compile and will generate 'out_of_gas' error)
+#[available_gas(200000)] 
 fn test_main() {
-    
     let a = main();
-    assert(a == 11, ' error expected 11 ');
+    assert(a == 10, ' incorrect loop value ');
 }
 ```
+
+to run the test, use `cairo-test filename.cairo` or just to run it without testing use `cairo-run --available-gas 200000 filename.cairo`.
+
+For further explanation about this topic, [click here](https://cairo-book.github.io/ch02-05-control-flow.html) (Cairo-Book).

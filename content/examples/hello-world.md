@@ -7,13 +7,11 @@ draft: false
 the `use` keyword imports a dependency into scope
 
 ```rust {.codebox}
-
 use debug::PrintTrait;
 
 fn main() {
     "Hello, world!".print();
 }
-
 ```
 
 now, run the tests with `cairo-run hello_world.cairo`

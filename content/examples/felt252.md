@@ -4,9 +4,8 @@ date: 2023-06-21T11:45:31-07:00
 draft: false
 ---
 
-The basic data type in Cairo is `felt252`, which stands for *field element*.
-These are integers in the range `0 <= x < P`, where `P` is a large prime number, currently equal to `P = 2^{251} + 17 * 2^{192}+1`.
-Field elements have the property of *turning around* when their value falls outside the specified range.
+The basic data type in Cairo is `felt252`, which stands for *field element*. These are integers in the range `0 <= x < P`, where `P` is a large prime number, currently equal to `P = 2^{251} + 17 * 2^{192}+1`. 
+Field elements have the property of intentionally *wrapping around* when their value falls outside the specified range, they use modular arithmetic.
 
 ```rust {.codebox}
 use debug::PrintTrait;

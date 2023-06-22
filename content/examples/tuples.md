@@ -7,8 +7,6 @@ draft: false
 A `tuple` in cairo allow us to group multiple values with a variety of types into a single element with a fixed lenght that can't be changed after its declaration.
 
 ```rust {.codebox}
-use debug::PrintTrait;
-
 fn main() {
     // You can explicitly declare each position in the tuple and its type
     let tup: (u32, u64, bool) = (8, 65, false);
@@ -30,7 +28,7 @@ use debug::PrintTrait;
 fn main() {
     let rectangle = (50, 20, 10); // W x L x H
     let v = volume(rectangle);
-    v.print();
+    v.print(); // This result is shown in hexadecimal (e.g 10000 = 0x2710)
 }
 
 fn volume(sides: (u64, u64, u64)) -> u64 {

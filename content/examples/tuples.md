@@ -4,7 +4,7 @@ date: 2023-06-21
 draft: false
 ---
 
-A `tuple` in cairo allow us to group multiple values with a variety of types into a single element with a fixed lenght that can't be changed after its declaration.
+A `tuple` in Cairo allows us to group multiple values with a variety of types into a single element with a fixed length that can't be changed after its declaration.
 
 ```rust {.codebox}
 fn main() {

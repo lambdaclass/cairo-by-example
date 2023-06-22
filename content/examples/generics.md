@@ -1,6 +1,6 @@
 ---
 title: "generics"
-date: 2023-06-22T01:01:25
+date: 2023-06-22T13:30:00-06:00
 draft: false
 ---
 

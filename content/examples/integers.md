@@ -1,6 +1,6 @@
 ---
 title: "integers"
-date: 2023-06-22T11:45:31-03:00
+date: 2023-06-22T12:26:00-06:00
 draft: false
 ---
 

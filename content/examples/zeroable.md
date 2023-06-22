@@ -1,6 +1,6 @@
 ---
 title: "zeroable"
-date: 2023-06-21T14:00:01+0000
+date: 2023-06-22T13:50:00-06:00
 draft: false
 ---
 

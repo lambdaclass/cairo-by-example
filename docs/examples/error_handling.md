@@ -53,6 +53,29 @@ fn main() {
 }
 ```
 
+To wrap up the topic of panics, the `nonpanic` notation can be used to indicate that a function will never panic. In order to use this notation, not only should the function not panic, but also the functions called by it must also be annotated with `nonpanic`
+
+For example, this will compile:
+```
+fn get_number() -> u16 nopanic {
+    17
+}
+```
+
+But this will not:
+
+```
+fn get_number() -> u16 nopanic {
+    panic_with_felt252('Unable to provide number')
+}
+```
+
+With the following error:
+
+```
+error: Function is declared as nopanic but calls a function that may panic.
+```
+
 ## Assert
 
 The assert function can be used to check that a boolean expression holds true during runtime, and panic if holds false. The assert function takes a boolean expression and a short string (the size of a felt) as error code.

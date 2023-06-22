@@ -11,23 +11,21 @@ Field elements have the property of intentionally *wrapping around* when their v
 use debug::PrintTrait;
 
 fn main() {
-    let x: felt252 = 2; 
-    let y: felt252 = 5; 
-    (x+y).print();
+    let x: felt252 = 2;
+    let y: felt252 = 5;
+    (x + y).print();
 }
-
 ```
 
-Since `felt252` is the default data type, in simple cases like these there is no real need to specify the type. This means we can simply write
+Since `felt252` is the default data type, in simple cases like these there is no real need to specify the type.
+This means we can simply write:
 
 ```rust {.codebox}
 use debug::PrintTrait;
 
 fn main() {
-    let x = 2; 
-    let y = 5; 
-    (x+y).print();
+    let x = 2;
+    let y = 5;
+    (x + y).print();
 }
-
 ```
-

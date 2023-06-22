@@ -6,7 +6,18 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jun 2023 10:46:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 16:52:30 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>functions</title>
+      <link>https://cairo-by-example.com/examples/functions/</link>
+      <pubDate>Wed, 21 Jun 2023 16:52:30 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/functions/</guid>
+      <description>A function is a unit of code that performs some logic. It is defined using the fn keyword.
+Examples of functions are:
+// This functions doesn&amp;#39;t return anything. fn main() { let x = 3; } // This function returns an u32. fn inc(x: u32) -&amp;gt; u32 { x + 1 } The Cairo convention is to name functions using the &amp;lsquo;snake_case&amp;rsquo; form. In the example above, the function name is inc_n.</description>
+    </item>
+    
     <item>
       <title>comments</title>
       <link>https://cairo-by-example.com/examples/comments/</link>
@@ -93,9 +104,9 @@ struct Vector2 { x: f32, y: f32, } impl Vector2Add of Add&amp;lt;Vector2&amp;gt;
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://cairo-by-example.com/examples/strings/</guid>
-      <description>In Cairo a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.
+      <description>In Cairo, a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.
 Examples of strings:
-use debug::PrintTrait; fn main() { let x = &amp;#39;Cairo is awesome&amp;#39;; x.print(); let c = &amp;#39;A&amp;#39;; c.print(); } Run cairo-run file_name</description>
+use debug::PrintTrait; fn main() { let x = &amp;#39;Cairo is awesome&amp;#39;; x.print(); let c = &amp;#39;A&amp;#39;; c.print(); } Run cairo-run file_name to test this example</description>
     </item>
     
     <item>

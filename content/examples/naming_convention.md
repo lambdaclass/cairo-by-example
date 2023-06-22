@@ -1,5 +1,5 @@
 ---
-title: "Naming Convention"
+title: "naming convention"
 date: 2023-06-21T18:20:30+0000
 draft: false
 ---

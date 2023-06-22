@@ -6,7 +6,58 @@
     <description>Recent content on cairo by example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jun 2023 10:46:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 16:52:31 -0600</lastBuildDate><atom:link href="https://cairo-by-example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>if expression</title>
+      <link>https://cairo-by-example.com/examples/if/</link>
+      <pubDate>Wed, 21 Jun 2023 16:52:31 -0600</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/if/</guid>
+      <description>An if expression is a control flow construct that allow us to conditionally execute a piece of code depending on the value of a boolean condition. Since it is an expression, it returns the value of the last expression in the branch.
+use debug::PrintTrait; fn main() { let is_awesome = true; if is_awesome { &amp;#39;Cairo is awesome!&amp;#39;.print(); } } You can combine several conditions using boolean operators like &amp;amp;&amp;amp; (and), || (or), etc.</description>
+    </item>
+    
+    <item>
+      <title>felt252</title>
+      <link>https://cairo-by-example.com/examples/felt252/</link>
+      <pubDate>Wed, 21 Jun 2023 11:45:31 -0700</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/felt252/</guid>
+      <description>The basic data type in Cairo is felt252, which stands for field element. These are integers in the range 0 &amp;lt;= x &amp;lt; P, where P is a large prime number, currently equatl to P = 2^{251} + 17 * 2^{192}+1. Field elements have the property of turning around when their value falls outside the specified range.
+use debug::PrintTrait; fn main() { let x: felt252 = 2; let y: felt252 = 5; (x+y).</description>
+    </item>
+    
+    <item>
+      <title>naming convention</title>
+      <link>https://cairo-by-example.com/examples/naming_convention/</link>
+      <pubDate>Wed, 21 Jun 2023 18:20:30 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/naming_convention/</guid>
+      <description>Cairo, like many other languages, has a clearly defined naming convention. It is advised to follow it since it&amp;rsquo;ll help both code writers and readers after getting used to it.
+use core::debug::PrintTrait; // Modules use snake_case naming. mod sample_module {} // Types use PascalCase. This includes enums, structs and traits and trait // implementations. type FeltAlias = felt252; // Type parameters are types too, so they also use PascalCase, although they are // generally single letters, like the `T` used here.</description>
+    </item>
+    
+    <item>
+      <title>functions</title>
+      <link>https://cairo-by-example.com/examples/functions/</link>
+      <pubDate>Wed, 21 Jun 2023 15:02:30 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/functions/</guid>
+      <description>A function is a unit of code that performs some logic. It is defined using the fn keyword.
+Examples of functions are:
+// This functions doesn&amp;#39;t return anything. fn main() { let x = 3; } // This function returns an u32. fn inc(x: u32) -&amp;gt; u32 { x + 1 } The Cairo convention is to name functions using the &amp;lsquo;snake_case&amp;rsquo; form. In the example above, the function name is inc_n.</description>
+    </item>
+    
+    <item>
+      <title>ownership</title>
+      <link>https://cairo-by-example.com/examples/ownership/</link>
+      <pubDate>Wed, 21 Jun 2023 14:08:27 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/ownership/</guid>
+      <description>All Cairo code has to abide by two ownership rules: - each value in Cairo has one and only one owner at a time, - when the owner goes out of scope, the value will be dropped
+use array::ArrayTrait; fn foo(arr: Array&amp;lt;u128&amp;gt;) { // foo takes ownership of the array. // when this function returns, arr is dropped. } fn main() { // as the creator of arr, the main function owns the array let arr = ArrayTrait::&amp;lt;u128&amp;gt;::new(); foo(arr); // moves ownership of the array to function call // foo(arr); &amp;lt;- fails to compile, as main doesn&amp;#39;t own the array anymore } </description>
+    </item>
+    
     <item>
       <title>comments</title>
       <link>https://cairo-by-example.com/examples/comments/</link>
@@ -44,6 +95,17 @@ For example:
     </item>
     
     <item>
+      <title>snapshots</title>
+      <link>https://cairo-by-example.com/examples/snapshots/</link>
+      <pubDate>Wed, 21 Jun 2023 11:05:00 -0300</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/snapshots/</guid>
+      <description>Snapshots provide read-only instances of an object without taking ownership when passed to a function. Every type T has a snapshot version @T, which is always droppable and duplicatable.
+To create a snapshot of a value x of type T, simply use @x.
+use array::Array; use array::ArrayTrait; use option::OptionTrait; use box::BoxTrait; // Receives an array snapshot fn sum_starting_two(data: @Array&amp;lt;u32&amp;gt;) -&amp;gt; u32 { //data.append(5_u32); &amp;lt;- This will fail, asi data is read-only let first = *data.</description>
+    </item>
+    
+    <item>
       <title>zeroable</title>
       <link>https://cairo-by-example.com/examples/zeroable/</link>
       <pubDate>Wed, 21 Jun 2023 14:00:01 +0000</pubDate>
@@ -63,6 +125,16 @@ Here is how to get a NonZero&amp;lt;T&amp;gt; out of a felt252.
       <description>An enum in Cairo works like a tagged union, variants can hold values inside, which you can access via pattern matching.
 You can work with enums like this:
 use option::Option; use option::OptionTrait; // Define an enum enum MyEnum { A: u8, B: u16, C: u32, D: u64 } // Construct and return an enum variant. fn my_enum_a() -&amp;gt; MyEnum { MyEnum::A(4_u8) } // Match the enum, the order must match the enum definition.</description>
+    </item>
+    
+    <item>
+      <title>loop</title>
+      <link>https://cairo-by-example.com/examples/loop/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cairo-by-example.com/examples/loop/</guid>
+      <description>The loop keyword tells Cairo to execute a block of code over and over again forever (until it runs out of gas) or until you explicitly tell it to stop. This is the only kind of loop for now.
+use debug::PrintTrait; fn main() -&amp;gt; u128 { let mut i: u128 = 0; loop { if i &amp;gt; 9 { // Break condition break (); } // Repeating code &amp;#39;hello&amp;#39;.print(); i = i + 1; }; i } #[test] // In order to prevent infinite iteration, we have to explicitly declare the &amp;#39;available_gas&amp;#39; value // (The program wont compile and will generate &amp;#39;out_of_gas&amp;#39; error) #[available_gas(200000)] fn test_main() { let a = main(); assert(a == 10, &amp;#39; incorrect loop value &amp;#39;); } To run the test, use cairo-test filename.</description>
     </item>
     
     <item>

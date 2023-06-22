@@ -1,11 +1,10 @@
 ---
-title: "if"
+title: "if expression"
 date: 2023-06-21T16:52:31-06:00
 draft: false
 ---
 
 An `if expression` is a control flow construct that allow us to conditionally execute a piece of code depending on the value of a boolean condition. Since it is an expression, it returns the value of the last expression in the branch.
-
 
 ```rust {.codebox}
 use debug::PrintTrait;

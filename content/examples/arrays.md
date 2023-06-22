@@ -4,6 +4,8 @@ date: 2023-06-21T11:00:00-06:00
 draft: false
 ---
 
+# Arrays
+
 You can create arrays in cairo with `ArrayTrait::new()` and add elements with the method `append`: 
 
 ```rust {.codebox}

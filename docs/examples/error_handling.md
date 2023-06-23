@@ -85,3 +85,73 @@ fn main() {
     assert ( 2 == 1, 'Assertion Failed')
 }
 ```
+
+# Recoverable errors with Result
+
+Result is an enum with the variants `Ok` and `Err`, which behaves as any other enum
+
+```
+enum Result<T, E> {
+    Ok: T,
+    Err: E,
+}
+```
+
+It also has specific behaviour added by the `ResultTrait`
+
+```
+trait ResultTrait<T, E> {
+    /// If `val` is `Result::Ok(x)`, returns `x`. Otherwise, panics with `err`.
+    fn expect<impl EDrop: Drop<E>>(self: Result<T, E>, err: felt252) -> T;
+    /// If `val` is `Result::Ok(x)`, returns `x`. Otherwise, panics.
+    fn unwrap<impl EDrop: Drop<E>>(self: Result<T, E>) -> T;
+    /// If `val` is `Result::Err(x)`, returns `x`. Otherwise, panics with `err`.
+    fn expect_err<impl TDrop: Drop<T>>(self: Result<T, E>, err: felt252) -> E;
+    /// If `val` is `Result::Err(x)`, returns `x`. Otherwise, panics.
+    fn unwrap_err<impl TDrop: Drop<T>>(self: Result<T, E>) -> E;
+    /// Returns `true` if the `Result` is `Result::Ok`.
+    fn is_ok(self: @Result<T, E>) -> bool;
+    /// Returns `true` if the `Result` is `Result::Err`.
+    fn is_err(self: @Result<T, E>) -> bool;
+    /// Returns `true` if the `Result` is `Result::Ok`, and consumes the value.
+    fn into_is_err<impl TDrop: Drop<T>, impl EDrop: Drop<E>>(self: Result<T, E>) -> bool;
+    /// Returns `true` if the `Result` is `Result::Err`, and consumes the value.
+    fn into_is_ok<impl TDrop: Drop<T>, impl EDrop: Drop<E>>(self: Result<T, E>) -> bool;
+}
+```
+
+```
+use result::ResultTrait;
+
+fn safe_div(a: u16, b: u16) -> Result<u16, felt252> {
+    if b == 0 {
+        Result::Err('Zero Division Error')
+    } else {
+        Result::Ok(a/b)
+    }
+}
+
+
+fn main() {
+    safe_div(4, 0) // this returns Result::Err('Zero Division Error')
+    safe_div(4, 2); // this returns Result::Ok(2)
+
+    safe_div(4, 0).expect('Unexpected Error'); // This panics with "Unexpected Error"
+    safe_div(4, 2).expect('Unexpected Error') // This returns 2
+
+    safe_div(4, 0).unwrap(); // This panics with "Result::unwrap failed"
+    safe_div(4, 2).unwrap(); // This returns 2
+
+    safe_div(4, 0).expect_err('Unexpected Error'); // This returns 'Zero Division Error' as a felt252 (2015904348648541445689960557934493454709190514)
+    safe_div(4, 2).expect_err('Unexpected Error'); // This panics with "Unexpected Error"
+
+    safe_div(4, 0).unwrap_err(); // This returns 'Zero Division Error' as a felt252 (2015904348648541445689960557934493454709190514)
+    safe_div(4, 2).unwrap_err(); // This panics with "Result::unwrap_err failed"
+
+    safe_div(4, 0).is_ok() // This returns false
+    safe_div(4, 2).is_ok() // This returns true
+
+    safe_div(4, 0).is_err() // This returns true
+    safe_div(4, 2).is_err() // This returns false
+}
+```

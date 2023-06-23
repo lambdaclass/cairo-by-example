@@ -20,6 +20,6 @@ By default, the value `0` is returned for non-existing keys:
         let val10 = dict_u8[10]; // 110
         let val11 = dict_felt[11]; // 0
         dict_felt.insert(11, 1024);
-        let val11 = dict_felt[11]; // 1034
+        let val11 = dict_felt[11]; // 1024
     }
 ```

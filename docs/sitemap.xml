@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cairo-by-example.com/</loc>
-    <lastmod>2023-06-22T01:01:25+00:00</lastmod>
+    <lastmod>2023-06-22T11:45:31-03:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/</loc>
-    <lastmod>2023-06-22T01:01:25+00:00</lastmod>
+    <lastmod>2023-06-22T11:45:31-03:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/integers/</loc>
+    <lastmod>2023-06-22T11:45:31-03:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/generics/</loc>
     <lastmod>2023-06-22T01:01:25+00:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/clone_and_copy/</loc>
+    <lastmod>2023-06-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/if/</loc>
     <lastmod>2023-06-21T16:52:31-06:00</lastmod>
@@ -26,7 +32,13 @@
     <loc>https://cairo-by-example.com/examples/ownership/</loc>
     <lastmod>2023-06-21T14:08:27-03:00</lastmod>
   </url><url>
+    <loc>https://cairo-by-example.com/examples/arrays/</loc>
+    <lastmod>2023-06-21T11:00:00-06:00</lastmod>
+  </url><url>
     <loc>https://cairo-by-example.com/examples/comments/</loc>
+    <lastmod>2023-06-21T10:46:31-06:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/dictionaries/</loc>
     <lastmod>2023-06-21T10:46:31-06:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/structs/</loc>
@@ -51,6 +63,12 @@
     <lastmod>2023-06-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/op_overloading/</loc>
+    <lastmod>2023-06-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/strings/</loc>
+    <lastmod>2023-06-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cairo-by-example.com/examples/tuples/</loc>
     <lastmod>2023-06-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cairo-by-example.com/examples/assert/</loc>

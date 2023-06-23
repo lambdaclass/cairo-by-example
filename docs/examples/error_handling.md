@@ -120,6 +120,8 @@ trait ResultTrait<T, E> {
 }
 ```
 
+Usage example:
+
 ```
 use result::ResultTrait;
 

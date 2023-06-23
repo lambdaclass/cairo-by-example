@@ -1,21 +1,29 @@
 {{ define "main" }}
-<div id="content">
+<div>
 
-  <pre>
-curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
-  </pre>
+  <h4>Linux:</h4>
+  <pre><code>curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash</code></pre>
 
-  <h4>an introduction to <a href="https://cairo-lang.org/">Cairo</a>, with simple examples</h4>
+  <h4>MacOS:</h4>
+  Download custom Homebrew formulae and use it to install cairo-lang:
+<pre><code>wget -O /tmp/cairo-lang.rb https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/homebrew/cairo-lang.rb && brew install --formula --build-from-source /tmp/cairo-lang.rb</code></pre>
+
+  <h4>An introduction to <a href="https://cairo-lang.org/">Cairo</a>, with simple examples. </h4>
+  The objective of this tutorial is to quickly on-board new developers to Cairo. The first experience newcomers have
+  with Cairo and Starknet should be smooth and in 15' they should have everything setup and a good overview on what the
+  language is all about.
+  <h4>Examples:</h4>
   <div class="resource-list">
     <ul>
       {{ $examples := (where .Site.RegularPages.ByDate "Type" "examples")}}
       {{ range $examples }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .Permalink }}" style="text-transform: capitalize;">{{ .Title }}</a>
       </li>
       {{ end }}
     </ul>
   </div>
-
+  <a class="github-fork-ribbon" href="https://github.com/lambdaclass/cairo-by-example" data-ribbon="Fork me on GitHub"
+    title="Fork me on GitHub">Fork me on GitHub</a>
 </div>
 {{ end }}

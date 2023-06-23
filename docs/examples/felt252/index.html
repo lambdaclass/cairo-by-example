@@ -26,9 +26,8 @@
     </h1>
 </div><div id="content">
 <h3>felt252</h3>
-<p>The basic data type in Cairo is <code>felt252</code>, which stands for <em>field element</em>.
-These are integers in the range <code>0 &lt;= x &lt; P</code>, where <code>P</code> is a large prime number, currently equal to <code>P = 2^{251} + 17 * 2^{192}+1</code>.
-Field elements have the property of <em>turning around</em> when their value falls outside the specified range.</p>
+<p>The basic data type in Cairo is <code>felt252</code>, which stands for <em>field element</em>. These are integers in the range <code>0 &lt;= x &lt; P</code>, where <code>P</code> is a large prime number, currently equal to <code>P = 2^{251} + 17 * 2^{192}+1</code>.
+Field elements have the property of intentionally <em>wrapping around</em> when their value falls outside the specified range, they use modular arithmetic.</p>
 <div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> debug::PrintTrait;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {

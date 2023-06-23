@@ -8,6 +8,8 @@ html {
   margin: auto;
   max-width: 70ch;
   padding: 2em 1em;
+  background-color: #131516;
+  color: #d8d4cf;
 }
 
 img {
@@ -41,7 +43,7 @@ pre {
   overflow-x: auto;
   padding: 1rem;
   white-space: pre;
-  font-size: .8rem;
+  font-size: 0.8rem;
   counter-reset: line;
 }
 
@@ -53,12 +55,12 @@ code {
   font-weight: bold;
 }
 
-.header h1{
+.header h1 {
   margin: 0 0 1.5rem;
   font-size: 1.8rem;
 }
 
-#content h4{
+#content h4 {
   margin-top: 1.5rem;
   line-height: 1.4;
 }
@@ -72,4 +74,31 @@ a:hover {
   text-decoration: underline;
 }
 
-.github-fork-ribbon:before { background-color: #fe4a3c; }
+.github-fork-ribbon:before {
+  background-color: #fe4a3c;
+}
+ul {
+  list-style: none;
+}
+ul li {
+  position: relative;
+}
+ul li::before {
+  content: "";
+  background-color: #d8d4cf;
+  position: absolute;
+  top: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-left: -0.75rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}

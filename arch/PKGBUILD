@@ -1,11 +1,11 @@
-pkgname=cairo
+pkgname="cairo-lang"
 pkgver=2.0.0
-release=rc4
+release="rc4"
 pkgrel=1
 epoch=
 pkgdesc="Cairo language installation"
 arch=("x86_64")
-url="https://cairo-by-example/"
+url="https://cairo-by-example.com/"
 license=('MIT')
 groups=()
 depends=("git" "rustup")
@@ -19,7 +19,7 @@ backup=()
 options=()
 install=
 changelog=
-source=("https://github.com/starkware-libs/$pkgname/archive/refs/tags/v$pkgver-$release.tar.gz")
+source=("https://github.com/starkware-libs/cairo/archive/refs/tags/v$pkgver-$release.tar.gz")
 noextract=()
 md5sums=()
 validpgpkeys=()
@@ -30,24 +30,19 @@ prepare() {
 }
 
 build() {
-	cd "$pkgname-$pkgver-$release"
+	cd "cairo-$pkgver-$release"
 	cargo build --all --release --manifest-path ./Cargo.toml
 	
 }
 
 package() {
-	# todo: make a for loop that searches for executable files, and moves them.
 	
-	pwd
-	echo $pkgdir
+	pkgs=("cairo-run" "cairo-compile" "cairo-format" "cairo-language-server" "cairo-test" "sierra-compile" "starknet-compile" "starknet-sierra-compile")
+	
 	mkdir -p $pkgdir/usr/bin/
-	mv $pkgname-$pkgver-$release/target/release/cairo-run $pkgdir/usr/bin/
-	mv $pkgname-$pkgver-$release/target/release/cairo-compile $pkgdir/usr/bin
-	mv $pkgname-$pkgver-$release/target/release/cairo-format $pkgdir/usr/bin
-	mv $pkgname-$pkgver-$release/target/release/cairo-language-server $pkgdir/usr/bin
-	mv $pkgname-$pkgver-$release/target/release/cairo-test $pkgdir/usr/bin
-	mv $pkgname-$pkgver-$release/target/release/sierra-compile $pkgdir/usr/bin
-	mv $pkgname-$pkgver-$release/target/release/starknet-compile $pkgdir/usr/bin
-	mv $pkgname-$pkgver-$release/target/release/starknet-sierra-compile $pkgdir/usr/bin
+	
+	for pkg in ${pkgs[@]}; do
+		mv cairo-$pkgver-$release/target/release/$pkg $pkgdir/usr/bin
+	done
 }
 

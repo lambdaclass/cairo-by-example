@@ -1,6 +1,6 @@
 ---
 title: "hello world"
-date: 2023-06-10T16:52:30-06:00
+date: 2023-06-22T12:00:00-06:00
 draft: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "dictionaries"
-date: 2023-06-21T10:46:31-06:00
+date: 2023-06-22T12:51:00-06:00
 draft: false
 ---
 

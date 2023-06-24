@@ -1,6 +1,6 @@
 ---
 title: "tuples"
-date: 2023-06-21
+date: 2023-06-22T12:50:00-06:00
 draft: false
 ---
 

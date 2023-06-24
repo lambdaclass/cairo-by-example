@@ -1,6 +1,6 @@
 ---
 title: "if expression"
-date: 2023-06-21T16:52:31-06:00
+date: 2023-06-22T13:00:00-06:00
 draft: false
 ---
 

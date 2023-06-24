@@ -1,6 +1,6 @@
 ---
 title: "assert"
-date: 2023-06-10T16:52:31-06:00
+date: 2023-06-22T12:05:00-06:00
 draft: false
 ---
 To make sure our tests work, we use assert.

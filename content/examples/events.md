@@ -9,7 +9,7 @@ Events are a useful mechanism for logging activity of smart contracts
     - Designed to be consumed by off chain clients
     - Only emit events, but not read them.
 
-```cairo
+```rust {.codebox}
 # Declaring an event
 #[event]
 fn MyEvent(value: u8) {};

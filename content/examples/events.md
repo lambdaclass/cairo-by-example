@@ -4,7 +4,7 @@ date: 2023-06-22T15:39:00-06:00
 draft: false
 ---
 
-Events are a useful mechanism to logging activity in  smart contracts
+Events are a useful mechanism for logging activity of smart contracts
     - Require the `#[event]` attribute.
     - Designed to be consumed by off chain clients
     - Only emit events, but not read them.

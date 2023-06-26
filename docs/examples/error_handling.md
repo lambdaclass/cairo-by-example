@@ -157,3 +157,32 @@ fn main() {
     safe_div(4, 2).is_err() // This returns false
 }
 ```
+
+## The '?' Operator
+
+If you need something as simple as `unwrap` without worrying about panics, then the `?` operator is the perfect tool for the job. The `?` operator can be used on functions that return either `Result` or `Option` to inmediately propagate the `Err` and `None` variants and return from the function. Using the `?` operator on `Ok` and `Some` variants will instead unwrap their inner values.
+
+For example in `average_speed_as_felt`, if `safe_div` returns a `Result::Ok`, the `?` will just unwrap the inner value, but if it returns `Result::Err` then the function will end and that result will be returned.
+
+```
+
+use result::ResultTrait;
+
+fn safe_div(a: u16, b: u16) -> Result<u16, felt252> {
+    if b == 0 {
+        Result::Err('Zero Division Error')
+    } else {
+        Result::Ok(a/b)
+    }
+}
+
+fn average_speed_as_felt(time: u16, distance: u16) -> Result<felt252, felt252> {
+    let average_speed = safe_div(distance, time)?; // Propagate the error
+    Result::Ok(u16_to_felt252(average_speed))
+}
+
+fn main() {
+    let average_speed = average_speed_as_felt(0, 20); // This will return Result::Err('Zero Division Error')
+    let average_speed = average_speed_as_felt(2, 20); // This will return Result::Ok(10)
+}
+```

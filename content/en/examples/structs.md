@@ -1,6 +1,6 @@
 ---
 title: "structs"
-date: 2023-06-22T12:40:00-06:00
+weight: 240
 draft: false
 ---
 

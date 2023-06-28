@@ -1,6 +1,6 @@
 ---
 title: "naming convention"
-date: 2023-06-22T12:20:00-06:00
+weight: 330
 draft: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "clone and copy"
-date: 2023-06-22
+weight: 290
 draft: false
 ---
 

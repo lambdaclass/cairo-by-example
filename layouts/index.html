@@ -24,7 +24,7 @@
   <h4>Examples:</h4>
   <div class="resource-list">
     <ul>
-      {{ $examples := (where .Site.RegularPages.ByDate "Type" "examples")}}
+      {{ $examples := (where .Site.RegularPages.ByWeight "Type" "examples")}}
       {{ range $examples }}
       <li>
         <a href="{{ .Permalink }}" style="text-transform: capitalize;">{{ .Title }}</a>

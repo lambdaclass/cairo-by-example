@@ -1,6 +1,6 @@
 ---
 title: "snapshots"
-date: 2023-06-22T13:20:00-06:00
+weight: 310
 draft: false
 ---
 

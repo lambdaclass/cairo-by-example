@@ -1,6 +1,6 @@
 ---
 title: "enums"
-date: 2023-06-22T12:45:00-06:00
+weight: 200
 draft: false
 ---
 

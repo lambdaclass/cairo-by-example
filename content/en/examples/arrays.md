@@ -6,9 +6,11 @@ draft: false
 
 # Arrays
 
-You can create arrays in cairo with `ArrayTrait::new()` and add elements with the method `append`: 
+You can create arrays in cairo with `ArrayTrait::new()` and add elements with the method `append`:
 
 ```rust {.codebox}
+use array::ArrayTrait;
+
 fn get_array() -> Array<felt252> {
     let mut numbers = ArrayTrait::new();
     numbers.append(444);
@@ -76,7 +78,7 @@ fn test_array_retrieve_elements() {
 
     assert(first_element == 444, 'wrong first element');
     assert(second_element == 555, 'wrong second element');
-        
+
     // array.get(2) will return None
     // array.at(2) will cause an error
 }

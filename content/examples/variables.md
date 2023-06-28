@@ -1,6 +1,6 @@
 ---
 title: "variables"
-date: 2023-06-10T16:52:31-06:00
+date: 2
 draft: false
 ---
 

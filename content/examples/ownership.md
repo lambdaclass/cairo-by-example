@@ -1,6 +1,6 @@
 ---
 title: "ownership"
-date: 2023-06-21T14:08:27-03:00
+date: 13
 draft: false
 ---
 

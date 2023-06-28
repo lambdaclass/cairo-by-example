@@ -1,6 +1,6 @@
 ---
 title: "structs"
-date: 2023-06-21T10:29:31-06:00
+date: 8
 draft: false
 ---
 

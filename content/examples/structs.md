@@ -1,6 +1,6 @@
 ---
 title: "structs"
-date: 13
+weight: 24
 draft: false
 ---
 

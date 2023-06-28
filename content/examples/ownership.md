@@ -1,6 +1,6 @@
 ---
 title: "ownership"
-date: 17
+weight: 28
 draft: false
 ---
 

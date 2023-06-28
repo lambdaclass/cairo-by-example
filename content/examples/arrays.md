@@ -1,6 +1,6 @@
 ---
 title: "arrays"
-date: 11
+weight: 22
 draft: false
 ---
 

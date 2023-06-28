@@ -1,6 +1,6 @@
 ---
 title: "hello world"
-date: 0
+weight: 1
 draft: false
 ---
 

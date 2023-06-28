@@ -1,6 +1,6 @@
 ---
 title: "variables"
-date: 2
+weight: 3
 draft: false
 ---
 

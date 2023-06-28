@@ -1,6 +1,6 @@
 ---
 title: "integers"
-date: 7
+weight: 8
 draft: false
 ---
 

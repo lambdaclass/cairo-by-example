@@ -1,6 +1,6 @@
 ---
 title: "clone and copy"
-date: 18
+weight: 29
 draft: false
 ---
 

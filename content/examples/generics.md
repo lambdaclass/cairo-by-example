@@ -1,6 +1,6 @@
 ---
 title: "generics"
-date: 19
+weight: 30
 draft: false
 ---
 

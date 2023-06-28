@@ -1,6 +1,6 @@
 ---
 title: "strings"
-date: 5
+weight: 6
 draft: false
 ---
 In Cairo, a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.

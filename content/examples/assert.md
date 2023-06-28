@@ -1,6 +1,6 @@
 ---
 title: "assert"
-date: 1
+weight: 2
 draft: false
 ---
 To make sure our tests work, we use assert.

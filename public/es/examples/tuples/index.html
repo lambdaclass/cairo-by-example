@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon"
+    href="https://www.cairo-lang.org/wp-content/uploads/2020/12/cropped-favicon-32x32.png">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fifty-eight-bytes-of.css">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="https://cairo-by-example.com/" />
+  <meta name="twitter:creator" content="lambdaclass" />
+  <meta name="twitter:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  <meta property="og:title" content="an introduction to cairo" />
+  <meta property="og:description" content="with simplified examples" />
+  <meta property="og:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  
+  
+  <title>Cairo by example | tuples</title>
+</head>
+<body><div class="header">
+    <h1>
+        <a href="/" style="all: unset;">
+            <img src="/img/cairo.png" style="width: 40px;" />
+            cairo <small><small><small>by example</small></small></small>
+        </a>
+    </h1>
+</div><div id="content">
+<h3>tuples</h3>
+<p>A <code>tuple</code> in Cairo allows us to group multiple values with a variety of types into a single element with a fixed length that can&rsquo;t be changed after its declaration.</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// You can explicitly declare each position in the tuple and its type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> tup: (<span style="color:#66d9ef">u32</span>, <span style="color:#66d9ef">u64</span>, <span style="color:#66d9ef">bool</span>) <span style="color:#f92672">=</span> (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">65</span>, <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Or it can also be declared without specifying the types
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> tup <span style="color:#f92672">=</span> (<span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">70</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Because a tuple is considered a single element, you can
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// use pattern matching to retrieve individual items
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> (x, y, z) <span style="color:#f92672">=</span> tup; 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// You can do this while declaring the tuple as well
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> (x, y): (felt252, felt252) <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here is an example using tuples where we declare a rectangle with its side dimensions as items of the tuple and then calculate its volume.</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> debug::PrintTrait;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> rectangle <span style="color:#f92672">=</span> (<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>); <span style="color:#75715e">// W x L x H
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> v <span style="color:#f92672">=</span> volume(rectangle);
+</span></span><span style="display:flex;"><span>    v.print(); <span style="color:#75715e">// This result is shown in hexadecimal (e.g 10000 = 0x2710)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">volume</span>(sides: (<span style="color:#66d9ef">u64</span>, <span style="color:#66d9ef">u64</span>, <span style="color:#66d9ef">u64</span>)) -&gt; <span style="color:#66d9ef">u64</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> (x, y, z) <span style="color:#f92672">=</span> sides;
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">*</span> y <span style="color:#f92672">*</span> z
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To run the program, use <code>cairo-run filename.cairo</code>.</p>
+<p>For further explanation about this topic, <a href="https://cairo-book.github.io/ch02-02-data-types.html?highlight=tuple#the-tuple-type">check the Cairo Book</a>.</p>
+
+
+<br>
+<details>
+    <summary><i>try it out</i></summary>
+
+    install the cairo toolchain if you haven't yet:
+    <pre>
+	curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
+        </pre>
+
+    then checkout and run the example:
+    <pre>
+        </pre>
+</details>
+<br>
+<div style="display: flex; justify-content: space-between;">
+    <a href="/es/examples/enums/">prev (enums)</a>
+    <a href="/es/examples/dictionaries/">next (dictionaries)</a>
+</div>
+
+
+    </div>
+</body>
+
+</html>

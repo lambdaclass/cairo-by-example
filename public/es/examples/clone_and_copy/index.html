@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon"
+    href="https://www.cairo-lang.org/wp-content/uploads/2020/12/cropped-favicon-32x32.png">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fifty-eight-bytes-of.css">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="https://cairo-by-example.com/" />
+  <meta name="twitter:creator" content="lambdaclass" />
+  <meta name="twitter:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  <meta property="og:title" content="an introduction to cairo" />
+  <meta property="og:description" content="with simplified examples" />
+  <meta property="og:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  
+  
+  <title>Cairo by example | clone and copy</title>
+</head>
+<body><div class="header">
+    <h1>
+        <a href="/" style="all: unset;">
+            <img src="/img/cairo.png" style="width: 40px;" />
+            cairo <small><small><small>by example</small></small></small>
+        </a>
+    </h1>
+</div><div id="content">
+<h3>clone and copy</h3>
+<p>Because of Cairo&rsquo;s ownership rules, it&rsquo;s necessary to specify how data can be duplicated. For this the <code>Clone</code> and <code>Copy</code> traits are used. <code>Clone</code> specifies how a type instance can be <em>cloned</em>, meaning its data duplicated and assigned a new owner. The behaviour specified by <code>Clone</code> can be <strong>arbitrarily complicated</strong>. Instead <code>Copy</code> requires <code>Clone</code> and it specifies that a type can be <em>bitwise-copied</em>, meaning that its cloning mechanism is simple and known, instead of arbitrary.</p>
+<p>From the ownership example:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> array::ArrayTrait;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">foo</span>(arr: <span style="color:#a6e22e">Array</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// foo takes ownership of the array.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// when this function returns, arr is dropped.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// as the creator of arr, the main function owns the array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> arr <span style="color:#f92672">=</span> ArrayTrait::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span>::new();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    foo(arr.clone()); <span style="color:#75715e">// moves ownership of a clone of arr to function call
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    foo(arr); <span style="color:#75715e">// compiles because previously the array was duplicated
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// foo(arr); &lt;- fails to compile, as main doesn&#39;t own the array anymore
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>An example of deriving the Copy trait:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">#[derive(Copy, Clone)]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Vector2</span> {
+</span></span><span style="display:flex;"><span>    x: <span style="color:#66d9ef">u32</span>,
+</span></span><span style="display:flex;"><span>    y: <span style="color:#66d9ef">u32</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// u32 derives Copy too
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> v <span style="color:#f92672">=</span> Vector2 { x: <span style="color:#ae81ff">1</span>, y: <span style="color:#ae81ff">0</span> };
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> w <span style="color:#f92672">=</span> v;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// now w is a copy of v, v is still accesible
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div>
+
+<br>
+<details>
+    <summary><i>try it out</i></summary>
+
+    install the cairo toolchain if you haven't yet:
+    <pre>
+	curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
+        </pre>
+
+    then checkout and run the example:
+    <pre>
+        </pre>
+</details>
+<br>
+<div style="display: flex; justify-content: space-between;">
+    <a href="/es/examples/strings/">prev (strings)</a>
+    <a href="/es/examples/hello-world/">next (hola mundo)</a>
+</div>
+
+
+    </div>
+</body>
+
+</html>

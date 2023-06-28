@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon"
+    href="https://www.cairo-lang.org/wp-content/uploads/2020/12/cropped-favicon-32x32.png">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fifty-eight-bytes-of.css">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="https://cairo-by-example.com/" />
+  <meta name="twitter:creator" content="lambdaclass" />
+  <meta name="twitter:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  <meta property="og:title" content="an introduction to cairo" />
+  <meta property="og:description" content="with simplified examples" />
+  <meta property="og:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  
+  
+  <title>Cairo by example | testing</title>
+</head>
+<body><div class="header">
+    <h1>
+        <a href="/" style="all: unset;">
+            <img src="/img/cairo.png" style="width: 40px;" />
+            cairo <small><small><small>by example</small></small></small>
+        </a>
+    </h1>
+</div><div id="content">
+<h3>testing</h3>
+<p>Tests are functions that verify that code is working as expected. These functions have to be annotated with <code>#[test]</code></p>
+<p>Any code that panics will cause a test to fail. As a programmer you usually want to write a test by setting up an initial state, performing some computation, and asserting the result is as you expected.</p>
+<p>For example:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_passes</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    assert(result <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">&#39;result</span> is not <span style="color:#ae81ff">4</span><span style="color:#a6e22e">&#39;</span>); 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can also annotate tests that are supposed to fail with <code>#[should_panic]</code>:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#[should_panic]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_should_fail</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> a: <span style="color:#66d9ef">u8</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">255</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> b: <span style="color:#66d9ef">u8</span> <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// panics due to overflow
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>To run any test, you can use the <code>cairo-test</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ cairo-test .
+</span></span><span style="display:flex;"><span>running 2 tests
+</span></span><span style="display:flex;"><span>test test_crate::test_passes ... ok
+</span></span><span style="display:flex;"><span>test test_crate::test_should_fail ... ok
+</span></span><span style="display:flex;"><span>test result: ok. 2 passed; 0 failed; 0 ignored; 0 filtered out;
+</span></span></code></pre></div><p>Note: For this to work there needs to be a<code>cairo_project.toml</code> file. This is the configuration file for &ldquo;vanilla&rdquo; Cairo projects (i.e. not managed by Scarb), which is required to run the <code>cairo-test .</code> command to run the code of the crate. The content of the file is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">crate_roots</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">test_crate</span> = <span style="color:#e6db74">&#34;src&#34;</span>
+</span></span></code></pre></div><p>Which indicates that the crate named &ldquo;test_crate&rdquo; is located in the <code>src</code> directory. Any Cairo file in the crate will be tested any time you run <code>cairo-test</code>.</p>
+
+
+<br>
+<details>
+    <summary><i>try it out</i></summary>
+
+    install the cairo toolchain if you haven't yet:
+    <pre>
+	curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
+        </pre>
+
+    then checkout and run the example:
+    <pre>
+        </pre>
+</details>
+<br>
+<div style="display: flex; justify-content: space-between;">
+    <a href="https://cairo-by-example.com/examples/naming_convention/">prev (naming convention)</a>
+    <a href="https://cairo-by-example.com/examples/snapshots/">next (snapshots)</a>
+</div>
+
+
+    </div>
+</body>
+
+</html>

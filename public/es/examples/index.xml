@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cairo by example</title>
+    <link>/es/examples/</link>
+    <description>Recent content on Cairo by example</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 22 Jun 2023 13:50:00 -0600</lastBuildDate><atom:link href="/es/examples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>zeroable</title>
+      <link>/es/examples/zeroable/</link>
+      <pubDate>Thu, 22 Jun 2023 13:50:00 -0600</pubDate>
+      
+      <guid>/es/examples/zeroable/</guid>
+      <description>The Cairo std library has some utilities for handling non zero values.
+Here is how to get a NonZero&amp;lt;T&amp;gt; out of a felt252.
+// The IsZeroResult&amp;lt;T&amp;gt; enum allows us to obtain a NonZero&amp;lt;T&amp;gt; via matching. use zeroable::IsZeroResult; use zeroable::NonZeroIntoImpl; fn main() -&amp;gt; felt252 { // NonZeroIntoImpl converts a NonZero&amp;lt;T&amp;gt; into its inner value. NonZeroIntoImpl::into(felt_to_nonzero(1234)) } fn felt_to_nonzero(value: felt252) -&amp;gt; NonZero&amp;lt;felt252&amp;gt; { // felt252_is_zero is a builtin method for felt252. match felt252_is_zero(value) { IsZeroResult::Zero(()) =&amp;gt; panic(ArrayTrait::new()), IsZeroResult::NonZero(x) =&amp;gt; x, } } </description>
+    </item>
+    
+    <item>
+      <title>operator overloading</title>
+      <link>/es/examples/op_overloading/</link>
+      <pubDate>Thu, 22 Jun 2023 13:45:00 -0600</pubDate>
+      
+      <guid>/es/examples/op_overloading/</guid>
+      <description>Operator overloading is possible in Cairo through the use of particular traits, like Add, Sub, Mul, Div and many others.
+For example, for overloading the addition (+) operator of a Vector2 type:
+#[derive(PartialEq, Drop)] struct Vector2 { x: felt252, y: felt252, } impl Vector2Add of Add&amp;lt;Vector2&amp;gt; { fn add(lhs: Vector2, rhs: Vector2) -&amp;gt; Vector2 { Vector2 { x: lhs.x + rhs.x, y: lhs.y + rhs.y } } } fn main() { let v = Vector2 { x: 1, y: 0 }; let w = Vector2 { x: 0, y: 1 }; assert(v + w == Vector2 { x: 1, y: 1 }, &amp;#39;Should be equal.</description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>/es/examples/testing/</link>
+      <pubDate>Thu, 22 Jun 2023 13:35:00 -0600</pubDate>
+      
+      <guid>/es/examples/testing/</guid>
+      <description>Tests are functions that verify that code is working as expected. These functions have to be annotated with #[test]
+Any code that panics will cause a test to fail. As a programmer you usually want to write a test by setting up an initial state, performing some computation, and asserting the result is as you expected.
+For example:
+#[test] fn test_passes() { let result = 2 + 2; assert(result == 4, &amp;#39;result is not 4&amp;#39;); } You can also annotate tests that are supposed to fail with #[should_panic]:</description>
+    </item>
+    
+    <item>
+      <title>generics</title>
+      <link>/es/examples/generics/</link>
+      <pubDate>Thu, 22 Jun 2023 13:30:00 -0600</pubDate>
+      
+      <guid>/es/examples/generics/</guid>
+      <description>Generic types allow us to create definitions that may be used with different data types.
+In Cairo, you can use generics when defining functions, structs, enums, traits, implementations, and methods.
+Example of a generic function:
+// We can use this function to compare any integer (e.g. u8, u32, u256) fn largest&amp;lt;T&amp;gt;(t1: T, t2: T) -&amp;gt; T { if t1 &amp;gt; t2 { t1 } else { t2 } } If you tried to run the previous function, you might had a compiler error saying Trait has no implementation in context .</description>
+    </item>
+    
+    <item>
+      <title>pattern_matching</title>
+      <link>/es/examples/pattern_matching/</link>
+      <pubDate>Thu, 22 Jun 2023 13:25:00 -0600</pubDate>
+      
+      <guid>/es/examples/pattern_matching/</guid>
+      <description>Besides enums, Cairo supports more general use of pattern matching. You can match on enums but also structs. Currently you can use pattern matching on structs only to destructure the fields in a let statement:
+struct MyStruct { a: u16, b: u16, } fn destructure_my_struct(s: MyStruct, t: MyStruct, u: MyStruct) -&amp;gt; u16 { // We can ignore a single field by using `_` or `_name` let MyStruct{a: a, b: _b} = u; let MyStruct{a: b, b: _} = s; // Or just ignore everything we didn&amp;#39;t name by using `.</description>
+    </item>
+    
+    <item>
+      <title>snapshots</title>
+      <link>/es/examples/snapshots/</link>
+      <pubDate>Thu, 22 Jun 2023 13:20:00 -0600</pubDate>
+      
+      <guid>/es/examples/snapshots/</guid>
+      <description>Snapshots provide read-only instances of an object without taking ownership when passed to a function. Every type T has a snapshot version @T, which is always droppable and duplicatable.
+To create a snapshot of a value x of type T, simply use @x.
+use array::Array; use array::ArrayTrait; use option::OptionTrait; use box::BoxTrait; // Receives an array snapshot fn sum_starting_two(data: @Array&amp;lt;u32&amp;gt;) -&amp;gt; u32 { //data.append(5_u32); &amp;lt;- This will fail, asi data is read-only let first = *data.</description>
+    </item>
+    
+    <item>
+      <title>ownership</title>
+      <link>/es/examples/ownership/</link>
+      <pubDate>Thu, 22 Jun 2023 13:15:00 -0600</pubDate>
+      
+      <guid>/es/examples/ownership/</guid>
+      <description>All Cairo code has to abide by two ownership rules: - each value in Cairo has one and only one owner at a time, - when the owner goes out of scope, the value will be dropped
+use array::ArrayTrait; fn foo(arr: Array&amp;lt;u128&amp;gt;) { // foo takes ownership of the array. // when this function returns, arr is dropped. } fn main() { // as the creator of arr, the main function owns the array let arr = ArrayTrait::&amp;lt;u128&amp;gt;::new(); foo(arr); // moves ownership of the array to function call // foo(arr); &amp;lt;- fails to compile, as main doesn&amp;#39;t own the array anymore } </description>
+    </item>
+    
+    <item>
+      <title>loop</title>
+      <link>/es/examples/loop/</link>
+      <pubDate>Thu, 22 Jun 2023 13:05:00 -0600</pubDate>
+      
+      <guid>/es/examples/loop/</guid>
+      <description>The loop keyword tells Cairo to execute a block of code over and over again forever (until it runs out of gas) or until you explicitly tell it to stop. This is the only kind of loop for now.
+use debug::PrintTrait; fn main() -&amp;gt; u128 { let mut i: u128 = 0; loop { if i &amp;gt; 9 { // Break condition break (); } // Repeating code &amp;#39;hello&amp;#39;.print(); i = i + 1; }; i } #[test] // In order to prevent infinite iteration, we have to explicitly declare the &amp;#39;available_gas&amp;#39; value // (The program wont compile and will generate &amp;#39;out_of_gas&amp;#39; error) #[available_gas(200000)] fn test_main() { let a = main(); assert(a == 10, &amp;#39; incorrect loop value &amp;#39;); } To run the test, use cairo-test filename.</description>
+    </item>
+    
+    <item>
+      <title>if expression</title>
+      <link>/es/examples/if/</link>
+      <pubDate>Thu, 22 Jun 2023 13:00:00 -0600</pubDate>
+      
+      <guid>/es/examples/if/</guid>
+      <description>An if expression is a control flow construct that allow us to conditionally execute a piece of code depending on the value of a boolean condition. Since it is an expression, it returns the value of the last expression in the branch.
+use debug::PrintTrait; fn main() { let is_awesome = true; if is_awesome { &amp;#39;Cairo is awesome!&amp;#39;.print(); } } You can combine several conditions using boolean operators like &amp;amp;&amp;amp; (and), || (or), etc.</description>
+    </item>
+    
+    <item>
+      <title>functions</title>
+      <link>/es/examples/functions/</link>
+      <pubDate>Thu, 22 Jun 2023 12:55:00 -0600</pubDate>
+      
+      <guid>/es/examples/functions/</guid>
+      <description>A function is a unit of code that performs some logic. It is defined using the fn keyword.
+Examples of functions are:
+// This functions doesn&amp;#39;t return anything. fn main() { let x = 3; } // This function returns an u32. fn inc(x: u32) -&amp;gt; u32 { x + 1 } The Cairo convention is to name functions using the &amp;lsquo;snake_case&amp;rsquo; form. In the example above, the function name is inc_n.</description>
+    </item>
+    
+    <item>
+      <title>dictionaries</title>
+      <link>/es/examples/dictionaries/</link>
+      <pubDate>Thu, 22 Jun 2023 12:51:00 -0600</pubDate>
+      
+      <guid>/es/examples/dictionaries/</guid>
+      <description>Cairo has a built-in dictionary type called Felt252Dict which maps keys of type Felt252 to values. The dictionary is generic over the type of the stored values.
+You can access the values for a specific key with the [] operator. By default, the value 0 is returned for non-existing keys:
+use dict::Felt252DictTrait; fn test_dict() -&amp;gt; felt252 { let mut dict_u8 = felt252_dict_new::&amp;lt;u8&amp;gt;(); let mut dict_felt = felt252_dict_new::&amp;lt;felt252&amp;gt;(); dict_u8.insert(10, 110); let val10 = dict_u8[10]; // 110 let val11 = dict_felt[11]; // 0 dict_felt.</description>
+    </item>
+    
+    <item>
+      <title>tuples</title>
+      <link>/es/examples/tuples/</link>
+      <pubDate>Thu, 22 Jun 2023 12:50:00 -0600</pubDate>
+      
+      <guid>/es/examples/tuples/</guid>
+      <description>A tuple in Cairo allows us to group multiple values with a variety of types into a single element with a fixed length that can&amp;rsquo;t be changed after its declaration.
+fn main() { // You can explicitly declare each position in the tuple and its type let tup: (u32, u64, bool) = (8, 65, false); // Or it can also be declared without specifying the types let tup = (false, 2, 70); // Because a tuple is considered a single element, you can // use pattern matching to retrieve individual items let (x, y, z) = tup; // You can do this while declaring the tuple as well let (x, y): (felt252, felt252) = (2, 3); } Here is an example using tuples where we declare a rectangle with its side dimensions as items of the tuple and then calculate its volume.</description>
+    </item>
+    
+    <item>
+      <title>enums</title>
+      <link>/es/examples/enums/</link>
+      <pubDate>Thu, 22 Jun 2023 12:45:00 -0600</pubDate>
+      
+      <guid>/es/examples/enums/</guid>
+      <description>An enum in Cairo works like a tagged union, variants can hold values inside, which you can access via pattern matching.
+You can work with enums like this:
+use option::Option; use option::OptionTrait; // Define an enum enum MyEnum { A: u8, B: u16, C: u32, D: u64 } // Construct and return an enum variant. fn my_enum_a() -&amp;gt; MyEnum { MyEnum::A(4_u8) } // Match the enum, the order must match the enum definition.</description>
+    </item>
+    
+    <item>
+      <title>structs</title>
+      <link>/es/examples/structs/</link>
+      <pubDate>Thu, 22 Jun 2023 12:40:00 -0600</pubDate>
+      
+      <guid>/es/examples/structs/</guid>
+      <description>A struct is a collection of named fields. It is one of the ways to define custom user types.
+The fields of a struct, called members, can be of any defined type.
+For example:
+struct Employee { age: u8, id: u32, role: String, } Struct members can be user-defined types:
+struct Company { employees: Vec&amp;lt;Employee&amp;gt;, number_of_buildings: u32 } </description>
+    </item>
+    
+    <item>
+      <title>arrays</title>
+      <link>/es/examples/arrays/</link>
+      <pubDate>Thu, 22 Jun 2023 12:35:00 -0600</pubDate>
+      
+      <guid>/es/examples/arrays/</guid>
+      <description>Arrays You can create arrays in cairo with ArrayTrait::new() and add elements with the method append:
+fn get_array() -&amp;gt; Array&amp;lt;felt252&amp;gt; { let mut numbers = ArrayTrait::new(); numbers.append(444); numbers.append(555); return numbers; } You can get the length of an array with len:
+#[test] fn test_array_len() { let array = get_array(); let len = array.len(); assert(len == 2, &amp;#39;wrong array length&amp;#39;); } You can get an element from an array with get or at:</description>
+    </item>
+    
+    <item>
+      <title>integers</title>
+      <link>/es/examples/integers/</link>
+      <pubDate>Thu, 22 Jun 2023 12:26:00 -0600</pubDate>
+      
+      <guid>/es/examples/integers/</guid>
+      <description>Even though the felt252 type is fundamental for the Cairo language, it is highly recommended to use integer types where possible. integer types come with extra protection against potential vulnerabilities in the code, such as overflow checks. Each type is suffixed with the number of bits occupied by the fixed number representation.
+Here&amp;rsquo;s an example program that declares a variable of each available type, with each type&amp;rsquo;s maximum value:
+fn main() { let a: u8 = 0xff; let b: u16 = 0xffff; let c: u32 = 0xffffffff; let c: usize = 0xffffffff; // same size as u32 let d: u64 = 0xffffffffffffffff; let e: u128 = 0xffffffffffffffffffffffffffffffff; let f: u256 = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff; } Note that all of these are unsigned, same as felt252.</description>
+    </item>
+    
+    <item>
+      <title>felt252</title>
+      <link>/es/examples/felt252/</link>
+      <pubDate>Thu, 22 Jun 2023 12:25:00 -0600</pubDate>
+      
+      <guid>/es/examples/felt252/</guid>
+      <description>The basic data type in Cairo is felt252, which stands for field element. These are integers in the range 0 &amp;lt;= x &amp;lt; P, where P is a large prime number, currently equal to P = 2^{251} + 17 * 2^{192}+1. Field elements have the property of intentionally wrapping around when their value falls outside the specified range, they use modular arithmetic.
+use debug::PrintTrait; fn main() { let x: felt252 = 2; let y: felt252 = 5; (x + y).</description>
+    </item>
+    
+    <item>
+      <title>naming convention</title>
+      <link>/es/examples/naming_convention/</link>
+      <pubDate>Thu, 22 Jun 2023 12:20:00 -0600</pubDate>
+      
+      <guid>/es/examples/naming_convention/</guid>
+      <description>Cairo, like many other languages, has a clearly defined naming convention. It is advised to follow it since it&amp;rsquo;ll help both code writers and readers after getting used to it.
+use core::debug::PrintTrait; // Modules use snake_case naming. mod sample_module {} // Types use PascalCase. This includes enums, structs and traits and trait // implementations. type FeltAlias = felt252; // Type parameters are types too, so they also use PascalCase, although they are // generally single letters, like the `T` used here.</description>
+    </item>
+    
+    <item>
+      <title>variables</title>
+      <link>/es/examples/variables/</link>
+      <pubDate>Thu, 22 Jun 2023 12:15:00 -0600</pubDate>
+      
+      <guid>/es/examples/variables/</guid>
+      <description>To store data in variables with the let keyword but you will not be able to change the value of said variables.
+if you need to change that data, it must be a mutable variable with let mut
+fn main() { let immutable_var: felt252 = 17; // immutable_var = 38; &amp;lt;-- fails to compile // but this is legal: let mut mutable_var: felt252 = immutable_var; mutable_var = 38; assert(mutable_var != immutable_var, &amp;#39;mutable equals immutable&amp;#39;); } #[test] fn test_main() { main(); } </description>
+    </item>
+    
+    <item>
+      <title>comments</title>
+      <link>/es/examples/comments/</link>
+      <pubDate>Thu, 22 Jun 2023 12:10:00 -0600</pubDate>
+      
+      <guid>/es/examples/comments/</guid>
+      <description>In Cairo programs, any text after a pair of forward slashes (//) and until the end of the line will be ignored by the compiler.
+You can use this to leave explanatory comments in your code.
+fn main() -&amp;gt; felt252 { // start of the function 1 + 4 // return the sum of 1 and 4 } </description>
+    </item>
+    
+    <item>
+      <title>assert</title>
+      <link>/es/examples/assert/</link>
+      <pubDate>Thu, 22 Jun 2023 12:05:00 -0600</pubDate>
+      
+      <guid>/es/examples/assert/</guid>
+      <description>To make sure our tests work, we use assert.
+fn main(x: felt252, y: felt252) { assert(x != y, &amp;#39;error, x is equal to y&amp;#39;); } #[test] fn test_main() { main(1,2); } The first argument of assert is the condition we want to check, and the second is a message we will see on the console if the condition is false.
+Run cairo-test file_name
+Try changing it so that the test fails.</description>
+    </item>
+    
+    <item>
+      <title>hola mundo</title>
+      <link>/es/examples/hello-world/</link>
+      <pubDate>Thu, 22 Jun 2023 12:00:00 -0600</pubDate>
+      
+      <guid>/es/examples/hello-world/</guid>
+      <description>La palabra reservada use importa una dependencia en el alcance (scope).
+use debug::PrintTrait; fn main() { &amp;#39;Hello, world!&amp;#39;.print(); } Ahora, corré el test con cairo-run hola_mundo.cairo
+[DEBUG] Hello, world! (raw: 5735816763073854953388147237921) Run completed successfully, returning [] </description>
+    </item>
+    
+    <item>
+      <title>clone and copy</title>
+      <link>/es/examples/clone_and_copy/</link>
+      <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/es/examples/clone_and_copy/</guid>
+      <description>Because of Cairo&amp;rsquo;s ownership rules, it&amp;rsquo;s necessary to specify how data can be duplicated. For this the Clone and Copy traits are used. Clone specifies how a type instance can be cloned, meaning its data duplicated and assigned a new owner. The behaviour specified by Clone can be arbitrarily complicated. Instead Copy requires Clone and it specifies that a type can be bitwise-copied, meaning that its cloning mechanism is simple and known, instead of arbitrary.</description>
+    </item>
+    
+    <item>
+      <title>strings</title>
+      <link>/es/examples/strings/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/es/examples/strings/</guid>
+      <description>In Cairo, a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.
+Examples of strings:
+use debug::PrintTrait; fn main() { let x = &amp;#39;Cairo is awesome&amp;#39;; x.print(); let c = &amp;#39;A&amp;#39;; c.print(); } To run this example, first copy the code in a new file and then run cairo-run file_name in your terminal.</description>
+    </item>
+    
+  </channel>
+</rss>

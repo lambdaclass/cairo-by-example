@@ -1,6 +1,6 @@
 ---
 title: "generics"
-weight: 30
+weight: 300
 draft: false
 ---
 

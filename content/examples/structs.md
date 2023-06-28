@@ -1,6 +1,6 @@
 ---
 title: "structs"
-weight: 24
+weight: 240
 draft: false
 ---
 

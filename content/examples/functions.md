@@ -1,6 +1,6 @@
 ---
 title: "functions"
-date: 2023-06-22T12:55:00-06:00
+weight: 40
 draft: false
 ---
 

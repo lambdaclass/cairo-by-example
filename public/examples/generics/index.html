@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://www.cairo-lang.org/wp-content/uploads/2020/12/cropped-favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fifty-eight-bytes-of.css">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="https://cairo-by-example.com/" />
+  <meta name="twitter:creator" content="lambdaclass" />
+  <meta name="twitter:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  <meta property="og:title" content="an introduction to cairo" />
+  <meta property="og:description" content="with simplified examples" />
+  <meta property="og:image" content="https://cairo-by-example.com/img/card.png?4444" />
+  
+  
+  <title>Cairo by example | generics</title>
+</head>
+<body><div class="header">
+    <h1>
+        <a href="/" style="all: unset;">
+            <img src="/img/cairo.png" style="width: 40px;" />
+            cairo <small><small><small>by example</small></small></small>
+        </a>
+    </h1>
+</div><div id="content">
+<h3>generics</h3>
+<p>Generic types allow us to create definitions that may be used with different data types.</p>
+<p>In Cairo, you can use generics when defining <code>functions</code>, <code>structs</code>, <code>enums</code>, <code>traits</code>, <code>implementations</code>, and <code>methods</code>.</p>
+<p>Example of a generic function:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// We can use this function to compare any integer (e.g. u8, u32, u256)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">largest</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>(t1: <span style="color:#a6e22e">T</span>, t2: <span style="color:#a6e22e">T</span>) -&gt; <span style="color:#a6e22e">T</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> t1 <span style="color:#f92672">&gt;</span> t2 {
+</span></span><span style="display:flex;"><span>        t1
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        t2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you tried to run the previous function, you might had a compiler error saying <code>Trait has no implementation in context ...</code>, this happens because the compiler requires that some traits must be implemented for various reasons.</p>
+<p>In our example we must implement 3 traits:</p>
+<ul>
+<li><code>PartialOrd</code>: For the comparison to work</li>
+<li><code>Drop</code>: Since we are dropping the value that is not returned</li>
+<li><code>Copy</code>: To move the function inputs</li>
+</ul>
+<p>Fix for the previous example:</p>
+<div class="highlight codebox"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">largest</span><span style="color:#f92672">&lt;</span>
+</span></span><span style="display:flex;"><span>    T,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">impl</span> TOrd: PartialOrd<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">impl</span> TDrop: Drop<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">impl</span> TCopy: Copy<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&gt;</span>(t1: <span style="color:#a6e22e">T</span>, t2: <span style="color:#a6e22e">T</span>) -&gt; <span style="color:#a6e22e">T</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> t1 <span style="color:#f92672">&gt;</span> t2 {
+</span></span><span style="display:flex;"><span>        t1
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        t2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+<br>
+<details>
+    <summary><i>try it out</i></summary>
+
+    install the cairo toolchain if you haven't yet:
+    <pre>
+	curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
+        </pre>
+
+    then checkout and run the example:
+    <pre>
+        </pre>
+</details>
+<br>
+<div style="display: flex; justify-content: space-between;">
+    <a href="/examples/pattern_matching/">prev (pattern_matching)</a>
+    <a href="/examples/testing/">next (testing)</a>
+</div>
+
+
+    </div>
+</body>
+
+</html>

@@ -4,14 +4,12 @@ defaultContentLanguage = 'en'
 
 [languages.en]
 weight = 1
-baseURL = 'https://cairo-by-example.com/'
 contentDir = 'content/en'
 languageName = 'English'
 title = 'Cairo by example'
 
 [languages.es]
 weight = 2
-baseURL = 'https://cairo-by-example.com/es/'
 contentDir = 'content/es'
 languageName = 'Español'
 title = 'Cairo by example'

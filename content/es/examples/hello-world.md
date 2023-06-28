@@ -1,10 +1,10 @@
 ---
-title: "hello world"
+title: "hola mundo"
 date: 2023-06-22T12:00:00-06:00
 draft: false
 ---
 
-the `use` keyword imports a dependency into scope
+La palabra reservada `use` importa una dependencia en el alcance (scope).
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-now, run the tests with `cairo-run hello_world.cairo`
+Ahora, corré el test con `cairo-run hola_mundo.cairo`
 
 ```bash
 [DEBUG] Hello, world!                   (raw: 5735816763073854953388147237921)

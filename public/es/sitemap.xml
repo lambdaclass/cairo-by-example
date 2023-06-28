@@ -2,366 +2,366 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cairo-by-example.com/es/</loc>
+    <loc>/es/</loc>
     <lastmod>2023-06-22T13:50:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/"
+                href="/es/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/</loc>
+    <loc>/es/examples/</loc>
     <lastmod>2023-06-22T13:50:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/"
+                href="/examples/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/"
+                href="/es/examples/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/zeroable/</loc>
+    <loc>/es/examples/zeroable/</loc>
     <lastmod>2023-06-22T13:50:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/zeroable/"
+                href="/examples/zeroable/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/zeroable/"
+                href="/es/examples/zeroable/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/op_overloading/</loc>
+    <loc>/es/examples/op_overloading/</loc>
     <lastmod>2023-06-22T13:45:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/op_overloading/"
+                href="/examples/op_overloading/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/op_overloading/"
+                href="/es/examples/op_overloading/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/testing/</loc>
+    <loc>/es/examples/testing/</loc>
     <lastmod>2023-06-22T13:35:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/testing/"
+                href="/examples/testing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/testing/"
+                href="/es/examples/testing/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/generics/</loc>
+    <loc>/es/examples/generics/</loc>
     <lastmod>2023-06-22T13:30:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/generics/"
+                href="/examples/generics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/generics/"
+                href="/es/examples/generics/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/pattern_matching/</loc>
+    <loc>/es/examples/pattern_matching/</loc>
     <lastmod>2023-06-22T13:25:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/pattern_matching/"
+                href="/examples/pattern_matching/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/pattern_matching/"
+                href="/es/examples/pattern_matching/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/snapshots/</loc>
+    <loc>/es/examples/snapshots/</loc>
     <lastmod>2023-06-22T13:20:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/snapshots/"
+                href="/examples/snapshots/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/snapshots/"
+                href="/es/examples/snapshots/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/ownership/</loc>
+    <loc>/es/examples/ownership/</loc>
     <lastmod>2023-06-22T13:15:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/ownership/"
+                href="/examples/ownership/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/ownership/"
+                href="/es/examples/ownership/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/loop/</loc>
+    <loc>/es/examples/loop/</loc>
     <lastmod>2023-06-22T13:05:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/loop/"
+                href="/examples/loop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/loop/"
+                href="/es/examples/loop/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/if/</loc>
+    <loc>/es/examples/if/</loc>
     <lastmod>2023-06-22T13:00:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/if/"
+                href="/examples/if/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/if/"
+                href="/es/examples/if/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/functions/</loc>
+    <loc>/es/examples/functions/</loc>
     <lastmod>2023-06-22T12:55:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/functions/"
+                href="/examples/functions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/functions/"
+                href="/es/examples/functions/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/dictionaries/</loc>
+    <loc>/es/examples/dictionaries/</loc>
     <lastmod>2023-06-22T12:51:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/dictionaries/"
+                href="/examples/dictionaries/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/dictionaries/"
+                href="/es/examples/dictionaries/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/tuples/</loc>
+    <loc>/es/examples/tuples/</loc>
     <lastmod>2023-06-22T12:50:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/tuples/"
+                href="/examples/tuples/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/tuples/"
+                href="/es/examples/tuples/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/enums/</loc>
+    <loc>/es/examples/enums/</loc>
     <lastmod>2023-06-22T12:45:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/enums/"
+                href="/examples/enums/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/enums/"
+                href="/es/examples/enums/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/structs/</loc>
+    <loc>/es/examples/structs/</loc>
     <lastmod>2023-06-22T12:40:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/structs/"
+                href="/examples/structs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/structs/"
+                href="/es/examples/structs/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/arrays/</loc>
+    <loc>/es/examples/arrays/</loc>
     <lastmod>2023-06-22T12:35:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/arrays/"
+                href="/examples/arrays/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/arrays/"
+                href="/es/examples/arrays/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/integers/</loc>
+    <loc>/es/examples/integers/</loc>
     <lastmod>2023-06-22T12:26:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/integers/"
+                href="/examples/integers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/integers/"
+                href="/es/examples/integers/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/felt252/</loc>
+    <loc>/es/examples/felt252/</loc>
     <lastmod>2023-06-22T12:25:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/felt252/"
+                href="/examples/felt252/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/felt252/"
+                href="/es/examples/felt252/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/naming_convention/</loc>
+    <loc>/es/examples/naming_convention/</loc>
     <lastmod>2023-06-22T12:20:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/naming_convention/"
+                href="/examples/naming_convention/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/naming_convention/"
+                href="/es/examples/naming_convention/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/variables/</loc>
+    <loc>/es/examples/variables/</loc>
     <lastmod>2023-06-22T12:15:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/variables/"
+                href="/examples/variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/variables/"
+                href="/es/examples/variables/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/comments/</loc>
+    <loc>/es/examples/comments/</loc>
     <lastmod>2023-06-22T12:10:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/comments/"
+                href="/examples/comments/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/comments/"
+                href="/es/examples/comments/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/assert/</loc>
+    <loc>/es/examples/assert/</loc>
     <lastmod>2023-06-22T12:05:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/assert/"
+                href="/examples/assert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/assert/"
+                href="/es/examples/assert/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/hello-world/</loc>
+    <loc>/es/examples/hello-world/</loc>
     <lastmod>2023-06-22T12:00:00-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/hello-world/"
+                href="/examples/hello-world/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/hello-world/"
+                href="/es/examples/hello-world/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/clone_and_copy/</loc>
+    <loc>/es/examples/clone_and_copy/</loc>
     <lastmod>2023-06-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/clone_and_copy/"
+                href="/examples/clone_and_copy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/clone_and_copy/"
+                href="/es/examples/clone_and_copy/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/examples/strings/</loc>
+    <loc>/es/examples/strings/</loc>
     <lastmod>2023-06-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/examples/strings/"
+                href="/examples/strings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/examples/strings/"
+                href="/es/examples/strings/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/categories/</loc>
+    <loc>/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/categories/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/categories/"
+                href="/es/categories/"
                 />
   </url><url>
-    <loc>https://cairo-by-example.com/es/tags/</loc>
+    <loc>/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://cairo-by-example.com/tags/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://cairo-by-example.com/es/tags/"
+                href="/es/tags/"
                 />
   </url>
 </urlset>

@@ -19,7 +19,7 @@ fn main() {
 ```
 
 You can combine several conditions using boolean operators like `&&` (and), `||` (or), etc.
-You can also add an optional else-branch like in many other programming languages. 
+You can also add an optional else-branch like in many other programming languages.
 
 ```rust {.codebox}
 use debug::PrintTrait;

@@ -1,6 +1,6 @@
 ---
 title: "ownership"
-date: 13
+date: 17
 draft: false
 ---
 

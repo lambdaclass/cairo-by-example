@@ -42,15 +42,15 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> b: <span style="color:#66d9ef">u8</span> <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// panics due to overflow
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><p>To run any test, you can use the <code>cairo-test</code> command.</p>
-<pre tabindex="0"><code>$ cairo-test .
-running 2 tests
-test test_crate::test_passes ... ok
-test test_crate::test_should_fail ... ok
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 filtered out;
-</code></pre><p>Note: For this to work there needs to be a<code>cairo_project.toml</code> file. This is the configuration file for &ldquo;vanilla&rdquo; Cairo projects (i.e. not managed by Scarb), which is required to run the <code>cairo-test .</code> command to run the code of the crate. The content of the file is:</p>
-<pre tabindex="0"><code>[crate_roots]
-test_crate = &#34;src&#34;
-</code></pre><p>Which indicates that the crate named &ldquo;test_crate&rdquo; is located in the <code>src</code> directory. Any Cairo file in the crate will be tested any time you run <code>cairo-test</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ cairo-test .
+</span></span><span style="display:flex;"><span>running 2 tests
+</span></span><span style="display:flex;"><span>test test_crate::test_passes ... ok
+</span></span><span style="display:flex;"><span>test test_crate::test_should_fail ... ok
+</span></span><span style="display:flex;"><span>test result: ok. 2 passed; 0 failed; 0 ignored; 0 filtered out;
+</span></span></code></pre></div><p>Note: For this to work there needs to be a<code>cairo_project.toml</code> file. This is the configuration file for &ldquo;vanilla&rdquo; Cairo projects (i.e. not managed by Scarb), which is required to run the <code>cairo-test .</code> command to run the code of the crate. The content of the file is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">crate_roots</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">test_crate</span> = <span style="color:#e6db74">&#34;src&#34;</span>
+</span></span></code></pre></div><p>Which indicates that the crate named &ldquo;test_crate&rdquo; is located in the <code>src</code> directory. Any Cairo file in the crate will be tested any time you run <code>cairo-test</code>.</p>
 
 
 <br>
@@ -69,7 +69,7 @@ test_crate = &#34;src&#34;
 <br>
 <div style="display: flex; justify-content: space-between;">
     <a href="https://cairo-by-example.com/examples/snapshots/">prev (snapshots)</a>
-    <a href="https://cairo-by-example.com/examples/pattern_matching/">next (pattern_matching)</a>
+    <a href="https://cairo-by-example.com/examples/naming_convention/">next (naming convention)</a>
 </div>
 
 

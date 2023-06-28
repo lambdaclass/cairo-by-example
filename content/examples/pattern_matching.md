@@ -1,11 +1,12 @@
 ---
 title: "pattern matching"
-date: 2023-06-21T14:41:01+0000
+date: 16
 draft: false
 ---
 
 Besides [enums](../enums), Cairo supports more general use of pattern matching. You can match on `enum`s but also `struct`s.
 Currently you can use pattern matching on `struct`s only to destructure the fields in a `let` statement:
+
 ```rust {.codebox}
 struct MyStruct {
     a: u16,
@@ -23,6 +24,7 @@ fn destructure_my_struct(s: MyStruct, t: MyStruct, u: MyStruct) -> u16 {
 ```
 
 You can also destructure tuples with this syntax:
+
 ```rust {.codebox}
 fn destructure_tuple(t: (u16, u16)) -> u16 {
     let (x, y) = t;
@@ -31,6 +33,7 @@ fn destructure_tuple(t: (u16, u16)) -> u16 {
 ```
 
 However, using `struct`s for the `match` arms will currently fail to compile:
+
 ```rust {.codebox}
 // Doesn't compile
 fn match_my_struct(s: MyStruct) -> u16 {

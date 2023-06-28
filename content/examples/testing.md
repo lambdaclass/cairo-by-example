@@ -1,6 +1,6 @@
 ---
 title: "testing"
-date: 9
+date: 21
 draft: false
 ---
 
@@ -29,9 +29,9 @@ fn test_should_fail() {
 }
 ```
 
-To run any test, you can use the `cairo-test` command. 
+To run any test, you can use the `cairo-test` command.
 
-```
+```console
 $ cairo-test .
 running 2 tests
 test test_crate::test_passes ... ok
@@ -41,7 +41,7 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 filtered out;
 
 Note: For this to work there needs to be a`cairo_project.toml` file. This is the configuration file for "vanilla" Cairo projects (i.e. not managed by Scarb), which is required to run the `cairo-test .` command to run the code of the crate. The content of the file is:
 
-```
+```toml
 [crate_roots]
 test_crate = "src"
 ```

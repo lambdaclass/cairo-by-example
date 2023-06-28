@@ -1,6 +1,6 @@
 ---
 title: "generics"
-date: 12
+date: 19
 draft: false
 ---
 
@@ -24,6 +24,7 @@ fn largest<T>(t1: T, t2: T) -> T {
 If you tried to run the previous function, you might had a compiler error saying `Trait has no implementation in context ...`, this happens because the compiler requires that some traits must be implemented for various reasons.
 
 In our example we must implement 3 traits:
+
 - `PartialOrd`: For the comparison to work
 - `Drop`: Since we are dropping the value that is not returned
 - `Copy`: To move the function inputs
@@ -44,4 +45,3 @@ fn largest<
     }
 }
 ```
-

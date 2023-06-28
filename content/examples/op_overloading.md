@@ -1,6 +1,6 @@
 ---
 title: "operator overloading"
-date: 16
+date: 23
 draft: false
 ---
 
@@ -9,9 +9,10 @@ Operator overloading is possible in Cairo through the use of particular traits, 
 For example, for overloading the addition (+) operator of a `Vector2` type:
 
 ```rust {.codebox}
+#[derive(PartialEq, Drop)]
 struct Vector2 {
-    x: f32,
-    y: f32,
+    x: felt252,
+    y: felt252,
 }
 
 impl Vector2Add of Add<Vector2> {

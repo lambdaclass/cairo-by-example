@@ -1,6 +1,6 @@
 ---
 title: "enums"
-date: 7
+date: 9
 draft: false
 ---
 

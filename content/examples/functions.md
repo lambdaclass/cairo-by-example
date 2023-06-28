@@ -22,4 +22,4 @@ fn inc(x: u32) -> u32 {
 
 The Cairo convention is to name functions using the 'snake_case' form. In the example above, the function name is `inc_n`.
 
-Note that in Cairo, functions always return a value. When the function has no particular return value, it is common to return the unit type (`()`). 
+Note that in Cairo, functions always return a value. When the function has no particular return value, it is common to return the unit type (`()`).

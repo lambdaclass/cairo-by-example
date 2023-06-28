@@ -8,7 +8,6 @@ To store data in variables with the let keyword but you will not be able to chan
 
 if you need to change that data, it must be a mutable variable with let mut
 
-
 ```rust {.codebox}
 fn main() {
     let immutable_var: felt252 = 17;

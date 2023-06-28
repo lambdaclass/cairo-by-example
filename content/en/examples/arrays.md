@@ -6,7 +6,7 @@ draft: false
 
 # Arrays
 
-You can create arrays in cairo with `ArrayTrait::new()` and add elements with the method `append`: 
+You can create arrays in cairo with `ArrayTrait::new()` and add elements with the method `append`:
 
 ```rust {.codebox}
 fn get_array() -> Array<felt252> {

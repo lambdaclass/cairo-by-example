@@ -57,6 +57,10 @@ fn main() {
     let mut num = 17_u8;
     num %= 5_u8;
     assert( num == 2_u8, 'Operator %=');
+
+    // Operator `&` represents Bitwise And
+    // Only implemented for `bool`
+    // Can be overloaded by implementing `BitAnd`
+    assert( true & true, 'Operator &');
 }
 ```
-

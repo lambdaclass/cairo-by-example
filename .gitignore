@@ -1,2 +1,4 @@
 resources/*
 .DS_Store
+docs/
+public/

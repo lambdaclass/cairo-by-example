@@ -1,3 +1,5 @@
+.PHONY: build serve
+
 build:
 	hugo
 

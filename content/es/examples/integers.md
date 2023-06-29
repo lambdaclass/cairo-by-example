@@ -4,11 +4,11 @@ date: 2023-06-22T12:26:00-06:00
 draft: false
 ---
 
-Even though the `felt252` type is fundamental for the Cairo language, it is highly recommended to use `integer` types where possible.
-`integer` types come with extra protection against potential vulnerabilities in the code, such as overflow checks.
-Each type is suffixed with the number of bits occupied by the fixed number representation.
+Aunque el tipo `felt252` es fundamental para el lenguaje Cairo, es altamente recomendable usar tipos `integer` siempre que sea posible.
+Los tipos `integer` vienen con protección extra contra posibles vulnerabilidades en el código, como comprobaciones de desbordamiento.
+Cada tipo tiene como sufijo el número de bits que ocupa la representación del número fijo.
 
-Here's an example program that declares a variable of each available type, with each type's maximum value:
+He aquí un programa de ejemplo que declara una variable de cada tipo disponible, con el valor máximo de cada tipo:
 
 ```rust {.codebox}
 fn main() {
@@ -22,8 +22,8 @@ fn main() {
 }
 ```
 
-Note that all of these are **unsigned**, same as `felt252`.
-But, unlike `felt252`, these types cannot be assigned a negative literal:
+Nótese que todos ellos son **sin signo**, igual que `felt252`.
+Pero, a diferencia de `felt252`, a estos tipos no se les puede asignar un literal negativo:
 
 ```rust {.codebox}
 fn main() {

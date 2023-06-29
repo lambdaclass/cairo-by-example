@@ -4,7 +4,7 @@ date: 2023-06-22T12:50:00-06:00
 draft: false
 ---
 
-A `tuple` in Cairo allows us to group multiple values with a variety of types into a single element with a fixed length that can't be changed after its declaration.
+Una `tupla` en Cairo nos permite agrupar múltiples valores con una variedad de tipos en un único elemento con una longitud fija que no puede ser cambiada después de su declaración.
 
 ```rust {.codebox}
 fn main() {
@@ -21,7 +21,7 @@ fn main() {
 }
 ```
 
-Here is an example using tuples where we declare a rectangle with its side dimensions as items of the tuple and then calculate its volume.
+He aquí un ejemplo utilizando tuplas en el que declaramos un rectángulo con sus dimensiones laterales como elementos de la tupla y luego calculamos su volumen.
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -36,6 +36,6 @@ fn volume(sides: (u64, u64, u64)) -> u64 {
     x * y * z
 }
 ```
-To run the program, use `cairo-run filename.cairo`.
+Para ejecutar el programa, utilice `cairo-run filename.cairo`.
 
-For further explanation about this topic, [check the Cairo Book](https://cairo-book.github.io/ch02-02-data-types.html?highlight=tuple#the-tuple-type).
+Para más explicaciones sobre este tema, [consulte el Cairo Book](https://cairo-book.github.io/ch02-02-data-types.html?highlight=tuple#the-tuple-type).

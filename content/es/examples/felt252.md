@@ -4,8 +4,8 @@ date: 2023-06-22T12:25:00-06:00
 draft: false
 ---
 
-The basic data type in Cairo is `felt252`, which stands for *field element*. These are integers in the range `0 <= x < P`, where `P` is a large prime number, currently equal to `P = 2^{251} + 17 * 2^{192}+1`. 
-Field elements have the property of intentionally *wrapping around* when their value falls outside the specified range, they use modular arithmetic.
+El tipo de datos básico en Cairo es `felt252`, que significa *field element*. Son números enteros en el rango `0 <= x < P`, donde `P` es un número primo grande, actualmente igual a `P = 2^{251} + 17 * 2^{192}+1`. 
+Los elementos de campo tienen la propiedad de *envolverse* intencionadamente cuando su valor cae fuera del rango especificado, utilizan aritmética modular.
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -17,8 +17,8 @@ fn main() {
 }
 ```
 
-Since `felt252` is the default data type, in simple cases like these there is no real need to specify the type.
-This means we can simply write:
+Dado que `felt252` es el tipo de datos por defecto, en casos sencillos como éste no es realmente necesario especificar el tipo.
+Esto significa que podemos simplemente escribir:
 
 ```rust {.codebox}
 use debug::PrintTrait;

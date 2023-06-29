@@ -4,11 +4,11 @@ date: 2023-06-22T13:35:00-06:00
 draft: false
 ---
 
-Tests are functions that verify that code is working as expected. These functions have to be annotated with `#[test]`
+Los tests son funciones que verifican que el código funciona como se espera. Estas funciones deben ser anotadas con `#[test]`.
 
-Any code that panics will cause a test to fail. As a programmer you usually want to write a test by setting up an initial state, performing some computation, and asserting the result is as you expected.
+Cualquier código que entre en pánico hará que una prueba falle. Como programador, normalmente quieres escribir una prueba estableciendo un estado inicial, realizando algún cálculo, y afirmando que el resultado es el esperado.
 
-For example:
+Por ejemplo:
 
 ```rust {.codebox}
 #[test]
@@ -18,7 +18,7 @@ fn test_passes() {
 }
 ```
 
-You can also annotate tests that are supposed to fail with `#[should_panic]`:
+También puede anotar las pruebas que se supone que deben fallar con `#[should_panic]`:
 
 ```rust {.codebox}
 #[test]
@@ -29,7 +29,7 @@ fn test_should_fail() {
 }
 ```
 
-To run any test, you can use the `cairo-test` command.
+Para ejecutar cualquier test, puede utilizar el comando `cairo-test`.
 
 ```console
 $ cairo-test .
@@ -46,4 +46,4 @@ Note: For this to work there needs to be a`cairo_project.toml` file. This is the
 test_crate = "src"
 ```
 
-Which indicates that the crate named "test_crate" is located in the `src` directory. Any Cairo file in the crate will be tested any time you run `cairo-test`.
+Lo que indica que el crate llamado "test_crate" está localizado en el directorio `src`. Cualquier archivo Cairo en el crate será probado cada vez que ejecutes `cairo-test`.

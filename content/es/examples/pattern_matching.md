@@ -4,8 +4,8 @@ date: 2023-06-22T13:25:00-06:00
 draft: false
 ---
 
-Besides [enums](../enums), Cairo supports more general use of pattern matching. You can match on `enum`s but also `struct`s.
-Currently you can use pattern matching on `struct`s only to destructure the fields in a `let` statement:
+Además de [enums](../enums), Cairo soporta un uso más general de la concordancia de patrones. Puede coincidir con `enum`s pero también con `struct`s.
+Actualmente puede usar la concordancia de patrones en `struct`s sólo para desestructurar los campos en una sentencia `let`:
 
 ```rust {.codebox}
 struct MyStruct {
@@ -23,7 +23,7 @@ fn destructure_my_struct(s: MyStruct, t: MyStruct, u: MyStruct) -> u16 {
 }
 ```
 
-You can also destructure tuples with this syntax:
+También puede desestructurar tuplas con esta sintaxis:
 
 ```rust {.codebox}
 fn destructure_tuple(t: (u16, u16)) -> u16 {
@@ -32,7 +32,7 @@ fn destructure_tuple(t: (u16, u16)) -> u16 {
 }
 ```
 
-However, using `struct`s for the `match` arms will currently fail to compile:
+Sin embargo, el uso de `struct`s para los casos de `match` actualmente falla al compilar:
 
 ```rust {.codebox}
 // Doesn't compile

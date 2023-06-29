@@ -3,10 +3,9 @@ title: "snapshots"
 date: 2023-06-22T13:20:00-06:00
 draft: false
 ---
+Snapshots proporcionan instancias de sólo lectura de un objeto sin tomar propiedad cuando se pasan a una función. Cada tipo `T` tiene una versión snapshot `@T`, que siempre se puede soltar y duplicar.
 
-Snapshots provide read-only instances of an object without taking ownership when passed to a function. Every type `T` has a snapshot version `@T`, which is always droppable and duplicatable.
-
-To create a snapshot of a value `x` of type `T`, simply use `@x`.
+Para crear una snapshot de un valor `x` de tipo `T`, basta con utilizar `@x`.
 
 ```rust {.codebox}
 use array::Array;

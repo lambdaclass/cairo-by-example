@@ -4,9 +4,9 @@ date: 2023-06-22T12:15:00-06:00
 draft: false
 ---
 
-To store data in variables with the let keyword but you will not be able to change the value of said variables.
+Para almacenar datos en variables con la palabra clave let pero no podrás cambiar el valor de dichas variables.
 
-if you need to change that data, it must be a mutable variable with let mut
+Si necesitas cambiar esos datos, debe ser una variable mutable con let mut
 
 ```rust {.codebox}
 fn main() {

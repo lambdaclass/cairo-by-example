@@ -9,14 +9,13 @@ Snapshots provide read-only instances of an object without taking ownership when
 To create a snapshot of a value `x` of type `T`, simply use `@x`.
 
 ```rust {.codebox}
-use array::Array;
 use array::ArrayTrait;
 use option::OptionTrait;
 use box::BoxTrait;
 
 // Receives an array snapshot
 fn sum_starting_two(data: @Array<u32>) -> u32 {
-    //data.append(5_u32); <- This will fail, asi data is read-only
+    //data.append(5_u32); <- This will fail, as data is read-only
     let first = *data.get(0).unwrap().unbox();
     let second = *data.get(1).unwrap().unbox();
     first + second

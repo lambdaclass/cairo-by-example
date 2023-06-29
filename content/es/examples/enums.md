@@ -4,7 +4,7 @@ date: 2023-06-22T12:45:00-06:00
 draft: false
 ---
 
-Un enum en Cairo funciona como una unión etiquetada, las variantes pueden contener valores en su interior, a los que puedes acceder mediante la concordancia de patrones.
+Un enum en Cairo funciona como una unión etiquetada, las variantes pueden contener valores en su interior, a los que puedes acceder mediante pattern matching.
 
 Puedes trabajar con enums así:
 

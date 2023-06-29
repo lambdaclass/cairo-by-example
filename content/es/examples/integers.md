@@ -5,7 +5,7 @@ draft: false
 ---
 
 Aunque el tipo `felt252` es fundamental para el lenguaje Cairo, es altamente recomendable usar tipos `integer` siempre que sea posible.
-Los tipos `integer` vienen con protección extra contra posibles vulnerabilidades en el código, como comprobaciones de desbordamiento.
+Los tipos `integer` vienen con protección extra contra posibles vulnerabilidades en el código, como chequeos contra overflow.
 Cada tipo tiene como sufijo el número de bits que ocupa la representación del número fijo.
 
 He aquí un programa de ejemplo que declara una variable de cada tipo disponible, con el valor máximo de cada tipo:

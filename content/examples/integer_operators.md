@@ -27,5 +27,36 @@ fn main() {
 }
 ```
 
-List of symbols representing integer operations:
+Examples of operator usage:
+
+```rust
+fn main() {
+    // Operator `!` represents `Not`
+    // Not overloadable & only implemented for `bool`
+    let not_true = !true;
+    assert( not_true == false, 'Operator !');
+
+    // Operator `!=` represents Nonequality Comparison
+    // Supported on all primitive types
+    // Can be overloaded by implementing `PartialEq`
+    assert( 17 != 15, 'Operator !=');
+
+    // Operator `==` represents Equality Comparison
+    // Supported on all primitive types
+    // Can be overloaded by implementing `PartialEq`
+    assert( 17 == 17, 'Operator ==');
+
+    // Operator `%` represents Arithmetic Remainder
+    // Supported on all unsigned integer primitives except `felt252`
+    // Can be overloaded by implementing `Rem`
+    assert( (17_u16 % 5_u16) == 2_u16, 'Operator %');
+
+    // Operator `%` represents Arithmetic Remainder and Assignement
+    // Supported on all unsigned integer primitives except `felt252`
+    // Can be overloaded by implementing `RemEq`
+    let mut num = 17_u8;
+    num %= 5_u8;
+    assert( num == 2_u8, 'Operator %=');
+}
+```
 

@@ -9,7 +9,8 @@ If you want to add another example please submit a PR that adds a similar file t
 Most of the CSS and hugo code was taken modified from [noir-by-example](https://github.com/sambarnes/noir-by-example/).
 Most of the code is taken from [Cairo Book](https://cairo-book.github.io/) and community contributions.
 
-# References
+## References
+
 - [Cairo Book](https://cairo-book.github.io/)
 - [solidity-by-example](https://github.com/raineorshine/solidity-by-example)
 - [noir-by-example](https://github.com/sambarnes/noir-by-example/)

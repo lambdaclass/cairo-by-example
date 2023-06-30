@@ -1,0 +1,15 @@
+defaultContentLanguage = 'en'
+
+[languages]
+
+[languages.en]
+weight = 1
+contentDir = 'content/en'
+languageName = 'English'
+title = 'Cairo by example'
+
+[languages.es]
+weight = 2
+contentDir = 'content/es'
+languageName = 'Español'
+title = 'Cairo by example'

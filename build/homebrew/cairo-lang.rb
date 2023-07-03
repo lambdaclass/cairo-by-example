@@ -1,5 +1,6 @@
 class CairoLang < Formula
   desc "Cairo language installation"
+  depends_on "rust" => :optional
   homepage "https://cairo-by-example.com/"
   url "https://github.com/starkware-libs/cairo/archive/refs/tags/v2.0.0-rc4.tar.gz"
   sha256 "e3dd3ce3f9ab5b69c44d01b13777d92516dcd830efb6a3d2cd46915d4f03e8a9"
@@ -11,6 +12,10 @@ class CairoLang < Formula
     method = "manual" if (exists("/Users/$USER/.cargo/bin/rustc"))
     # Check for brewed rust
     method = "brew" if exists("rustc")
+
+    if method.nil?
+      raise("Rust compiler not installed, please install it first!")
+    end
 
     print("Detected Rust installation method: " + method.upcase + "\n")
 

@@ -25,9 +25,9 @@ class CairoLang < Formula
     end
 
     print(`rustup override set stable`)
-    print(`rustup update`)
     print(`cargo build --all --release --manifest-path ./Cargo.toml`)
 
+    prefix.install Dir["./corelib/"]
     bin.install "./target/release/cairo-compile"
     bin.install "./target/release/cairo-format"
     bin.install "./target/release/cairo-language-server"

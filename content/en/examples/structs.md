@@ -33,7 +33,7 @@ You can instantiate structs via the following syntax:
 let employee = Employee {
     age: 53,
     id: 1616,
-    role: 'asdas',
+    role: 'engineer',
 };
 ```
 
@@ -42,7 +42,7 @@ If you have variables named the same as the members, you can use a shorter synta
 ```rust {.codebox}
 let age = 53;
 let id = 1616;
-let role = 'asdas';
+let role = 'engineer';
 
 let employee = Employee {
     age,
@@ -73,7 +73,7 @@ fn main() {
     let employee = Employee {
         age: 53,
         id: 1616,
-        role: 'asdas',
+        role: 'engineer',
     };
     let mut employees = ArrayTrait::new();
     employees.append(employee);

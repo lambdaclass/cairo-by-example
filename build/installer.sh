@@ -70,7 +70,7 @@ case "$os" in
 			*)
 				echo -e "${YEL}--- Detected installation for unknown Linux distro --- ${RST}"
 				set -x
-				wget https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
+				curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
 				set +x
 				;;
 			esac

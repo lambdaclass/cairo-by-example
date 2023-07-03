@@ -5,8 +5,8 @@ draft: false
 ---
 
 Todo el código de Cairo tiene que cumplir dos reglas de _ownership_:
-    - Cada valor en Cairo tiene uno y sólo un owner a la vez,
-    - Cuando el owner sale del ámbito, el valor será _dropped_.
+    - Cada valor en Cairo tiene un único owner a la vez,
+    - Cuando el owner sale del scope, el valor será _dropped_.
 
 ```rust {.codebox}
 use array::ArrayTrait;

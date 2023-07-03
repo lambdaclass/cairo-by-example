@@ -4,8 +4,8 @@ date: 2023-06-22T13:25:00-06:00
 draft: false
 ---
 
-Además de [enums](../enums), Cairo soporta un uso más general de la concordancia de patrones. Puede coincidir con `enum`s pero también con `struct`s.
-Actualmente puede usar la concordancia de patrones en `struct`s sólo para desestructurar los campos en una sentencia `let`:
+Además de [enums](../enums), Cairo soporta un uso más general de pattern matching. Puede coincidir con `enum`s pero también con `struct`s.
+Actualmente puede usar pattern matching en `struct`s sólo para desestructurar los campos en una sentencia `let`:
 
 ```rust {.codebox}
 struct MyStruct {

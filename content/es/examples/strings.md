@@ -3,7 +3,7 @@ title: "strings"
 date: 2023-06-21
 draft: false
 ---
-En Cairo, un string es una colección de caracteres almacenados en un Felt252. Las cadenas pueden tener una longitud máxima de 31 caracteres.
+En Cairo, un string es una colección de caracteres almacenados en un Felt252. Pueden tener una longitud máxima de 31 caracteres.
 
 Ejemplos de strings:
 

@@ -4,7 +4,7 @@ date: 2023-06-22T12:40:00-06:00
 draft: false
 ---
 
-Una struc es una colección de campos con nombre. Es una de las formas de definir tipos de usuario personalizados.
+Una struct es una colección de campos con nombre. Es una de las formas de crear tipos personalizados definidos por el usuario.
 
 Los campos de un struct, llamados miembros, pueden ser de cualquier tipo definido.
 

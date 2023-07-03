@@ -29,4 +29,4 @@ fn main() {
 }
 ```
 
-Encontrará una lista completa de los operadores sobrecargables y sus respectivos rasgos en el [Apéndice B del Cairo Book](https://cairo-book.github.io/appendix-02-operators-and-symbols.html)
+Encontrará una lista completa de los operadores sobrecargables y sus respectivos traits en el [Apéndice B del Cairo Book](https://cairo-book.github.io/appendix-02-operators-and-symbols.html)

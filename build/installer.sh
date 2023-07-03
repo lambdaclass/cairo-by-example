@@ -49,23 +49,24 @@ case "$os" in
 		[[ ! -e /etc/os-release ]] && exit 1
 		source /etc/os-release
 		case "$ID" in
-			arch)
-				echo -e "${YEL}--- Installing Cairo ${version} on Arch Linux --- ${RST}"
-				[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
-				set -x
-				yay -S cairo-lang
-				set +x
-				;;
-			debian | ubuntu)
-				[[ ! -e /etc/os-release ]] && exit 1
-				echo -e "${YEL}--- Installing Cairo ${version} on Debian/Ubuntu --- ${RST}"
-				echo -e "${VIO}==>${RST} Downloading .deb file..."
-				set -x
-				wget -O /tmp/cairo_${version}_amd64.deb https://github.com/lambdaclass/cairo-by-example/releases/download/v${version}/cairo_${version}-1_amd64.deb
-				set +x
-				echo -e "${VIO}==>${RST} Installing cairo-lang..." 
-				sudo dpkg -i /tmp/cairo_${version}_amd64.deb
-				;;
+			# XXX: Scripts for arch and debian/ubuntu are not working (missing corelib/)
+			# arch)
+			# 	echo -e "${YEL}--- Installing Cairo ${version} on Arch Linux --- ${RST}"
+			# 	[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
+			# 	set -x
+			# 	yay -S cairo-lang
+			# 	set +x
+			# 	;;
+			# debian | ubuntu)
+			# 	[[ ! -e /etc/os-release ]] && exit 1
+			# 	echo -e "${YEL}--- Installing Cairo ${version} on Debian/Ubuntu --- ${RST}"
+			# 	echo -e "${VIO}==>${RST} Downloading .deb file..."
+			# 	set -x
+			# 	wget -O /tmp/cairo_${version}_amd64.deb https://github.com/lambdaclass/cairo-by-example/releases/download/v${version}/cairo_${version}-1_amd64.deb
+			# 	set +x
+			# 	echo -e "${VIO}==>${RST} Installing cairo-lang..."
+			# 	sudo dpkg -i /tmp/cairo_${version}_amd64.deb
+			# 	;;
 			*)
 				echo -e "${YEL}--- Detected installation for unknown Linux distro --- ${RST}"
 				set -x
@@ -80,9 +81,9 @@ case "$os" in
 		echo -e "${YEL}--- Installing Cairo ${version} on Windows --- ${RST}"
 		set -x
 		# TODO: Add command for Windows here
+		set +x
 		echo -e "${ERR} Windows installation is still WIP."
 		exit 1
-		set +x
 		;;
 
 	*)

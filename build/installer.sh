@@ -26,6 +26,21 @@ case "$os" in
 		set -x
 		curl -o /tmp/cairo-lang.rb https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/homebrew/cairo-lang.rb && brew install --formula --build-from-source /tmp/cairo-lang.rb
 		set +x
+		corelib="$(brew --cellar cairo-lang)/$(brew list --versions cairo-lang | tr ' ' '\n' | tail -1)/corelib"
+		if [[ -f /Users/${USER}/.zshrc ]]; then
+			echo "export CARGO_MANIFEST_DIR=\"${corelib}\"" >> /Users/${USER}/.zshrc
+			echo "~/.zshrc has been populated with the required environment variable"
+			echo "For cairo to work in the current shell, you need to set it manually:"
+			echo "export CARGO_MANIFEST_DIR=\"${corelib}\""
+		elif [[ -f /Users/${USER}/.bashrc ]]; then
+			echo "export CARGO_MANIFEST_DIR=\"${corelib}\"" >> /Users/${USER}/.bashrc
+			echo "~/.bashrc has been populated with the required environment variable"
+			echo "For cairo to work in the current shell, you need to set it manually:"
+			echo "export CARGO_MANIFEST_DIR=\"${corelib}\""
+		else
+			echo "For cairo to work, please set the CARGO_MANIFEST_DIR environment variable in your shell of choice with the following value:"
+			echo "export CARGO_MANIFEST_DIR=\"${corelib}\""
+		fi
 		;;
 
 	# Linux

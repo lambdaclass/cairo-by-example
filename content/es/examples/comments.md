@@ -4,9 +4,9 @@ date: 2023-06-22T12:10:00-06:00
 draft: false
 ---
 
-In Cairo programs, any text after a pair of forward slashes (`//`) and until the end of the line will be ignored by the compiler.
+En los programas Cairo, cualquier texto después de un par de barras inclinadas (`//`) y hasta el final de la línea será ignorado por el compilador.
 
-You can use this to leave explanatory comments in your code.
+Puedes usar esto para dejar comentarios explicativos en tu código.
 
 ```rust {.codebox}
 fn main() -> felt252 {

@@ -4,11 +4,11 @@ date: 2023-06-22T12:40:00-06:00
 draft: false
 ---
 
-A struct is a collection of named fields. It is one of the ways to define custom user types.
+Una struct es una colección de campos con nombre. Es una de las formas de crear tipos personalizados definidos por el usuario.
 
-The fields of a struct, called members, can be of any defined type.
+Los campos de un struct, llamados miembros, pueden ser de cualquier tipo definido.
 
-For example:
+Por ejemplo:
 
 ```rust {.codebox}
 struct Employee {
@@ -18,7 +18,7 @@ struct Employee {
 }
 ```
 
-Struct members can be user-defined types:
+Los miembros de Struct pueden ser tipos definidos por el usuario:
 
 ```rust {.codebox}
 struct Company {

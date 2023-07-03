@@ -4,10 +4,10 @@ date: 2023-06-22T12:51:00-06:00
 draft: false
 ---
 
-Cairo has a built-in dictionary type called `Felt252Dict` which maps keys of type `Felt252` to values. The dictionary is generic over the type of the stored values.  
+Cairo tiene un diccionario integrado llamado `Felt252Dict` que asigna claves de tipo `Felt252` a valores. El diccionario es genérico sobre el tipo de los valores almacenados.  
 
-You can access the values for a specific key with the `[]` operator.
-By default, the value `0` is returned for non-existing keys:
+Puede acceder a los valores de una clave específica con el operador `[]`.
+Por defecto, se devuelve el valor `0` para claves no existentes:
 
 ```rust {.codebox}
     use dict::Felt252DictTrait;

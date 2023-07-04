@@ -15,7 +15,7 @@ Events are a useful mechanism for logging activity of smart contracts
 fn MyEvent(value: u8) {};
 
 # Emmiting an event
-#[extenral]
+#[external]
 fn emitMyEvent(value: u8 ) {
   MyEvent(value);
 }

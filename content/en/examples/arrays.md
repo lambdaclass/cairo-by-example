@@ -16,7 +16,7 @@ fn get_array() -> Array<felt252> {
     numbers.append(444);
     numbers.append(555);
 
-    return numbers;
+    numbers
 }
 ```
 
@@ -59,7 +59,7 @@ fn get_array() -> Array<felt252> {
     numbers.append(444);
     numbers.append(555);
 
-    return numbers;
+    numbers
 }
 
 #[test]

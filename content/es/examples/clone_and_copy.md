@@ -27,11 +27,14 @@ fn main() {
     // foo(arr); <- fails to compile, as main doesn't own the array anymore
 }
 ```
+Para correr ejemplo ejecuta en tu terminal `cairo-run clone_copy.cairo --available-gas 20000`
 
 Un ejemplo de derivación del trait Copy:
 
 ```rust {.codebox}
-#[derive(Copy, Clone)]
+use clone::Clone;
+
+#[derive(Copy, Clone, Drop)]
 struct Vector2 {
     x: u32,
     y: u32,
@@ -45,3 +48,4 @@ fn main() {
     // now w is a copy of v, v is still accesible
 }
 ```
+Pruebalo corriendo `cairo-run clone_copy_2.cairo --available-gas 20000` en tu terminal.

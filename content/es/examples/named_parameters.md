@@ -1,12 +1,12 @@
 ---
 title: "named parameters"
-date: 2023-06-25T12:55:00-06:00
+weight: 45
 draft: false
 ---
 
-Named parameters allow you to specify the names of arguments when you call a function.
-If you want to use named parameters, you need to specify the name of the parameter and the value you want to pass it.
-Note that they still need to be in the same order as declared in the function.
+Los _parámetros nombrados_ (_named parameters_) le permiten especificar los nombres de los argumentos al llamar a una función.
+Si quieres usar parámetros nombrados, tienes que especificar el nombre del parámetro y el valor que quieres pasarle.
+Notar que aún se requiere que estén en el mismo orden en que fueron declarados.
 
 ```rust {.codebox}
 fn foo(x: u8, y: u8) {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-If you pass a variable with the same name as the parameter, you can use a shorter syntax:
+Si le pasas una variable con el mismo nombre que el parámetro, puedes usar una sintaxis más corta:
 
 ```rust {.codebox}
 fn foo(x: u8, y: u8) {

@@ -1,6 +1,6 @@
 ---
 title: "named parameters"
-date: 2023-06-25T12:55:00-06:00
+weight: 45
 draft: false
 ---
 

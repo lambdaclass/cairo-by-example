@@ -49,14 +49,14 @@ case "$os" in
 		[[ ! -e /etc/os-release ]] && exit 1
 		source /etc/os-release
 		case "$ID" in
-			# XXX: Scripts for arch and debian/ubuntu are not working (missing corelib/)
-			# arch)
-			# 	echo -e "${YEL}--- Installing Cairo ${version} on Arch Linux --- ${RST}"
-			# 	[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
-			# 	set -x
-			# 	yay -S cairo-lang
-			# 	set +x
-			# 	;;
+			# XXX: Script for debian/ubuntu is not working (missing corelib/)
+			arch)
+				echo -e "${YEL}--- Installing Cairo ${version} on Arch Linux --- ${RST}"
+				[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
+				set -x
+				yay -S cairo-lang
+				set +x
+				;;
 			# debian | ubuntu)
 			# 	[[ ! -e /etc/os-release ]] && exit 1
 			# 	echo -e "${YEL}--- Installing Cairo ${version} on Debian/Ubuntu --- ${RST}"

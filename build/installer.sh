@@ -51,7 +51,7 @@ case "$os" in
 		case "$ID" in
 			# XXX: Script for debian/ubuntu is not working (missing corelib/)
 			arch)
-			echo -e "${YEL}--- Installing Cairo ${version} on Arch Linux --- ${RST}"
+				echo -e "${YEL}--- Installing Cairo ${version} on Arch Linux --- ${RST}"
 				[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
 				set -x
 				yay -S cairo-lang

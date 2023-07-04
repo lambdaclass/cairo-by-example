@@ -9,8 +9,8 @@ Un enum en Cairo funciona como una unión etiquetada, las variantes pueden conte
 Puedes trabajar con enums así:
 
 ```rust {.codebox}
-use option::Option;
 use option::OptionTrait;
+use debug::PrintTrait;
 
 // Define an enum
 enum MyEnum {
@@ -18,6 +18,16 @@ enum MyEnum {
     B: u16,
     C: u32,
     D: u64
+}
+
+// It will print 'Got something else'
+fn main(){
+    let x = my_enum_a();
+    let y = my_enum_get_b(x);
+    match y {
+        Option::Some(x) => 'Got B'.print(),
+        Option::None(()) => 'Got something else'.print(),
+    } 
 }
 
 // Construct and return an enum variant.

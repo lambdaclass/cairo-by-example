@@ -17,7 +17,7 @@ use array::SpanTrait;
 
 // Recibe un span
 fn sum_starting_two(dato: Span<u32>) -> u32 {
-    // data.append(5_u32); <- Esto falla!
+    // dato.append(5_u32); <- Esto falla!
     *dato[0] + *dato[1]
 }
 

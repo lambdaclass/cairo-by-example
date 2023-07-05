@@ -28,6 +28,6 @@ fn main() -> u32 {
     dato.append(3_u32);
     dato.append(4_u32);
     dato.get(0);
-    sum_starting_two(dato.span()) // Usando el spam
+    sum_starting_two(dato.span()) // Usando el span
 }
 ```

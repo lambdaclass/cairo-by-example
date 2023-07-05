@@ -15,7 +15,7 @@ Modificación del ejemplo [snapshots](./snapshots.md):
 use array::ArrayTrait;
 use array::SpanTrait;
 
-// Recibe un spam
+// Recibe un span
 fn sum_starting_two(dato: Span<u32>) -> u32 {
     // data.append(5_u32); <- Esto falla!
     *dato[0] + *dato[1]

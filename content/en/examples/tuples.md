@@ -21,7 +21,7 @@ fn main() {
 }
 ```
 
-Here is an example using tuples where we declare a rectangular_prism with its side dimensions as items of the tuple and then calculate its volume.
+Here is an example using tuples where we declare a rectangular prism with its side dimensions as items of the tuple and then calculate its volume.
 
 ```rust {.codebox}
 use debug::PrintTrait;

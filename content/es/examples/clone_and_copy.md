@@ -4,9 +4,9 @@ date: 2023-06-22
 draft: false
 ---
 
-Because of Cairo's ownership rules, it's necessary to specify how data can be duplicated. For this the `Clone` and `Copy` traits are used. `Clone` specifies how a type instance can be *cloned*, meaning its data duplicated and assigned a new owner. The behaviour specified by `Clone` can be **arbitrarily complicated**. Instead `Copy` requires `Clone` and it specifies that a type can be *bitwise-copied*, meaning that its cloning mechanism is simple and known, instead of arbitrary.
+Debido a las reglas de propiedad de Cairo, es necesario especificar cómo se pueden duplicar los datos. Para esto se usan los traits `Clone` y `Copy`. `Clone` especifica cómo una instancia de tipo puede ser *clonada*, es decir, sus datos son duplicados y asignados a un nuevo propietario. El comportamiento especificado por `Clone` puede ser **arbitrariamente complicado**. En cambio `Copy` requiere `Clone` y especifica que un tipo puede ser *bitwise-copiado*, lo que significa que su mecanismo de clonación es simple y conocido, en lugar de arbitrario.
 
-From the ownership example:
+Continuando con el ejemplo de "ownership":
 
 ```rust {.codebox}
 use array::ArrayTrait;
@@ -27,11 +27,14 @@ fn main() {
     // foo(arr); <- fails to compile, as main doesn't own the array anymore
 }
 ```
+Para correr ejemplo ejecuta en tu terminal `cairo-run clone_copy.cairo --available-gas 20000`
 
-An example of deriving the Copy trait:
+Un ejemplo de derivación del trait Copy:
 
 ```rust {.codebox}
-#[derive(Copy, Clone)]
+use clone::Clone;
+
+#[derive(Copy, Clone, Drop)]
 struct Vector2 {
     x: u32,
     y: u32,
@@ -45,3 +48,4 @@ fn main() {
     // now w is a copy of v, v is still accesible
 }
 ```
+Pruebalo corriendo `cairo-run clone_copy_2.cairo --available-gas 20000` en tu terminal.

@@ -4,7 +4,7 @@ date: 2023-06-22T13:00:00-06:00
 draft: false
 ---
 
-An `if expression` is a control flow construct that allow us to conditionally execute a piece of code depending on the value of a boolean condition. Since it is an expression, it returns the value of the last expression in the branch.
+Una expresión `if` es una construcción de flujo de control que nos permite ejecutar condicionalmente un trozo de código dependiendo del valor de una condición booleana. Al ser una expresión, devuelve el valor de la última expresión de la rama.
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -18,8 +18,8 @@ fn main() {
 }
 ```
 
-You can combine several conditions using boolean operators like `&&` (and), `||` (or), etc.
-You can also add an optional else-branch like in many other programming languages.
+Puede combinar varias condiciones utilizando operadores booleanos como `&&` (and), `||` (or), etc.
+También puedes añadir una else-branch opcional como en muchos otros lenguajes de programación.
 
 ```rust {.codebox}
 use debug::PrintTrait;

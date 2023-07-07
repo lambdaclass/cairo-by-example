@@ -6,7 +6,7 @@ draft: false
 
 # Arrays
 
-You can create arrays in cairo with `ArrayTrait::new()` and add elements with the method `append`: 
+Puedes crear arrays en cairo con `ArrayTrait::new()` y añadir elementos con el método `append`:
 
 ```rust {.codebox}
 fn get_array() -> Array<felt252> {
@@ -14,11 +14,11 @@ fn get_array() -> Array<felt252> {
     numbers.append(444);
     numbers.append(555);
 
-    return numbers;
+    numbers
 }
 ```
 
-You can get the length of an array with `len`:
+Puedes obtener la longitud de un array con `len`:
 
 ```rust {.codebox}
 #[test]
@@ -29,7 +29,7 @@ fn test_array_len() {
 }
 ```
 
-You can get an element from an array with `get` or `at`:
+Puedes obtener un elemento de un array con `get` o `at`:
 
 ```rust {.codebox}
 #[test]
@@ -43,9 +43,9 @@ fn test_array_get() {
 }
 ```
 
-The difference between `get` and `at` is that `at` will cause an error if there is no element at the specified index while `get` returns an `Option` that is `None` in that case.
+La diferencia entre `get` y `at` es que `at` provocará un error si no hay ningún elemento en el índice especificado mientras que `get` devuelve una `Option` que es `None` en ese caso.
 
-Full example:
+Ejemplo completo:
 
 ```rust {.codebox}
 use array::ArrayTrait;
@@ -57,7 +57,7 @@ fn get_array() -> Array<felt252> {
     numbers.append(444);
     numbers.append(555);
 
-    return numbers;
+    numbers
 }
 
 #[test]

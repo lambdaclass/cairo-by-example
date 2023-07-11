@@ -42,7 +42,7 @@ trait IContract<TContractState> {
 ```
 #### Implementations
 
-Functions that affects the contract state uses a mutable reference to the `ContractState`: `ref self: TContractState `; while the functions that doesn't affect the state uses: `self: @TContractState`.
+Functions that affect the contract state use a mutable reference to the `ContractState`: `ref self: TContractState `; while the functions that don't affect the state use: `self: @TContractState`.
 
 And to implement this trait inside the contract, we use the `impl` keyword, with a `#[external(v0)]` attribute:
 

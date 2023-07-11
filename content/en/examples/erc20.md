@@ -1,10 +1,10 @@
 ---
-title: "erc20"
+title: "ERC20"
 weight: 380
 draft: false
 ---
 
-## ERC20
+#### ERC20
 
 The ERC-20 introduces a standard for Fungible Tokens, in other words, they have a property that makes each Token be exactly the same (in type and value) as another Token.
 

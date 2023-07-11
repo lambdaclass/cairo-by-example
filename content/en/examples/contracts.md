@@ -4,7 +4,7 @@ weight: 360
 draft: false
 ---
 
-## Contracts
+#### Contracts
 
 Contracts can be deployed to Starknet.
 
@@ -16,7 +16,7 @@ mod Contract {
 }
 ```
 
-## Storage
+#### Storage
 
 Inside a contract definition, you can define a storage, using the `#[storage]` attribute:
 
@@ -28,7 +28,7 @@ struct Storage {
 }
 ```
 
-## Interfaces
+#### Interfaces
 
 In order to interact with your contract, you'll want to define an interface, which gathers external (functions that mutates the storage) and view (functions that DOESN'T mutates the storage) function signatures under a trait. Traits use a generic argument, generally refering to the contract state. Static functions that do not touch storage or emit events do not require an addition argument. Interfaces are defined by adding a `#[starknet::interface]` attribute:
 
@@ -40,7 +40,7 @@ trait IContract<TContractState> {
    fn get_token_supply(self: @TContractState) -> felt252;
 }
 ```
-## Implementations
+#### Implementations
 
 Functions that affects the contract state uses a mutable reference to the `ContractState`: `ref self: TContractState `; while the functions that doesn't affect the state uses: `self: @TContractState`.
 
@@ -63,7 +63,7 @@ mod Contract {
 }
 ```
 
-## Storage Access
+#### Storage Access
 
 In order to interact with the contract state, you can use `read` and `write` functions:
 
@@ -81,7 +81,7 @@ fn increase_token_supply(ref self: ContractState, amount: felt252) {
 }
 ```
 
-## Constructors
+#### Constructors
 
 When you deploy a contract, you may want to have some initial setting, those are made using a constructor, defined by doing:
 
@@ -95,7 +95,7 @@ mod Contract {
 }
 ```
 
-## Events definition
+#### Events definition
 
 In Cairo2 all the contract events are unified under the `Event` enum:
 
@@ -118,7 +118,7 @@ struct DecimalsIncreased {
 }
 ```
 
-## Events emition
+#### Events emition
 
 In order to emit events, you can do the following:
 

@@ -1,10 +1,10 @@
 ---
-title: "contracts"
+title: "contratos"
 weight: 360
 draft: false
 ---
 
-# Contratos
+#### Contratos
 
 Los contratos pueden ser deplegados en Starknet.
 
@@ -16,7 +16,7 @@ mod Contract {
 }
 ```
 
-# Almacenamiento
+#### Almacenamiento
 
 Dentro de la definicion de un contrato, se puede definir un almacenamiento usando el atributo `#[storage]`:
 
@@ -28,7 +28,7 @@ struct Storage {
 }
 ```
 
-# Interfaces
+#### Interfaces
 
 Para interactuar con tu contrato querrás definir una interfaz, la cual acumula las funciones externas (modifican el almacenamiento) y las vistas (**no** modifican el almacenamiento) bajo un `trait`. Los `trait`s usan un argumento generico, generalmente refiriendose al estado del contrato. Las funciones estaticas que no tocan el almacenamiento ni emiten eventos no requerien del argumento adicional. Las interfaces se definen agregando el atributo `#[starknet::interface]`:
 
@@ -40,7 +40,7 @@ trait IContract<TContractState> {
    fn get_token_supply(self: @TContractState) -> felt252;
 }
 ```
-# Implementaciones
+#### Implementaciones
 
 Una funcion que altera el estado del contrato usa una referencia mutable al mismo: `ref self: TContractState`; mientras que las funciones que no lo alteran usan: `self: @TContractState`.
 
@@ -63,7 +63,7 @@ mod Contract {
 }
 ```
 
-## Interaccion con el almacenamiento
+#### Interaccion con el almacenamiento
 
 Para interactuar con el estado del contrato, se pueden usar las funciones `read` y `write`:
 
@@ -81,7 +81,7 @@ fn increase_token_supply(ref self: ContractState, amount: felt252) {
 }
 ```
 
-## Constructores
+#### Constructores
 
 Cuando despliegas un contrato, podras querer hacer una configuracion initial, estas son hechas usando un `constructor`, y se definen haciendo:
 
@@ -95,7 +95,7 @@ mod Contract {
 }
 ```
 
-## Definicion de Eventos
+#### Definicion de Eventos
 
 En Cairo2, todos los eventos de un contrato son unificados en una enumeracion llamada `Event`:
 
@@ -118,7 +118,7 @@ struct DecimalsIncreased {
 }
 ```
 
-## Emision de Eventos
+#### Emision de Eventos
 
 La emision de eventos se hace de la siguiente manera:
 

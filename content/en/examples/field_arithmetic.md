@@ -7,14 +7,20 @@ draft: false
 Because they use modular arithmetic, some operations of the `felt252` type may seem unusual.
 Some things to consider:
 
-### The maximum value of a `felt252` is `3618502788666131213697322783095070105623107215331596699973092056135872020480`
+### A `felt252` must be less than the Cairo prime
 
-The following code fails to compile with: *"error: The value does not fit within the range of type core::felt252."*
+The following code:
 
 ```rust {.codebox}
 fn main() {
-    let x: felt252 = 3618502788666131213697322783095070105623107215331596699973092056135872020481;
+    let cairo_prime: felt252 = 3618502788666131213697322783095070105623107215331596699973092056135872020481;
 }
+```
+
+fails to compile with:
+
+```bash
+error: The value does not fit within the range of type core::felt252.
 ```
 
 ### Operations are done modulo the *Cairo prime*
@@ -26,8 +32,8 @@ fn main() {
     // max value of felt252 (P - 1)
     let x = 3618502788666131213697322783095070105623107215331596699973092056135872020480;
     assert(x + 1 == 0, '(P - 1) + 1 == 0 (mod P)');
-    // assert(-x == 1, 'negation is modular'); <- not still supported
-    assert(1 - x == 2, 'subtraction is modular');
+    // assert(x == -1, 'negation is modular'); <- still not supported
+    assert(x == 0 - 1, 'subtraction is modular');
     assert(x * x == 1, 'multiplication is modular');
 }
 ```

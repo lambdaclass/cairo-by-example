@@ -118,7 +118,7 @@ struct DecimalsIncreased {
 }
 ```
 
-#### Events emition
+#### Emitting Events
 
 In order to emit events, you can do the following:
 

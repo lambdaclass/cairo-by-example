@@ -30,7 +30,7 @@ struct Storage {
 
 #### Interfaces
 
-In order to interact with your contract, you'll want to define an interface, which gathers external (functions that mutates the storage) and view (functions that DOESN'T mutates the storage) function signatures under a trait. Traits use a generic argument, generally refering to the contract state. Static functions that do not touch storage or emit events do not require an addition argument. Interfaces are defined by adding a `#[starknet::interface]` attribute:
+In order to interact with your contract, you'll want to define an interface, which gathers external (functions that mutate the storage) and view (functions that don't mutate the storage) function signatures under a trait. Traits use a generic argument, generally referring to the contract state. Static functions that do not use the storage or emit events do not require an additional argument. Interfaces are defined by adding a `#[starknet::interface]` attribute:
 
 ```rust {.codebox}
 #[starknet::interface]

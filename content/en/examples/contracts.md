@@ -83,7 +83,7 @@ fn increase_token_supply(ref self: ContractState, amount: felt252) {
 
 #### Constructors
 
-When you deploy a contract, you may want to have some initial setting, those are made using a constructor, defined by doing:
+When you deploy a contract, you can set its initial values using a constructor:
 
 ```rust {.codebox}
 mod Contract {

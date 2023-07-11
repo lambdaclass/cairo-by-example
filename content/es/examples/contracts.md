@@ -122,7 +122,7 @@ struct DecimalsIncreased {
 
 La emision de eventos se hace de la siguiente manera:
 
-```rust .{codebox}
+```rust {.codebox}
 fn increase_token_supply(ref self: ContractState, amount: felt252) {
     ...
     self.emit(TokenSupplyIncreased { amount });

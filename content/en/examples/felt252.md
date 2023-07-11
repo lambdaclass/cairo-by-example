@@ -5,15 +5,14 @@ draft: false
 ---
 
 The basic data type in Cairo is `felt252`, which stands for *field element*. These are integers in the range `0 <= x < P`, where `P` is a large prime number, currently equal to `P = 2^{251} + 17 * 2^{192}+1`.
-Field elements have the property of intentionally *wrapping around* when their value falls outside the specified range, they use modular arithmetic.
+Field elements have the property of intentionally *wrapping around* when their value falls outside the specified range. That is, they use modular arithmetic.
 
 ```rust {.codebox}
-use debug::PrintTrait;
-
 fn main() {
-    let x: felt252 = 2;
-    let y: felt252 = 5;
-    (x + y).print();
+    // max value of felt252
+    let x: felt252 = 3618502788666131213697322783095070105623107215331596699973092056135872020480;
+    let y: felt252 = 1;
+    assert(x + y == 0, 'P == 0 (mod P)');
 }
 ```
 
@@ -21,11 +20,10 @@ Since `felt252` is the default data type, in simple cases like these there is no
 This means we can simply write:
 
 ```rust {.codebox}
-use debug::PrintTrait;
-
 fn main() {
-    let x = 2;
-    let y = 5;
-    (x + y).print();
+    // max value of felt252
+    let x = 3618502788666131213697322783095070105623107215331596699973092056135872020480;
+    let y = 1;
+    assert(x + y == 0, 'P == 0 (mod P)');
 }
 ```

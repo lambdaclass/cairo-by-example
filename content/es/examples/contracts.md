@@ -8,7 +8,7 @@ draft: false
 
 Los contratos pueden ser deplegados en Starknet.
 
-Los modulos que son contratos se definen agregando el atributo `#[starknet::contract]` arriba de la definicion del mismo:
+Los módulos que son contratos se definen agregando el atributo `#[starknet::contract]` arriba de la definición del mismo:
 
 ```rust {.codebox}
 #[starknet::contract]
@@ -18,7 +18,7 @@ mod Contract {
 
 #### Almacenamiento
 
-Dentro de la definicion de un contrato, se puede definir un almacenamiento usando el atributo `#[storage]`:
+Dentro de la definición de un contrato, se puede definir un almacenamiento usando el atributo `#[storage]`:
 
 ```rust {.codebox}
 #[storage]
@@ -30,7 +30,7 @@ struct Storage {
 
 #### Interfaces
 
-Para interactuar con tu contrato querrás definir una interfaz, la cual acumula las funciones externas (modifican el almacenamiento) y las vistas (**no** modifican el almacenamiento) bajo un `trait`. Los `trait`s usan un argumento generico, generalmente refiriendose al estado del contrato. Las funciones estaticas que no tocan el almacenamiento ni emiten eventos no requerien del argumento adicional. Las interfaces se definen agregando el atributo `#[starknet::interface]`:
+Para interactuar con tu contrato querrás definir una interfaz, la cual acumula las funciones externas (modifican el almacenamiento) y las vistas (**no** modifican el almacenamiento) bajo un `trait`. Los `trait`s usan un argumento genérico, generalmente refiriendose al estado del contrato. Las funciones estáticas que no tocan el almacenamiento ni emiten eventos no requerien del argumento adicional. Las interfaces se definen agregando el atributo `#[starknet::interface]`:
 
 ```rust {.codebox}
 #[starknet::interface]
@@ -42,7 +42,7 @@ trait IContract<TContractState> {
 ```
 #### Implementaciones
 
-Una funcion que altera el estado del contrato usa una referencia mutable al mismo: `ref self: TContractState`; mientras que las funciones que no lo alteran usan: `self: @TContractState`.
+Una función que altera el estado del contrato usa una referencia mutable al mismo: `ref self: TContractState`; mientras que las funciones que no lo alteran usan: `self: @TContractState`.
 
 Para implementar un `trait` en el contrato, se usa la palabra reservada `impl`, con un atributo `#[external(v0)]`:
 
@@ -63,7 +63,7 @@ mod Contract {
 }
 ```
 
-#### Interaccion con el almacenamiento
+#### Interacción con el almacenamiento
 
 Para interactuar con el estado del contrato, se pueden usar las funciones `read` y `write`:
 
@@ -83,7 +83,7 @@ fn increase_token_supply(ref self: ContractState, amount: felt252) {
 
 #### Constructores
 
-Cuando despliegas un contrato, podras querer hacer una configuracion initial, estas son hechas usando un `constructor`, y se definen haciendo:
+Cuando despliegas un contrato, podras querer hacer una configuración inicial, estas son hechas usando un `constructor`, y se definen haciendo:
 
 ```rust {.codebox}
 mod Contract {
@@ -95,9 +95,9 @@ mod Contract {
 }
 ```
 
-#### Definicion de Eventos
+#### Definición de Eventos
 
-En Cairo2, todos los eventos de un contrato son unificados en una enumeracion llamada `Event`:
+En Cairo2, todos los eventos de un contrato son unificados en una enumeración llamada `Event`:
 
 ```rust {.codebox}
 #[event]
@@ -118,9 +118,9 @@ struct DecimalsIncreased {
 }
 ```
 
-#### Emision de Eventos
+#### Emisión de Eventos
 
-La emision de eventos se hace de la siguiente manera:
+La emisión de eventos se hace de la siguiente manera:
 
 ```rust {.codebox}
 fn increase_token_supply(ref self: ContractState, amount: felt252) {

@@ -6,9 +6,9 @@ draft: false
 
 #### Llamadas al Sistema (o syscalls)
 
-Escribir contratos requiere varias operaciones asociadas, como llamar a otro contrato o acceder al almacenamiento del contrato, que los programas no necesitan. El lenguaje de contratos de Starknet soporta estas operaciones usando llamadas al sistema (syscalls). Las syscalls permiten a un contrato de usar los servicios de Starknet OS. Se pueden usar las syscalls en una funcion para obtener mas informacion que dependa de una vista mas amplia del estado de Starknet, que de otra manera seria inaccesible, en vez de usar variables locales que aparecen en el alcance de una funcion.
+Escribir contratos requiere varias operaciones asociadas, como llamar a otro contrato o acceder al almacenamiento del contrato, que los programas no necesitan. El lenguaje de contratos de Starknet soporta estas operaciones usando llamadas al sistema (syscalls). Las syscalls permiten a un contrato de usar los servicios de Starknet OS. Se pueden usar las syscalls en una función para obtener más informacion que dependa de una vista más amplia del estado de Starknet, que de otra manera seria inaccesible, en vez de usar variables locales que aparecen en el alcance de una función.
 
-Se puede encontrar todas las syscalls disponible en la [documentacion oficial](https://docs.starknet.io/documentation/architecture_and_concepts/Contracts/system-calls-cairo1/), pero aqui hay un ejemplo de uso:
+Se puede encontrar todas las syscalls disponibles en la [documentación oficial](https://docs.starknet.io/documentation/architecture_and_concepts/Contracts/system-calls-cairo1/), pero aquí hay un ejemplo de uso:
 
 ```rust {.codebox}
 mod Contract {

@@ -6,9 +6,9 @@ draft: false
 
 #### ERC20
 
-El ERC-20 introduce un estandar para Tokens Fungibles, en otras palabras, tienen una propiedad que les permite a cada token ser exactamente igual (en tipo y valor) a otro Token.
+El ERC-20 introduce un estándar para Tokens Fungibles, en otras palabras, tienen una propiedad que les permite a cada token ser exactamente igual (en tipo y valor) a otro Token.
 
-Aqui hay un ejemplo de una implementacion simple:
+Aqui hay un ejemplo de una implementación simple:
 
 ```rust {.codebox}
 use starknet::ContractAddress;

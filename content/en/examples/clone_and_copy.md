@@ -10,6 +10,8 @@ From the ownership example:
 
 ```rust {.codebox}
 use array::ArrayTrait;
+use clone::Clone;
+use array::ArrayTCloneImpl;
 
 fn foo(arr: Array<u128>) {
     // foo takes ownership of the array.
@@ -27,11 +29,14 @@ fn main() {
     // foo(arr); <- fails to compile, as main doesn't own the array anymore
 }
 ```
+Try it out running `cairo-run clone_copy.cairo --available-gas 20000` in your terminal.
 
 An example of deriving the Copy trait:
 
 ```rust {.codebox}
-#[derive(Copy, Clone)]
+use clone::Clone;
+
+#[derive(Copy, Clone, Drop)]
 struct Vector2 {
     x: u32,
     y: u32,
@@ -45,3 +50,4 @@ fn main() {
     // now w is a copy of v, v is still accesible
 }
 ```
+Run the example with `cairo-run clone_copy_2.cairo --available-gas 20000` in your terminal.

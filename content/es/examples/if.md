@@ -1,6 +1,6 @@
 ---
-title: "if expression"
-date: 2023-06-22T13:00:00-06:00
+title: "If"
+weight: 50
 draft: false
 ---
 

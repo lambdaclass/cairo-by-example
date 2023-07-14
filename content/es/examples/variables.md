@@ -1,6 +1,6 @@
 ---
-title: "variables"
-date: 2023-06-22T12:15:00-06:00
+title: "Variables"
+weight: 30
 draft: false
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "dictionaries"
-date: 2023-06-22T12:51:00-06:00
+title: "Diccionarios"
+weight: 230
 draft: false
 ---
 

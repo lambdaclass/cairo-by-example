@@ -1,6 +1,6 @@
 ---
-title: "integers"
-date: 2023-06-22T12:26:00-06:00
+title: "Enteros"
+weight: 80
 draft: false
 ---
 

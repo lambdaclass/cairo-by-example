@@ -1,6 +1,6 @@
 ---
-title: "assert"
-date: 2023-06-22T12:05:00-06:00
+title: "Assert"
+weight: 20
 draft: false
 ---
 Para asegurarnos de que nuestras pruebas funcionan, utilizamos assert.

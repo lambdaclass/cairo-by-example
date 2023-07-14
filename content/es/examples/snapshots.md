@@ -1,6 +1,6 @@
 ---
-title: "snapshots"
-date: 2023-06-22T13:20:00-06:00
+title: "Snapshots"
+weight: 310
 draft: false
 ---
 Snapshots proporcionan instancias de sólo lectura de un objeto sin tomar propiedad cuando se pasan a una función. Cada tipo `T` tiene una versión snapshot `@T`, que siempre se puede soltar y duplicar.

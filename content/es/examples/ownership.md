@@ -1,6 +1,6 @@
 ---
-title: "ownership"
-date: 2023-06-22T13:15:00-06:00
+title: "Ownership"
+weight: 280
 draft: false
 ---
 

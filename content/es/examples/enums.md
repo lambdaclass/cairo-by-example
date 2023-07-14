@@ -1,16 +1,16 @@
 ---
-title: "enums"
-date: 2023-06-22T12:45:00-06:00
+title: "Enums"
+weight: 200
 draft: false
 ---
 
-An enum in Cairo works like a tagged union, variants can hold values inside, which you can access via pattern matching.
+Un enum en Cairo funciona como una unión etiquetada, las variantes pueden contener valores en su interior, a los que puedes acceder mediante pattern matching.
 
-You can work with enums like this:
+Puedes trabajar con enums así:
 
 ```rust {.codebox}
-use option::Option;
 use option::OptionTrait;
+use debug::PrintTrait;
 
 // Define an enum
 enum MyEnum {
@@ -18,6 +18,16 @@ enum MyEnum {
     B: u16,
     C: u32,
     D: u64
+}
+
+// It will print 'Got something else'
+fn main(){
+    let x = my_enum_a();
+    let y = my_enum_get_b(x);
+    match y {
+        Option::Some(x) => 'Got B'.print(),
+        Option::None(()) => 'Got something else'.print(),
+    } 
 }
 
 // Construct and return an enum variant.
@@ -36,3 +46,4 @@ fn my_enum_get_b(x: MyEnum) -> Option::<u16> {
     }
 }
 ```
+Para correr el ejemplo simplemente ejecute `cairo-run enums.cairo` en su terminal.

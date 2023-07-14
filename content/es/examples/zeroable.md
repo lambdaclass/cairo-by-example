@@ -1,12 +1,12 @@
 ---
-title: "zeroable"
-date: 2023-06-22T13:50:00-06:00
+title: "Zeroable"
+weight: 260
 draft: false
 ---
 
-The Cairo std library has some utilities for handling non zero values.
+La biblioteca std de Cairo tiene algunas utilidades para manejar valores distintos de cero.
 
-Here is how to get a `NonZero<T>` out of a felt252.
+He aquí cómo obtener un `NonZero<T>` de un felt252.
 
 ```rust {.codebox}
 // The IsZeroResult<T> enum allows us to obtain a NonZero<T> via matching.

@@ -17,8 +17,8 @@
 </details>
 <br>
 
-{{- $prev := .PrevInSection }}
-{{- $next := .NextInSection }}
+{{- $prev := .NextInSection }}
+{{- $next := .PrevInSection }}
 <div style="display: flex; justify-content: space-between;">
     {{- if $prev }}
     <a href="{{ $prev.Permalink }}">prev ({{ $prev.Title }})</a>

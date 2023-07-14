@@ -1,12 +1,12 @@
 ---
-title: "functions"
-date: 2023-06-22T12:55:00-06:00
+title: "Funciones"
+weight: 40
 draft: false
 ---
 
-A function is a unit of code that performs some logic. It is defined using the `fn` keyword.
+Una función es una unidad de código que realiza alguna lógica. Se define con la palabra clave `fn`.
 
-Examples of functions are:
+Ejemplos de funciones son:
 
 ```rust {.codebox}
 // This functions doesn't return anything.
@@ -20,6 +20,6 @@ fn inc(x: u32) -> u32 {
 }
 ```
 
-The Cairo convention is to name functions using the 'snake_case' form. In the example above, the function name is `inc_n`.
+La convención de Cairo es nombrar las funciones utilizando la forma 'snake_case'. En el ejemplo anterior, el nombre de la función es `inc_n`.
 
-Note that in Cairo, functions always return a value. When the function has no particular return value, it is common to return the unit type (`()`).
+Observe que en Cairo, las funciones siempre devuelven un valor. Cuando la función no tiene un valor de retorno particular, es común devolver el tipo de unidad (`()`).

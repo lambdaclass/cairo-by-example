@@ -1,12 +1,11 @@
 ---
-title: "naming convention"
-date: 2023-06-22T12:20:00-06:00
+title: "Convencion de nomenclatura"
+weight: 330
 draft: false
 ---
 
-Cairo, like many other languages, has a clearly defined naming convention. It is
-advised to follow it since it'll help both code writers and readers after
-getting used to it.
+Cairo, como muchos otros idiomas, tiene una convención de nomenclatura claramente definida. Se aconseja seguirla ya que ayudará tanto a los escritores de código como a los lectores después de
+acostumbrarse a ella.
 
 ```rust {.codebox}
 use core::debug::PrintTrait;
@@ -53,6 +52,4 @@ impl MyStructImpl of SomeAction<MyStruct> {
 const A_CONSTANT: felt252 = 1234;
 ```
 
-Usually, identifiers shouldn't start with an underscore (`_`), however when they
-aren't intended to be used they should start with `_` so that the compiler
-understands the programmer's intention and avoids emitting unused item warnings.
+Por lo general, los identificadores no deben comenzar con un guión bajo (`_`), cuando no están destinados a ser utilizados deben comenzar con `_` para que el compilador entienda la intención del programador y evite emitir advertencias de elementos no utilizados.

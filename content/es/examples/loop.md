@@ -1,11 +1,11 @@
 ---
-title: "loop"
-date: 2023-06-22T13:05:00-06:00
+title: "Loop"
+weight: 90
 draft: false
 ---
 
-The `loop` keyword tells Cairo to execute a block of code over and over again forever (until it runs out of gas) or until you explicitly tell it to stop. 
-This is the only kind of loop for now.
+La palabra clave `loop` le dice a Cairo que ejecute un bloque de código una y otra vez para siempre (hasta que se quede sin gas) o hasta que le digas explícitamente que pare. 
+Este es el único tipo de bucle por ahora.
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -33,6 +33,6 @@ fn test_main() {
 }
 ```
 
-To run the test, use `cairo-test filename.cairo` or just to run it without testing use `cairo-run --available-gas 200000 filename.cairo`.
+Para ejecutar la prueba, use `cairo-test nombre-de-archivo.cairo` o simplemente para ejecutarla sin probar use `cairo-run --available-gas 200000 nombre-de-archivo.cairo`.
 
-For further information about this topic, check [Cairo-Book](https://cairo-book.github.io/ch02-05-control-flow.html).
+Para más información sobre este tema, consulte [Cairo-Book](https://cairo-book.github.io/ch02-05-control-flow.html).

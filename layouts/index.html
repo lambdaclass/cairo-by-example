@@ -1,25 +1,13 @@
 {{ define "main" }}
 <div>
 
-  <h4>MacOS</h4>
-  Download custom Homebrew formulae and use it to install cairo-lang:
-  <pre><code>curl -o /tmp/cairo-lang.rb https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/homebrew/cairo-lang.rb && brew install --formula --build-from-source /tmp/cairo-lang.rb</code></pre>
-
-  <h4>Arch Linux</h4>
-  Download the package with your favourite AUR helper, such as <a href="https://github.com/Jguer/yay"> yay</a>:
-  <pre><code>yay -S cairo-lang</code></pre>
-
-  <h4>Debian 11</h4>
-  Download the pre-compiled debian package from cairo-by-example repository and install it using dpkg:
-  <pre><code>wget -O /tmp/cairo_2.0.0-rc4-1_amd64.deb https://github.com/lambdaclass/cairo-by-example/releases/download/v2.0.0-rc4/cairo_2.0.0-rc4-1_amd64.deb && dpkg -i /tmp/cairo_2.0.0-rc4-1_amd64.deb</code></pre>
-
-  <h4>Other Linux</h4>
-  Requirements: <code>git</code>, <code>rustup</code>
-  <pre><code>curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash</code></pre>
+  <h4>Install cairo-lang</h4>
+  Run this command to install cairo on your machine.
+  <pre><code>curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash</code></pre>
 
   <h4>An introduction to <a href="https://cairo-lang.org/">Cairo</a>, with simple examples. </h4>
   The objective of this tutorial is to quickly on-board new developers to Cairo. The first experience newcomers have
-  with Cairo and Starknet should be smooth and in 15' they should have everything setup and a good overview on what the
+  with Cairo and Starknet should be smooth and in 15 minutes they should have everything setup and a good overview on what the
   language is all about.
   <h4>Examples:</h4>
   <div class="resource-list">

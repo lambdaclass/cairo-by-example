@@ -1,11 +1,11 @@
 ---
-title: "strings"
-date: 2023-06-21
+title: "Strings"
+weight: 60
 draft: false
 ---
-In Cairo, a string is a collection of characters stored in a Felt252. Strings can have a maximum length of 31 characters.
+En Cairo, un string es una colección de caracteres almacenados en un Felt252. Pueden tener una longitud máxima de 31 caracteres.
 
-Examples of strings:
+Ejemplos de strings:
 
 ```rust {.codebox}
 use debug::PrintTrait;
@@ -17,4 +17,4 @@ fn main() {
 }
 ```
 
-To run this example, first copy the code in a new file and then run ```cairo-run file_name``` in your terminal.
+Para ejecutar este ejemplo, primero copia el código en un nuevo archivo y luego ejecuta ```cairo-run nombre_archivo``` en tu terminal.

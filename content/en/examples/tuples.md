@@ -21,13 +21,13 @@ fn main() {
 }
 ```
 
-Here is an example using tuples where we declare a rectangle with its side dimensions as items of the tuple and then calculate its volume.
+Here is an example using tuples where we declare a rectangular prism with its side dimensions as items of the tuple and then calculate its volume.
 
 ```rust {.codebox}
 use debug::PrintTrait;
 fn main() {
-    let rectangle = (50, 20, 10); // W x L x H
-    let v = volume(rectangle);
+    let rectangular_prism = (50, 20, 10); // W x L x H
+    let v = volume(rectangular_prism);
     v.print(); // This result is shown in hexadecimal (e.g 10000 = 0x2710)
 }
 

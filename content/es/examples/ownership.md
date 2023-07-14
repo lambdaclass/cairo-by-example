@@ -1,12 +1,12 @@
 ---
-title: "ownership"
-date: 2023-06-22T13:15:00-06:00
+title: "Ownership"
+weight: 280
 draft: false
 ---
 
-All Cairo code has to abide by two _ownership_ rules:
-    - each value in Cairo has one and only one owner at a time,
-    - when the owner goes out of scope, the value will be _dropped_
+Todo el código de Cairo tiene que cumplir dos reglas de _ownership_:
+    - Cada valor en Cairo tiene un único owner a la vez,
+    - Cuando el owner sale del scope, el valor será _dropped_.
 
 ```rust {.codebox}
 use array::ArrayTrait;

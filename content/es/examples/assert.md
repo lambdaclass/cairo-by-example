@@ -1,9 +1,9 @@
 ---
-title: "assert"
-date: 2023-06-22T12:05:00-06:00
+title: "Assert"
+weight: 20
 draft: false
 ---
-To make sure our tests work, we use assert.
+Para asegurarnos de que nuestras pruebas funcionan, utilizamos assert.
 
 ```rust {.codebox}
 fn main(x: felt252, y: felt252) {
@@ -16,8 +16,9 @@ fn test_main() {
 }
 ```
 
-The first argument of assert is the condition we want to check, and the second is a message we will see on the console if the condition is false.
+El primer argumento de assert es la condición que queremos comprobar, y el segundo es un mensaje que veremos en la consola si la condición es falsa.
 
-Run ```cairo-test file_name```
+Ejecuta ```cairo-test nombre_archivo```
 
-Try changing it so that the test fails.
+Intenta cambiarlo para que la prueba falle.
+

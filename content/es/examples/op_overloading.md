@@ -1,12 +1,12 @@
 ---
-title: "operator overloading"
-date: 2023-06-22T13:45:00-06:00
+title: "Sobrecarga de operadores"
+weight: 340
 draft: false
 ---
 
-Operator overloading is possible in Cairo through the use of particular traits, like `Add`, `Sub`, `Mul`, `Div` and many others.
+La sobrecarga de operadores es posible en Cairo mediante el uso de traits particulares, como `Add`, `Sub`, `Mul`, `Div` y muchos otros.
 
-For example, for overloading the addition (+) operator of a `Vector2` type:
+Por ejemplo, para sobrecargar el operador de suma (+) de un tipo `Vector2`:
 
 ```rust {.codebox}
 #[derive(PartialEq, Drop)]
@@ -29,4 +29,4 @@ fn main() {
 }
 ```
 
-A full list of overloadable operators and their respective traits can be found in [Appendix B of the Cairo Book](https://cairo-book.github.io/appendix-02-operators-and-symbols.html)
+Encontrará una lista completa de los operadores sobrecargables y sus respectivos traits en el [Apéndice B del Cairo Book](https://cairo-book.github.io/appendix-02-operators-and-symbols.html)

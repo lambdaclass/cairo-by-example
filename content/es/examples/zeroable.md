@@ -1,6 +1,6 @@
 ---
-title: "zeroable"
-date: 2023-06-22T13:50:00-06:00
+title: "Zeroable"
+weight: 260
 draft: false
 ---
 

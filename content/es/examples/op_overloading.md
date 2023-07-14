@@ -1,6 +1,6 @@
 ---
-title: "operator overloading"
-date: 2023-06-22T13:45:00-06:00
+title: "Sobrecarga de operadores"
+weight: 340
 draft: false
 ---
 

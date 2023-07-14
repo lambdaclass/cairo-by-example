@@ -1,6 +1,6 @@
 ---
-title: "arrays"
-date: 2023-06-22T12:35:00-06:00
+title: "Arrays"
+weight: 220
 draft: false
 ---
 

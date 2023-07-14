@@ -1,5 +1,5 @@
 ---
-title: "named parameters"
+title: "Parametros nombrados"
 weight: 45
 draft: false
 ---

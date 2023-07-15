@@ -1,7 +1,7 @@
 ---
 
 title: "constants"
-date: 2023-06-25T14:50:00-06:00
+weight: 100
 draft: false
 ---
 

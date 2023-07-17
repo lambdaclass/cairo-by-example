@@ -6,30 +6,30 @@ on:
   pull_request:
     branches: ["*"]
 
-  jobs:
-    test:
-      name: Test
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout sources
-          uses: actions/checkout@v3
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
 
-        - name: Install toolchain
-          run: |
-            sudo apt update
-            sudo apt-get install -y make
+      - name: Install toolchain
+        run: |
+          sudo apt update
+          sudo apt-get install -y make
 
-        - name: Install cairo
-          run: |
-            curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
+      - name: Install cairo
+        run: |
+          curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
 
-        - name: Use node
-          uses: actions/setup-node@v3
-          with:
-            node-version: latest
+      - name: Use node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
 
-        - name: Install txm
-          run: npm install -g txm
+      - name: Install txm
+        run: npm install -g txm
 
-        - name: Test with txm
-          run: make test
+      - name: Test with txm
+        run: make test

@@ -14,5 +14,5 @@ serve:
 	hugo serve
 
 test:
-	$(foreach file, $(EN_CONTENT), txm --jobs 1 $(file);)
+	$(foreach file, $(EN_CONTENT), txm --jobs 1 ./$(file);)
 	#$(foreach file, $(ES_CONTENT), txm --jobs 1 $(file);) # Uncomment when all tests are impl

@@ -17,6 +17,7 @@ jobs:
       - name: Install cairo
         run: |
           curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
+          export CARGO_MANIFEST_DIR="/usr/local/Cellar/cairo-lang/v2.0.0-rc4/corelib"
 
       - name: Use node
         uses: actions/setup-node@v3

@@ -4,11 +4,32 @@
 <br>
 <hr>
 <details>
-    <summary><i>How to install the toolchain</i></summary>
-    <br>
-    For macOS and Linux, run our script:
-    <pre>curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash</pre>
-  For Windows and others, please see <a href="https://www.cairo-lang.org/docs/getting_started/prerequisits.html">the official guide</a>
+    <summary><i>Try it out!</i></summary>
+    <ol>
+      <li>
+      Install the toolchain:<br>
+        <ul>
+          <li>
+            For macOS and Linux, run our script:
+          </li>
+            <pre>curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash</pre>
+          <li>
+            For Windows and others, please see <a href="https://www.cairo-lang.org/docs/getting_started/prerequisits.html">the official guide</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+      Run the example:
+      <ol>
+        <li>Copy the example into a <b><i>filename</i>.cairo</b> file and run with:</li>
+        {{ if eq .Params.example_type "main" }}
+          <pre>cairo-run <i>filename</i>.cairo</pre>
+        {{ else if eq .Params.example_type "test" }}
+          <pre>cairo-test <i>filename</i>.cairo</pre>
+        {{ end }}
+      </ol>
+      </li>
+    </ol>
 </details>
 <br>
 

@@ -2,6 +2,7 @@
 title: "hello world"
 weight: 10
 draft: false
+example_type: "main"
 ---
 
 the `use` keyword imports a dependency into scope

@@ -2,7 +2,7 @@
 title: "hello world"
 weight: 10
 draft: false
-run_command: "cairo-run hello_world.cairo"
+run_command: "cairo-run"
 ---
 
 the `use` keyword imports a dependency into scope

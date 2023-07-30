@@ -66,7 +66,7 @@ fn destructure_tuple(t: (u16, u16)) -> u16 {
 }
 
 #[test]
-fn test_destructure_struct(){
+fn test_destructure_struct() {
     let s = MyStruct{a: 1, b: 2};
     let t = MyStruct{a: 3, b: 4};
     let u = MyStruct{a: 5, b: 6};
@@ -75,7 +75,7 @@ fn test_destructure_struct(){
 }
 
 #[test]
-fn test_destructure_tuple(){
+fn test_destructure_tuple() {
     let t = (1, 2);
     let sum = destructure_tuple(t);
     assert(sum == 3, 'sum should be 3');

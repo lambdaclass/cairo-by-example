@@ -5,7 +5,7 @@ draft: false
 ---
 
 `Span` is a struct that represents a snapshot of an `Array`.
-All methods provided by `Array` can also be used with `Span`, with the exeption of the `append()` method.
+All methods provided by `Array` can also be used with `Span`, with the exception of the `append()` method.
 
 To create a `Span` of an `Array`, simply call the `span()` method.
 

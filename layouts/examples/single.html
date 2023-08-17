@@ -1,19 +1,31 @@
 {{ define "main" }}
 <h3>{{ .Title }}</h3>
 {{ .Content }}
-
 <br>
+<hr>
 <details>
-    <summary><i>try it out</i></summary>
-
-    install the cairo toolchain if you haven't yet:
-    <pre>
-	curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
-        </pre>
-
-    then checkout and run the example:
-    <pre>
-        </pre>
+    <summary><i>Try it out!</i></summary>
+    <ol>
+      <li>
+      Install the toolchain:<br>
+        <ul>
+          <li>
+            For macOS and Linux, run our script:
+          </li>
+            <pre>curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash</pre>
+          <li>
+            For Windows and others, please see <a href="https://www.cairo-lang.org/docs/getting_started/prerequisits.html">the official guide</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+      Run the example:
+      <ol>
+        <li>Copy the example into a <b>{{ .File.BaseFileName}}.cairo</b> file and run with:</li>
+        <pre>{{ printf "%s" .Params.run_command }} {{ .File.BaseFileName }}.cairo</pre>
+      </ol>
+      </li>
+    </ol>
 </details>
 <br>
 

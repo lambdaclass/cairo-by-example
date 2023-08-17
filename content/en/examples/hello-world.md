@@ -2,6 +2,7 @@
 title: "hello world"
 weight: 10
 draft: false
+run_command: "cairo-run"
 ---
 
 the `use` keyword imports a dependency into scope
@@ -13,9 +14,7 @@ fn main() {
     'Hello, world!'.print();
 }
 ```
-
-now, run the tests with `cairo-run hello_world.cairo`
-
+running this will yield:
 ```bash
 [DEBUG] Hello, world!                   (raw: 5735816763073854953388147237921)
 

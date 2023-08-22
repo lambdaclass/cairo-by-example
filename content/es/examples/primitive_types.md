@@ -4,18 +4,18 @@ weight: 85
 draft: false
 ---
 
-* Tipos Escalares:
-  * Enteros sin signo:
-    * `u8`
-    * `u16`
-    * `u32`
-    * `u64`
-    * `u128`
-    * `u256`
-    * `usize`
-  * `bool`
-* Tipos compuestos:
-  * Tuples `()`
+- Tipos Escalares:
+  - Enteros sin signo:
+    - `u8`
+    - `u16`
+    - `u32`
+    - `u64`
+    - `u128`
+    - `u256`
+    - `usize`
+  - `bool`
+- Tipos compuestos:
+  - Tuples `()`
 
 ```rust
 fn main() {

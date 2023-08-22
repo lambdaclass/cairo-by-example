@@ -1,9 +1,8 @@
 ---
 title: "primitive-types"
-date: 2023-06-27T16:52:30-06:00
+weight: 85
 draft: false
 ---
-# Primitive Types
 
 * Scalar Types:
   * Unsigned integers:
@@ -34,14 +33,8 @@ fn main() {
     inferred_type = 4294967296_u64;
 
     // A mutable variable's value can be changed.
-    let mut mutable = 12; // Mutable `u32`
+    let mut mutable = 12_u32; // Mutable `u32`
     mutable = 21;
-
-    // Error! The type of a variable can't be changed.
-    mutable = true;
-
-    // Variables can be overwritten with shadowing.
-    let mutable = true;
 
     // Tuples can hold variables of different types
     let tuple = (1_u32, true, 10000000_u64);
@@ -54,9 +47,7 @@ fn main() {
     assert(a == 1_u32, 'tuple unpack');
 }
 ```
-
 A `Numeric Literal` in cairo can be expressed in `Decimal`, `Hex`, `Octal` or `Binary` forms:
-
 ```rust
 fn main() {
     let num_decimal = 171717_u32;

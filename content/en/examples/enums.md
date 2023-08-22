@@ -21,7 +21,7 @@ enum MyEnum {
 }
 
 // It will print 'Got something else'
-fn main(){
+fn main() {
     let x = my_enum_a();
     let y = my_enum_get_b(x);
     match y {

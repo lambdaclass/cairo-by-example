@@ -2,6 +2,7 @@
 title: "hello world"
 weight: 10
 draft: false
+run_command: "cairo-run"
 ---
 
 <!-- !test program
@@ -19,7 +20,7 @@ fn main() {
 }
 ```
 
-now, run the tests with `cairo-run hello_world.cairo`
+now, run the tests with `cairo-run hello_world.cairo`. Running this will yield:
 
 <!-- !test out hello_world -->
 ```bash

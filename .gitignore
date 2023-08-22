@@ -2,3 +2,7 @@ resources/*
 .DS_Store
 docs/
 public/
+
+package.json
+package-lock.json
+node_modules/

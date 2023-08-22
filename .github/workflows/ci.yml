@@ -1,0 +1,32 @@
+name: CI
+on:
+  merge_group:
+  push:
+    branches: [main]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Install cairo
+        run: |
+          curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
+
+      - name: Use node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+
+      - name: Install txm
+        run: npm install -g txm
+
+      - name: Test with txm
+        run: | 
+          export CARGO_MANIFEST_DIR="/usr/local/Cellar/cairo-lang/v2.0.0-rc4/corelib"
+          make test

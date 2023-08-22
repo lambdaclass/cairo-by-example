@@ -5,8 +5,13 @@ draft: false
 run_command: "cairo-run"
 ---
 
+<!-- !test program
+cat > /tmp/program.cairo
+cairo-run /tmp/program.cairo -->
+
 the `use` keyword imports a dependency into scope
 
+<!-- !test in hello_world -->
 ```rust {.codebox}
 use debug::PrintTrait;
 
@@ -14,9 +19,12 @@ fn main() {
     'Hello, world!'.print();
 }
 ```
-running this will yield:
+
+now, run the tests with `cairo-run hello_world.cairo`. Running this will yield:
+
+<!-- !test out hello_world -->
 ```bash
-[DEBUG] Hello, world!                   (raw: 5735816763073854953388147237921)
+[DEBUG]	Hello, world!                  	(raw: 5735816763073854953388147237921)
 
 Run completed successfully, returning []
 ```

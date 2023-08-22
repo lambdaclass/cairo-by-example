@@ -4,18 +4,18 @@ weight: 85
 draft: false
 ---
 
-* Scalar Types:
-  * Unsigned integers:
-    * `u8`
-    * `u16`
-    * `u32`
-    * `u64`
-    * `u128`
-    * `u256`
-    * `usize`
-  * `bool`
-* Compound types:
-  * Tuples `()`
+- Scalar Types:
+  - Unsigned integers:
+    - `u8`
+    - `u16`
+    - `u32`
+    - `u64`
+    - `u128`
+    - `u256`
+    - `usize`
+  - `bool`
+- Compound types:
+  - Tuples `()`
 
 ```rust
 fn main() {

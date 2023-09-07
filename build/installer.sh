@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# USAGE: installer.sh <VERSION>
+# USAGE: installer.sh <CAIRO_VERSION>
 # if version is not declared, version will be assumed as 'latest'.
 
 set -e
@@ -14,7 +14,12 @@ ERR='\033[1;31m[✗] ' # Strong red.
 os=$(uname -s)
 
 # Cairo Version.
-DEFAULT_VERSION="latest"
+DEFAULT_CAIRO_VERSION="latest"
+
+set_cairo_corelib() {
+	echo -e "${LOG}For cairo to work, please set the CARGO_MANIFEST_DIR environment variable in your shell of choice with the following value:${RST}"
+	echo "export CARGO_MANIFEST_DIR=$1"
+}
 
 extract_version_from_url() {
 	local url="$1"
@@ -28,25 +33,25 @@ check_version_existence() {
 
 set_version() {
 	if [[ "$1" == "latest" ]]; then
-		REAL_VERSION=$(extract_version_from_url "https://github.com/starkware-libs/cairo/releases/latest/")
-		VERSION="${REAL_VERSION}"
+		REAL_CAIRO_VERSION=$(extract_version_from_url "https://github.com/starkware-libs/cairo/releases/latest/")
+		CAIRO_VERSION="${REAL_CAIRO_VERSION}"
 		LATEST="(latest)"
-		echo -e "${GRE}Version v$VERSION $LATEST for cairo found!"
+		echo -e "${GRE}Version v$CAIRO_VERSION $LATEST for cairo found!"
 	elif [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*)?$ ]]; then
 		if check_version_existence "$1"; then
 			echo -e "${GRE}Version v$1 for cairo found!"
-			VERSION="$1"
+			CAIRO_VERSION="$1"
 		else
 			echo -e "${ERR}Version v$1 doesn't exist on GitHub releases. Assuming 'latest'"
-			REAL_VERSION=$(extract_version_from_url "https://github.com/starkware-libs/cairo/releases/latest/")
-			VERSION="${REAL_VERSION}"
+			REAL_CAIRO_VERSION=$(extract_version_from_url "https://github.com/starkware-libs/cairo/releases/latest/")
+			CAIRO_VERSION="${REAL_CAIRO_VERSION}"
 			LATEST="(latest)"
 		fi
 	else
 		echo -e "${LOG}Invalid version argument '$1', assuming 'latest'.${RST}"
 		LATEST_URL="https://github.com/starkware-libs/cairo/releases/latest/"
-		REAL_VERSION=$(extract_version_from_url "$LATEST_URL")
-		VERSION="${REAL_VERSION}"
+		REAL_CAIRO_VERSION=$(extract_version_from_url "$LATEST_URL")
+		CAIRO_VERSION="${REAL_CAIRO_VERSION}"
 		LATEST="(latest)"
 	fi
 }
@@ -54,53 +59,38 @@ set_version() {
 install() {
 	case "$1" in
 	macos)
-		echo -e "${LOG}Installing Cairo ${VERSION} on Mac OS ${RST}"
-		echo -e "${VIO}➜${RST} Downloading cairo-lang $VERSION $LATEST"
+		echo -e "${LOG}Installing Cairo ${CAIRO_VERSION} on Mac OS ${RST}"
+		echo -e "${VIO}➜${RST} Downloading cairo-lang $CAIRO_VERSION $LATEST"
 		brew tap lambdaclass/cairo-lang
-		brew install lambdaclass/cairo-lang/cairo-lang@$VERSION
-		corelib="$(brew --cellar cairo-lang@$VERSION)/$VERSION/corelib"
-		if [[ -f /Users/${USER}/.zshrc ]]; then
-			echo "export CARGO_MANIFEST_DIR=\"${corelib}\"" >>/Users/${USER}/.zshrc
-			echo "~/.zshrc has been populated with the required environment variable"
-			echo "For cairo to work in the current shell, you need to set it manually:"
-			echo "export CARGO_MANIFEST_DIR=\"${corelib}\""
-		elif [[ -f /Users/${USER}/.bashrc ]]; then
-			echo "export CARGO_MANIFEST_DIR=\"${corelib}\"" >>/Users/${USER}/.bashrc
-			echo "~/.bashrc has been populated with the required environment variable"
-			echo "For cairo to work in the current shell, you need to set it manually:"
-			echo "export CARGO_MANIFEST_DIR=\"${corelib}\""
-		else
-			echo "For cairo to work, please set the CARGO_MANIFEST_DIR environment variable in your shell of choice with the following value:"
-			echo "export CARGO_MANIFEST_DIR=\"${corelib}\""
-		fi
+		brew install lambdaclass/cairo-lang/cairo-lang@$CAIRO_VERSION
+		set_cairo_corelib "$(brew --cellar cairo-lang@$CAIRO_VERSION)/$CAIRO_VERSION/corelib"
 		;;
 	arch)
-		echo -e "${LOG}Installing Cairo ${VERSION} on Arch Linux ${RST}"
+		echo -e "${LOG}Installing Cairo ${CAIRO_VERSION} on Arch Linux ${RST}"
 		[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
 		set -x
 		yay -S cairo-lang
 		set +x
+		set_cairo_corelib "/usr/lib/corelib/"
 		;;
 	debian-based)
-		# XXX: Script for debian/ubuntu is not working (missing corelib/)
-		exit 1
-		# 	[[ ! -e /etc/os-release ]] && exit 1
-		# 	echo -e "${LOG}--- Installing Cairo ${VERSION} on Debian/Ubuntu --- ${RST}"
-		# 	echo -e "${VIO}==>${RST} Downloading .deb file..."
-		# 	set -x
-		# 	wget -O /tmp/cairo_${VERSION}_amd64.deb https://github.com/lambdaclass/cairo-by-example/releases/download/v${VERSION}/cairo_${VERSION}-1_amd64.deb
-		# 	set +x
-		# 	echo -e "${VIO}==>${RST} Installing cairo-lang..."
-		# 	sudo dpkg -i /tmp/cairo_${VERSION}_amd64.deb
+		[[ ! -e /etc/os-release ]] && exit 1
+		echo -e "${LOG}--- Installing Cairo ${CAIRO_VERSION} on Debian/Ubuntu --- ${RST}"
+		echo -e "${VIO}==>${RST} Downloading .deb file..."
+		wget -O /tmp/cairo-lang@${CAIRO_VERSION}.deb https://github.com/lambdaclass/cairo-by-example/releases/download/v${CAIRO_VERSION}/cairo-lang@${CAIRO_VERSION}.deb
+		echo -e "${VIO}==>${RST} Installing cairo-lang..."
+		sudo dpkg -i /tmp/cairo-lang@${CAIRO_VERSION}.deb
+		set_cairo_corelib "/usr/lib/corelib/"
 		;;
 	linux-unknown)
 		echo -e "${LOG}Detected installation for unknown Linux distro ${RST}"
 		set -x
 		curl -L https://github.com/franalgaba/cairo-installer/raw/main/bin/cairo-installer | bash
 		set +x
+		set_cairo_corelib "/usr/lib/corelib/"
 		;;
 	windows)
-		echo -e "${LOG}Installing Cairo ${VERSION} on Windows ${RST}"
+		echo -e "${LOG}Installing Cairo ${CAIRO_VERSION} on Windows ${RST}"
 		set -x
 		# TODO: Add command for Windows here
 		set +x

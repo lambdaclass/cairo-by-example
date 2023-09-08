@@ -18,7 +18,7 @@ DEFAULT_CAIRO_VERSION="latest"
 
 set_cairo_corelib() {
 	echo -e "${LOG}For cairo to work, please set the CARGO_MANIFEST_DIR environment variable in your shell of choice with the following value:${RST}"
-	echo -e "\e[1;93m → export CARGO_MANIFEST_DIR=$1 ${RST} \n\n"
+	echo -e "${LOG}export CARGO_MANIFEST_DIR=$1 ${RST} \n\n"
 }
 
 extract_version_from_url() {

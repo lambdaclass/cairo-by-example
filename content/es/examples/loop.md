@@ -33,6 +33,6 @@ fn test_main() {
 }
 ```
 
-Para ejecutar la prueba, use `cairo-test nombre-de-archivo.cairo` o simplemente para ejecutarla sin probar use `cairo-run --available-gas 200000 nombre-de-archivo.cairo`.
+Para ejecutar la prueba, use `cairo-test nombre-de-archivo.cairo` o simplemente para ejecutarla sin probar use `cairo-run --single-file --available-gas 200000 nombre-de-archivo.cairo`.
 
 Para más información sobre este tema, consulte [Cairo-Book](https://cairo-book.github.io/ch02-05-control-flow.html).

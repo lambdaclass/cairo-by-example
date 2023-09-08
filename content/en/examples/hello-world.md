@@ -24,7 +24,7 @@ now, run the tests with `cairo-run --single-file hello_world.cairo`. Running thi
 
 <!-- !test out hello_world -->
 ```bash
-[DEBUG]	Hello, world!                  	(raw: 5735816763073854953388147237921)
+[DEBUG]	Hello, world!                  	(raw: 0x48656c6c6f2c20776f726c6421
 
 Run completed successfully, returning []
 ```

@@ -16,7 +16,7 @@ jobs:
 
       - name: Install cairo
         run: |
-          output=$(./build/installer.sh latest)
+          output=$(./build/installer.sh 2.2.0)
           echo "$output" | grep -o 'CARGO_MANIFEST_DIR=[^ ]*' >> $GITHUB_ENV
 
       - name: Use node

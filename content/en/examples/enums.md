@@ -46,4 +46,4 @@ fn my_enum_get_b(x: MyEnum) -> Option::<u16> {
     }
 }
 ```
-To try the example simply run `cairo-run enums.cairo` in your terminal.
+To try the example simply run `cairo-run --single-file enums.cairo` in your terminal.

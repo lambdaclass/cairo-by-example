@@ -7,7 +7,7 @@ run_command: "cairo-run --single-file"
 
 <!-- !test program
 cat > /tmp/program.cairo
-cairo-run /tmp/program.cairo -->
+cairo-run --single-file /tmp/program.cairo -->
 
 the `use` keyword imports a dependency into scope
 
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-now, run the tests with `cairo-run hello_world.cairo`. Running this will yield:
+now, run the tests with `cairo-run --single-file hello_world.cairo`. Running this will yield:
 
 <!-- !test out hello_world -->
 ```bash

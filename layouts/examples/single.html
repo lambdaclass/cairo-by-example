@@ -45,4 +45,23 @@
     {{- end }}
 </div>
 
+<script>
+    const runButtons = document.querySelectorAll('.runButton');
+
+    // Loop over each button
+    runButtons.forEach(function (runButton) {
+        // Add a click event listener to the run button
+        runButton.addEventListener('click', function () {
+            // Get the code from the div
+            const divElement = runButton.parentElement;
+            const resultBlock = divElement.querySelector('.resultBlock');
+            resultBlock.style.display = 'block';
+            resultBlock.innerHTML = "Running...";
+            runButtonAction(divElement.innerHTML).then(function (result) {
+                resultBlock.innerHTML = result;
+            });
+        });
+    });
+</script>
+
 {{ end }}

@@ -1,4 +1,4 @@
-![homebrew](https://github.com/lambdaclass/cairo-by-example/assets/53660242/4403b29e-8430-4daa-9897-15d0e335eb4c)
+![homebrew](https://github.com/lambdaclass/cairo-by-example/assets/53660242/2ae5a316-d75d-4f3e-8f00-ca0fd24787b1)
 # Building packages for Brew
 
 Homebrew is a package manager for MacOS, we can define a custom `formula` for creating our own packages.

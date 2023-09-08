@@ -69,7 +69,7 @@ install() {
 		echo -e "${LOG}Installing Cairo ${CAIRO_VERSION} on Arch Linux ${RST}"
 		[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
 		set -x
-		yay -S --no-confirm cairo-lang
+		yay -S --noconfirm cairo-lang
 		set +x
 		set_cairo_corelib "/usr/lib/corelib/"
 		;;

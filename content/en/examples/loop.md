@@ -33,6 +33,6 @@ fn test_main() {
 }
 ```
 
-To run the test, use `cairo-test filename.cairo` or just to run it without testing use `cairo-run --available-gas 200000 filename.cairo`.
+To run the test, use `cairo-test filename.cairo` or just to run it without testing use `cairo-run --single-file --available-gas 200000 filename.cairo`.
 
 For further information about this topic, check [Cairo-Book](https://cairo-book.github.io/ch02-05-control-flow.html).

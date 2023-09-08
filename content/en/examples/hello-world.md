@@ -2,12 +2,12 @@
 title: "hello world"
 weight: 10
 draft: false
-run_command: "cairo-run"
+run_command: "cairo-run --single-file"
 ---
 
 <!-- !test program
 cat > /tmp/program.cairo
-cairo-run /tmp/program.cairo -->
+cairo-run --single-file /tmp/program.cairo -->
 
 the `use` keyword imports a dependency into scope
 
@@ -20,11 +20,11 @@ fn main() {
 }
 ```
 
-now, run the tests with `cairo-run hello_world.cairo`. Running this will yield:
+now, run the tests with `cairo-run --single-file hello_world.cairo`. Running this will yield:
 
 <!-- !test out hello_world -->
 ```bash
-[DEBUG]	Hello, world!                  	(raw: 5735816763073854953388147237921)
+[DEBUG]	Hello, world!                  	(raw: 0x48656c6c6f2c20776f726c6421
 
 Run completed successfully, returning []
 ```

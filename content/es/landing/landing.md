@@ -5,8 +5,9 @@ title: "landing"
 ## Instalar cairo-lang
 Para instalar cairo-lang en tu computadora debes ejecutar el siguiente comando:
 ```bash
-curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
+curl -sL https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash -s 2.2.0
 ```
+> Éstos ejemplos asumen que cairo-lang tiene la version 2.2.0, ejecuta el script de arriba para instalar esta version especifíca.
 
 ## Una introducción a [Cairo](https://cairo-lang.org/), con simples ejemplos.
 

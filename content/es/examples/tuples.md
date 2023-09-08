@@ -36,6 +36,6 @@ fn volume(sides: (u64, u64, u64)) -> u64 {
     x * y * z
 }
 ```
-Para ejecutar el programa, utilice `cairo-run filename.cairo`.
+Para ejecutar el programa, utilice `cairo-run --single-file filename.cairo`.
 
 Para más explicaciones sobre este tema, [consulte el Cairo Book](https://cairo-book.github.io/ch02-02-data-types.html?highlight=tuple#the-tuple-type).

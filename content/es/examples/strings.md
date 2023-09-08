@@ -17,4 +17,4 @@ fn main() {
 }
 ```
 
-Para ejecutar este ejemplo, primero copia el código en un nuevo archivo y luego ejecuta ```cairo-run nombre_archivo``` en tu terminal.
+Para ejecutar este ejemplo, primero copia el código en un nuevo archivo y luego ejecuta ```cairo-run --single-file nombre_archivo``` en tu terminal.

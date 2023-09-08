@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-Ahora, corré el test con `cairo-run hola_mundo.cairo`
+Ahora, corré el test con `cairo-run --single-file hola_mundo.cairo`
 
 ```bash
 [DEBUG] Hello, world!                   (raw: 5735816763073854953388147237921)

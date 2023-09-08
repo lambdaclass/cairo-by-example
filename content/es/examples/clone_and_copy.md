@@ -27,7 +27,7 @@ fn main() {
     // foo(arr); <- fails to compile, as main doesn't own the array anymore
 }
 ```
-Para correr ejemplo ejecuta en tu terminal `cairo-run clone_copy.cairo --available-gas 20000`
+Para correr ejemplo ejecuta en tu terminal `cairo-run --single-file clone_copy.cairo --available-gas 20000`
 
 Un ejemplo de derivación del trait Copy:
 
@@ -48,4 +48,4 @@ fn main() {
     // now w is a copy of v, v is still accesible
 }
 ```
-Pruebalo corriendo `cairo-run clone_copy_2.cairo --available-gas 20000` en tu terminal.
+Pruebalo corriendo `cairo-run --single-file clone_copy_2.cairo --available-gas 20000` en tu terminal.

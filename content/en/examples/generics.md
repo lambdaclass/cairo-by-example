@@ -70,4 +70,4 @@ fn main() -> u8 {
     largest(a, b)
 }
 ```
-You can run the example by using `cairo-run generics.cairo`.
+You can run the example by using `cairo-run --single-file generics.cairo`.

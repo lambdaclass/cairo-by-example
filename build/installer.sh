@@ -18,7 +18,7 @@ DEFAULT_CAIRO_VERSION="latest"
 
 set_cairo_corelib() {
 	echo -e "${LOG}For cairo to work, please set the CARGO_MANIFEST_DIR environment variable in your shell of choice with the following value:${RST}"
-	echo "export CARGO_MANIFEST_DIR=$1"
+	echo -e "\e[1;93m → export CARGO_MANIFEST_DIR=$1 ${RST} \n\n"
 }
 
 extract_version_from_url() {
@@ -69,7 +69,7 @@ install() {
 		echo -e "${LOG}Installing Cairo ${CAIRO_VERSION} on Arch Linux ${RST}"
 		[[ ! -e /usr/bin/yay ]] && echo -e "${ERR}No yay installation found. If you use another AUR helper, please install the cairo-lang package.${RST}"
 		set -x
-		yay -S --noconfirm cairo-lang
+		yay -Scc --noconfirm cairo-lang
 		set +x
 		set_cairo_corelib "/usr/lib/corelib/"
 		;;

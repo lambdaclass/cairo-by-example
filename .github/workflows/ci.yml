@@ -16,8 +16,6 @@ jobs:
 
       - name: Install cairo
         run: |
-          # Removes the "export " from the last line from the script's output and then exports it.
-          # Directly using the string and passing it to `eval` may create a security vulnerability, that is why we sanitize it first.
           output=$(./build/installer.sh latest)
           echo "$output" | grep -o 'CARGO_MANIFEST_DIR=[^ ]*' >> $GITHUB_ENV
 

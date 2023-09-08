@@ -2,7 +2,7 @@
 title: "hello world"
 weight: 10
 draft: false
-run_command: "cairo-run"
+run_command: "cairo-run --single-file"
 ---
 
 <!-- !test program

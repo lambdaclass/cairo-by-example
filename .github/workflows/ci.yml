@@ -16,7 +16,10 @@ jobs:
 
       - name: Install cairo
         run: |
-          curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
+          # Removes the "export " from the last line from the script's output and then exports it.
+          # Directly using the string and passing it to `eval` may create a security vulnerability, that is why we sanitize it first.
+          output=$(./build/installer.sh latest)
+          export $(echo $output | tail -n 1 | sed 's/^export //') 
 
       - name: Use node
         uses: actions/setup-node@v3
@@ -28,5 +31,4 @@ jobs:
 
       - name: Test with txm
         run: | 
-          export CARGO_MANIFEST_DIR="/usr/local/Cellar/cairo-lang/v2.0.0-rc4/corelib"
           make test

@@ -5,7 +5,7 @@ title: "landing"
 ## Install cairo-lang
 Run this command to install cairo on your machine.
 ```bash
-curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash
+curl -L https://raw.githubusercontent.com/lambdaclass/cairo-by-example/main/build/installer.sh | bash -s latest
 ```
 
 ## An introduction to [Cairo](https://cairo-lang.org/), with simple examples.

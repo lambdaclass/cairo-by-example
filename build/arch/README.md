@@ -4,7 +4,7 @@
 Arch Linux supports 3rd-party packages via the *arch user repository* or *AUR*.
 
 ### How do I install it?
-You can use either the `installer.sh` script, which automates the process, or you can use any AUR Helper of your choice. 
+You can use either the `installer.sh` script, which automates the process (assumes you use `yay`), or you can use any AUR Helper of your choice. 
 
 Just install the `cairo-lang` package and let it compile for you.
 

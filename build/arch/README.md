@@ -19,11 +19,11 @@ git clone ssh://aur@aur.archlinux.org/cairo-lang.git
 cd cairo-lang/
 ./update-version.sh
 ```
-> This script gets the latest cairo version from [here](https://github.com/starkware-libs/cairo/) and overwrites the `PKGBUILD` and `.SRCINFO` files.
+> This script gets the latest cairo-lang version from [here](https://github.com/starkware-libs/cairo/) and overwrites the `PKGBUILD` and `.SRCINFO` files.
 * Push the new changes to the remote.
 ```bash
 git push
 ```
 > We need to push our changes to the AUR origin, to update our repo where users will install the package.
 
-Done! Now the AUR repo should have the latest `cairo` version!
+Done! Now the AUR repo should have the latest `cairo-lang` version!

@@ -11,7 +11,7 @@ You can use either the `installer.sh` script, which automates the process, or yo
 ```bash
 ./create_deb.sh compile
 ```
-> We pass the `compile` argument to tell the script we want to compile from source before creating the .deb. Not passing the `compile` argument will skip compilation and go straight to the `.deb` creations, which assumes you already have all the different versions compiled. This step will be done for every `cairo` version.
+> We pass the `compile` argument to tell the script we want to compile from source before creating the .deb. Not passing the `compile` argument will skip compilation and go straight to the `.deb` creations, which assumes you already have all the different versions compiled. This step will be done for every `cairo-lang` version.
 * Once compiled, we want to push the .deb into GitHub.
 ```bash
 find . -type f -name "*.deb" -exec sh -c 'VERSION=$(echo "{}" | sed "s/.*@\(.*\)\.deb/\1/"); gh release create v$VERSION {} --title "v$VERSION" --notes "Cairo v$VERSION .deb binary release."' \;

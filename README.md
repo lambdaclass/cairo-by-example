@@ -1,5 +1,9 @@
 # Cairo by Example
 
+:warning:
+This repo has been archived and it's contents merged with the official Cairo documentation at [`https://github.com/starknet-io/starknet-docs`](https://github.com/starknet-io/starknet-docs).
+:warning"
+
 ## Introduction
 
 The objective of this tutorial is to quickly on-board new developers to Cairo. The first experience newcomers have with Cairo and Starknet should be smooth and in 15' they should have everything setup and a good overview on what the language is all about.

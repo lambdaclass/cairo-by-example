@@ -2,7 +2,7 @@
 
 :warning:
 This repo has been archived and it's contents merged with the official Cairo documentation at [`https://github.com/starknet-io/starknet-docs`](https://github.com/starknet-io/starknet-docs).
-:warning"
+:warning:
 
 ## Introduction
 

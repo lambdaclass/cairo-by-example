@@ -23,3 +23,5 @@ Por defecto, se devuelve el valor `0` para claves no existentes:
         dict_felt[11] // 1024
     }
 ```
+
+[Abierto en Cairo Playground](<https://cairovm.codes/?codeType=Cairo&code=%27use%20dSWFeltZDSTrait%3Bjjfn%20main%7B%7D%20-%3EQZ%20(bu8zu8XbqzqZX~yu8h0YUkjOUoyu8%5BU%5DP1UO11ogP0~yqh1Y024k~gxU24j)%27~jVVzoqZ_ynewW%3CydS_x%20%2F%2FQfeltp~leRo%20%3D%20k%7D%3Bj%5Cnh.insert%7B1gyq%5B11%5DbpmuRyZ252Y%2C%201X%3E%7BkW%3A%3AV%20%20U10SictRt%20Q%20qP%3BxOpval%01OPQRSUVWXYZbghjkopqxyz~_>)

@@ -35,3 +35,5 @@ fn main() {
     }
 }
 ```
+
+[Open in Cairo Playground](<https://cairovm.codes/?codeType=Cairo&code=%27uskdebug%3A%3APWTraitXqfn%20mainY%20(~letj%3A%20u8%20%3D%202Vletx%3D%20trueX~ifx%26%26j%20%3E%200%20ZLets%20code%27%3Ay%20elskZGreat%20things%20arkcomingyq)%27~qzzz%20%20y%22.pWYV)x%20is_awesomkq%5Cnke%20j%20versionZ(~zz%22Y%7B%7DX%3BqWrintV%3B~%01VWXYZjkqxyz~_>)

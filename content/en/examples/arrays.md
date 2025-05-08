@@ -83,3 +83,5 @@ fn test_array_retrieve_elements() {
     // array.at(2) will cause an error
 }
 ```
+
+[Open in Cairo Playground](<https://cairovm.codes/?codeType=Cairo&code=%27hagqAgvhoptionqOptionvhboxqBoxvkfn%20main%7B%7D%20-%3EY%3Cfelt252%3E%20(~let%20mut%20j%20%3DYZqnew%7Bz444z555_k~jk)%27~kccz_~j.append%7BvZ%3Bkq%3A%3Ak%5Cnjnumbershuse%20grrayc%20%20_%7D%3BZTraitY%20Ag%01YZ_cghjkqvz~_>)

@@ -29,6 +29,9 @@ fn main() {
     // foo(arr); <- fails to compile, as main doesn't own the array anymore
 }
 ```
+
+[Open in Cairo Playground](<https://cairovm.codes/?codeType=Cairo&code=%279HNuseOVZCVN9UTCVImplNqfF_%3A%20UM%7DGfoojakRB.~xwhenKisgreturns%2CDiLdropped.q)qqfnSQGasKeOreatorYfz%2CKeSgownsB~letD%3D%20HZMZnewQN~_.cVQXxmovRPOVYfzjogcallq~_XxcompileLbecause%20previouslyB%20waLduplicated~~x_X%3C-EailsjoOompile%2CPsS%20doesn%22tYwnBPnymoreq)%27~qJJzPrrx%2F%2F%20q%5Cnj%20tgEunctioF_foo%7BarrZ%3A%3AY%20oX%7D%3B%20WezayVloneUArrayS%20mainResYwnershipYfQ%7B%7DP%20aO%20cN%3BqM%3Cu128%3ELs%20KjhJ%20%20HUTraitG%20(~xFn%20E%20fDz%20BKW9usWZ%019BDEFGHJKLMNOPQRSUVWXYZ_gjqxz~_>)
+
 Try it out running `cairo-run --single-file clone_copy.cairo --available-gas 20000` in your terminal.
 
 An example of deriving the Copy trait:

@@ -1,0 +1,11 @@
+{{ $class := .Attributes.class | default ""    }}
+{{ $lang  := .Attributes.lang  | default .Type }}
+{{ if transform.CanHighlight $lang }}
+<div class="{{ $class }}" style="position: relative;">
+    <button class="runButton" style="position: absolute; top: 10px; right: 10px;">Run</button>
+    {{ highlight .Inner $lang }}
+    <pre class="resultBlock" style="display: none;"><code class="{{ $class }}"></code></pre>
+</div>
+{{else}}
+<pre><code class="{{ $class }}">{{.Inner}}</code></pre>
+{{end}}
